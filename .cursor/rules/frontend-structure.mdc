@@ -1,0 +1,991 @@
+---
+description: web前端的技术架构描述和开发规范要求，编写前端代码时，要参考这里的内容
+alwaysApply: false
+---
+# PromptLab 前端设计文档
+
+## 项目概述
+
+PromptLab 前端是一个基于 React 19+ 和 TypeScript 的现代化 Web 应用程序，用于提示词工程平台的用户界面。采用 Vite 作为构建工具，使用 Ant Design 作为主要 UI 框架，集成 Tailwind CSS 进行样式定制。项目全面支持国际化（i18n），提供中英文双语界面。
+
+## 目录结构
+
+```
+web/
+├── src/                        # 源代码
+│   ├── i18n/                   # 国际化配置
+│   │   ├── index.ts                     # i18n 主配置文件
+│   │   ├── locales/                     # 语言包目录
+│   │   │   ├── zh.json                  # 中文语言包
+│   │   │   └── en.json                  # 英文语言包
+│   │   └── resources.ts                 # 语言资源配置
+│   ├── components/             # React 组件
+│   │   ├── auth/               # 认证相关组件
+│   │   │   ├── AuthPages.tsx            # 认证页面组合
+│   │   │   └── AuthWrapper.tsx          # 认证包装器
+│   │   ├── ui/                 # 基础 UI 组件
+│   │   │   ├── LongTextEditor.tsx       # 长文本编辑器
+│   │   │   ├── UserButton.tsx           # 用户按钮
+│   │   │   └── UserNav.tsx              # 用户导航
+│   │   ├── layouts/            # 布局组件
+│   │   │   ├── AdminLayout.tsx          # 管理布局
+│   │   │   └── Navbar.tsx               # 导航栏
+│   │   ├── payment/            # 支付相关组件
+│   │   │   └── PaymentPage.tsx          # 支付页面
+│   │   ├── prompt/             # 提示词相关组件
+│   │   │   └── TestCaseCard.tsx         # 测试用例卡片
+│   │   ├── prompt-assistant/   # 提示词助手组件
+│   │   │   ├── AssistantChat.tsx        # 助手聊天界面
+│   │   │   ├── components/              # 助手子组件
+│   │   │   │   ├── ActionProposalCard.tsx # 行动建议卡片
+│   │   │   │   ├── index.ts             # 组件导出
+│   │   │   │   ├── ModeToggle.tsx       # 模式切换
+│   │   │   │   └── StreamingMessage.tsx # 流式消息
+│   │   │   ├── hooks/                   # 助手钩子
+│   │   │   │   └── usePromptAssistant.ts # 提示词助手钩子
+│   │   │   ├── README.md                # 助手功能说明
+│   │   │   ├── services/                # 助手服务
+│   │   │   │   ├── assistantService.ts  # 助手服务
+│   │   │   │   └── promptEditService.ts # 提示词编辑服务
+│   │   │   └── types/                   # 助手类型定义
+│   │   ├── PromptHistoryDrawer/ # 提示词历史抽屉
+│   │   │   ├── index.tsx                # 抽屉组件
+│   │   │   └── README.md                # 功能说明
+│   │   ├── settings/           # 设置相关组件
+│   │   │   ├── ApiKeysSection.tsx       # API 密钥设置
+│   │   │   ├── BillingSection.tsx       # 计费设置
+│   │   │   ├── CustomModelsSection.tsx  # 自定义模型设置
+│   │   │   ├── MembersSection.tsx       # 成员管理
+│   │   │   ├── ModelsManagementSection.tsx # 模型管理设置
+│   │   │   └── ProjectInfoSection.tsx   # 项目信息
+│   │   ├── evaluation/         # 评估功能组件
+│   │   │   └── EvaluationColumnModal.tsx # 评估列配置
+│   │   ├── evaluation-steps/   # 评估步骤组件
+│   │   │   ├── CodeExecutionStep.tsx    # 代码执行步骤
+│   │   │   ├── ContainsStep.tsx         # 包含检查步骤
+│   │   │   ├── CosineSimilarityStep.tsx # 余弦相似度步骤
+│   │   │   ├── CustomApiStep.tsx        # 自定义 API 步骤
+│   │   │   ├── ExactMatchStep.tsx       # 精确匹配步骤
+│   │   │   ├── ExactMultiMatchStep.tsx  # 精确多匹配步骤
+│   │   │   ├── HumanInputStep.tsx       # 人工输入步骤
+│   │   │   ├── index.ts                 # 步骤导出
+│   │   │   ├── JsonExtractionStep.tsx   # JSON 提取步骤
+│   │   │   ├── LlmAssertionStep.tsx     # LLM 断言步骤
+│   │   │   ├── NumericDistanceStep.tsx  # 数值距离步骤
+│   │   │   ├── ParseValueStep.tsx       # 解析值步骤
+│   │   │   ├── PromptTemplateStep.tsx   # 提示词模板步骤
+│   │   │   ├── RegexStep.tsx            # 正则表达式步骤
+│   │   │   ├── StaticValueStep.tsx      # 静态值步骤
+│   │   │   ├── StepRegistry.tsx         # 步骤注册器
+│   │   │   ├── StepResultDisplay.tsx    # 步骤结果显示
+│   │   │   ├── types.ts                 # 步骤类型定义
+│   │   │   └── TypeValidationStep.tsx   # 类型验证步骤
+│   │   ├── upload-steps/       # 上传步骤组件
+│   │   │   ├── FileSelectStep.tsx       # 文件选择步骤
+│   │   │   ├── PreviewStep.tsx          # 预览步骤
+│   │   │   ├── ResultStep.tsx           # 结果步骤
+│   │   │   └── UploadProgressStep.tsx   # 上传进度步骤
+│   │   ├── text-diff/          # 文本差异组件
+│   │   │   ├── diff-styles.css          # 差异样式
+│   │   │   └── TextDiffViewer.tsx       # 文本差异查看器
+│   │   ├── json/               # JSON 相关组件
+│   │   │   └── JSONDisplay.tsx          # JSON 显示器
+│   │   ├── CreateDatasetModal.tsx       # 创建数据集模态框
+│   │   ├── CreateEvaluationPipeline.tsx # 创建评估流水线
+│   │   ├── CreateProjectModal.tsx       # 创建项目模态框
+│   │   ├── DataAnalysisModal.tsx        # 数据分析模态框
+│   │   ├── DatasetItemSelectionModal.tsx # 数据集项选择模态框
+│   │   ├── EditDatasetItemModal.tsx     # 编辑数据集项模态框
+│   │   ├── EditDatasetModal.tsx         # 编辑数据集模态框
+│   │   ├── EvaluationExecution.tsx      # 评估执行组件
+│   │   ├── NavigationBar.tsx            # 导航栏
+│   │   ├── OptimizationTrigger.tsx      # 优化触发器
+│   │   ├── PrivateRoute.tsx             # 私有路由组件
+│   │   ├── PromptHistoryDrawer.tsx      # 提示词历史抽屉
+│   │   ├── PromptOptimizer.tsx          # 提示词优化器
+│   │   ├── PromptOverviewPage.tsx       # 提示词概览页面
+│   │   ├── RequestDetailsModal.tsx      # 请求详情模态框
+│   │   ├── TestCaseGeneratorModal.tsx   # 测试用例生成器
+│   │   ├── tokenizer.js                 # 分词器
+│   │   ├── UploadDatasetWizard.tsx      # 数据集上传向导
+│   │   └── VariablePreview.tsx          # 变量预览
+│   ├── pages/                  # 页面组件
+│   │   ├── auth/               # 认证页面
+│   │   │   ├── LoginPage.tsx            # 登录页面
+│   │   │   └── RegisterPage.tsx         # 注册页面
+│   │   ├── datasets/           # 数据集管理页面
+│   │   │   ├── DatasetDetailPage.tsx    # 数据集详情页面
+│   │   │   └── DatasetsPage.tsx         # 数据集列表页面
+│   │   ├── prompts/            # 提示词管理页面
+│   │   │   ├── PromptEditorPage.tsx     # 提示词编辑页面
+│   │   │   ├── PromptOverviewPage.tsx   # 提示词概览页面
+│   │   │   └── PromptsPage.tsx          # 提示词列表页面
+│   │   ├── evaluations/        # 评估管理页面
+│   │   │   ├── EvalHistoryPage.tsx      # 评估历史页面
+│   │   │   ├── EvalPipelineDetailPage.tsx # 评估流水线详情
+│   │   │   ├── EvalPipelinesPage.tsx    # 评估流水线页面
+│   │   │   └── EvalResultDetailPage.tsx # 评估结果详情页面
+│   │   ├── project/            # 项目管理页面
+│   │   │   └── Settings.tsx             # 项目设置页面
+│   │   ├── user/               # 用户管理页面
+│   │   │   ├── InvitePage.tsx           # 邀请页面
+│   │   │   ├── ProfilePage.tsx          # 用户资料页面
+│   │   │   └── SettingsPage.tsx         # 用户设置页面
+│   │   ├── LandingPage.tsx              # 首页
+│   │   ├── LandingPage.css              # 首页样式
+│   │   └── NotFoundPage.tsx             # 404 页面
+│   ├── hooks/                  # 自定义 React Hooks
+│   │   └── useProjectJump.ts            # 项目跳转钩子
+│   ├── contexts/               # React Context
+│   │   ├── AuthContext.tsx              # 认证上下文
+│   │   ├── ProjectContext.tsx           # 项目上下文
+│   │   └── UnifiedAuthContext.tsx       # 统一认证上下文
+│   ├── constants/              # 常量定义
+│   │   └── llmSources.ts                # LLM 数据源常量
+│   ├── lib/                    # 工具库
+│   │   ├── api.ts                       # API 客户端
+│   │   ├── auth-config.ts               # 认证配置
+│   │   ├── http.ts                      # HTTP 配置
+│   │   ├── payment/                     # 支付相关
+│   │   │   ├── PaymentFactory.ts        # 支付工厂
+│   │   │   └── PaymentService.ts        # 支付服务
+│   │   ├── paymentApi.ts                # 支付 API
+│   │   └── utils.ts                     # 工具函数
+│   ├── services/               # 服务层
+│   │   └── umeng/                       # 友盟统计服务
+│   │       ├── config/                  # 配置文件
+│   │       │   └── pageAnalytics.ts     # 页面分析配置
+│   │       ├── README.md                # 服务说明
+│   │       ├── type/                    # 类型定义
+│   │       │   └── analytics.ts         # 分析类型
+│   │       ├── umengAnalytics.ts        # 友盟分析主文件
+│   │       └── useAnalytics.ts          # 分析钩子
+│   ├── utils/                  # 工具函数
+│   │   ├── concurrency.ts               # 并发工具
+│   │   ├── heightControl.ts             # 高度控制
+│   │   ├── prompt.ts                    # 提示词工具
+│   │   ├── translator.ts                # 翻译工具
+│   │   └── utils.ts                     # 通用工具
+│   ├── types/                  # TypeScript 类型定义
+│   │   ├── datasets.ts                  # 数据集类型
+│   │   ├── evaluation.ts                # 评估类型
+│   │   ├── llm.ts                       # LLM 类型
+│   │   ├── Pagination.ts                # 分页类型
+│   │   ├── payment.ts                   # 支付类型
+│   │   ├── Project.ts                   # 项目类型
+│   │   ├── prompt.ts                    # 提示词类型
+│   │   ├── promptAssistant.ts           # 提示词助手类型
+│   │   └── rowTask.ts                   # 行任务类型
+│   ├── typings/                # 类型定义
+│   │   ├── tokenize.d.ts                # 分词类型定义
+│   │   └── unidiff.d.ts                 # 差异类型定义
+│   ├── styles/                 # 样式文件
+│   │   └── antd-tailwind.css            # Ant Design + Tailwind 样式
+│   ├── assets/                 # 静态资源
+│   │   └── react.svg                    # React 图标
+│   ├── App.tsx                 # 主应用组件
+│   ├── App.css                 # 应用样式
+│   ├── main.tsx                # 应用入口点
+│   ├── routes.tsx              # 路由配置
+│   ├── index.css               # 全局样式
+│   └── vite-env.d.ts           # Vite 环境类型
+├── public/                     # 公共静态文件
+│   ├── favicon.png             # 网站图标
+│   └── vite.svg                # Vite 图标
+├── node_modules/               # 依赖包目录
+├── .gitignore                  # Git 忽略文件配置
+├── eslint.config.js            # ESLint 配置
+├── index.html                  # HTML 模板
+├── package.json                # 项目依赖配置
+├── package-lock.json           # 依赖锁定文件
+├── postcss.config.js           # PostCSS 配置
+├── README.md                   # 项目说明
+├── tailwind.config.js          # Tailwind CSS 配置
+├── tsconfig.json               # TypeScript 配置
+├── tsconfig.app.json           # 应用程序 TypeScript 配置
+├── tsconfig.node.json          # Node.js TypeScript 配置
+└── vite.config.ts              # Vite 构建配置
+```
+
+## 开发规范
+
+### 代码风格规范
+
+1. **代码格式化工具**
+   - 使用 ESLint 进行代码质量检查
+   - 使用 TypeScript 进行类型检查
+   - 遵循 React Hooks 最佳实践
+   - 支持 React Refresh 热更新
+
+2. **命名规范**
+   - 文件名：使用 PascalCase 命名组件文件，如 `UserProfile.tsx`
+   - 组件名：使用 PascalCase，如 `UserProfile`
+   - 函数名：使用 camelCase，如 `getUserProfile`
+   - 变量名：使用 camelCase，如 `userEmail`
+   - 常量名：使用 UPPER_SNAKE_CASE，如 `API_BASE_URL`
+   - 接口名：使用 PascalCase，前缀 I，如 `IUserProfile`
+   - 类型名：使用 PascalCase，如 `UserProfileType`
+   - 枚举名：使用 PascalCase，如 `UserStatus`
+
+3. **文件组织规范**
+   - Page 放到 `web/src/pages/[功能]` 目录
+   - 组件放到 `web/src/components/[功能]` 目录, 例如提示词相关的组件在web/src/components/prompt目录下
+   - 公共组件放在 `web/src/components/` 目录
+   - 每个组件一个文件，禁止将多个组件放到同一个文件
+   - 相关组件放在同一目录下
+
+4. **导入顺序规范**
+   - React 相关导入
+   - 第三方库导入
+   - 内部组件导入
+   - 工具函数和类型导入
+   - 样式文件导入
+   - 每组之间用空行分隔
+
+### 架构规范
+
+1. **组件架构**
+   - 展示组件 (Presentational Components)：负责 UI 渲染
+   - 容器组件 (Container Components)：负责状态管理和数据获取
+   - 页面组件 (Page Components)：路由级别的组件
+   - 布局组件 (Layout Components)：提供页面布局结构
+
+2. **状态管理**
+   - 使用 React Context 进行全局状态管理
+   - 本地状态使用 useState 和 useReducer
+   - 副作用处理使用 useEffect
+   - 复杂状态逻辑提取为自定义 Hooks
+
+3. **路由管理**
+   - 使用 React Router v6 进行客户端路由
+   - 嵌套路由支持
+   - 路由守卫实现权限控制
+   - 懒加载优化页面性能
+
+4. **数据获取**
+   - 使用 Axios 进行 HTTP 请求
+   - 统一的 API 接口封装
+   - 请求和响应拦截器
+   - 错误处理和重试机制
+
+### TypeScript 使用规范
+
+1. **类型定义**
+   - 严格的类型检查配置
+   - 禁用 any 类型，使用具体类型
+   - 接口定义放在 types 目录
+   - 使用泛型提高代码复用性
+   - 所有类型定义都放到 `web/src/types` 目录下
+
+2. **类型安全**
+   - 启用严格模式 (strict: true)
+   - 检查未使用的局部变量和参数
+   - 检查 switch 语句的完整性
+   - 使用类型断言时要谨慎
+
+3. **接口设计**
+   ```typescript
+   // API 响应类型
+   interface ApiResponse<T> {
+     data: T;
+     message: string;
+     success: boolean;
+   }
+
+   // 分页类型
+   interface PaginatedResponse<T> extends ApiResponse<T[]> {
+     meta: {
+       page: number;
+       pageSize: number;
+       totalCount: number;
+       totalPages: number;
+     };
+   }
+
+   // 用户类型
+   interface User {
+     id: string;
+     email: string;
+     name: string;
+     avatar?: string;
+     createdAt: string;
+     updatedAt: string;
+   }
+   ```
+
+### UI/UX 规范
+
+1. **设计系统**
+   - 基于 Ant Design 5.x 的组件库
+   - 使用 Tailwind CSS 进行样式定制
+   - 定义统一的颜色主题和设计令牌
+   - 响应式设计支持
+
+2. **组件规范**
+   - 遵循 Ant Design 的设计原则
+   - 自定义组件继承 Ant Design 样式
+   - 使用 styled-components 进行组件样式
+   - 支持主题切换 (明暗模式)
+
+3. **无障碍性**
+   - 语义化 HTML 标签
+   - 键盘导航支持
+   - 屏幕阅读器兼容
+   - 色彩对比度符合 WCAG 标准
+
+4. **用户体验**
+   - 加载状态指示器
+   - 错误边界处理
+   - 空状态页面
+   - 流畅的页面过渡动画
+
+### 国际化规范
+
+1. **多语言支持**
+   - 使用 react-i18next 进行国际化
+   - 文本内容外部化
+   - 支持动态语言切换
+   - RTL 语言支持
+   - 默认支持zh、en语言
+
+2. **语言包结构**
+   ```typescript
+   // web/src/i18n/locales/zh.json
+   {
+     "common": {
+       "save": "保存",
+       "cancel": "取消",
+       "delete": "删除",
+       "edit": "编辑",
+       "loading": "加载中...",
+       "confirm": "确认"
+     }
+   // web/src/i18n/locales/en.json
+   {
+     common": {
+      "save": "Save",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "edit": "Edit", 
+      "loading": "Loading...",
+      "confirm": "Confirm"
+    }
+   }
+   ```
+
+3. **国际化配置**
+   ```typescript
+   // web/src/i18n/index.ts
+   import i18n from 'i18next';
+   import { initReactI18next } from 'react-i18next';
+   import zhTranslation from './locales/zh.json';
+   import enTranslation from './locales/en.json';
+
+   const resources = {
+     zh: {
+       translation: zhTranslation,
+     },
+     en: {
+       translation: enTranslation,
+     },
+   };
+
+   i18n
+     .use(initReactI18next)
+     .init({
+       resources,
+       lng: 'zh', // 默认语言
+       fallbackLng: 'en',
+       interpolation: {
+         escapeValue: false,
+       },
+     });
+
+   export default i18n;
+   ```
+
+4. **组件多语言使用规范**
+   ```typescript
+   import React from 'react';
+   import { useTranslation } from 'react-i18next';
+   import { Button, Modal, Form, Input, message } from 'antd';
+
+   interface UserProfileProps {
+     user: User;
+     onSave: (data: Partial<User>) => Promise<void>;
+   }
+
+   export function UserProfile({ user, onSave }: UserProfileProps) {
+     const { t } = useTranslation();
+     const [form] = Form.useForm();
+
+     const handleSubmit = async (values: any) => {
+       try {
+         await onSave(values);
+         message.success(t('common.saveSuccess'));
+       } catch (error) {
+         message.error(t('common.saveError'));
+       }
+     };
+
+     return (
+       <Modal
+         title={t('user.profile.title')}
+         open={true}
+         onCancel={() => {}}
+         footer={[
+           <Button key="cancel" onClick={() => {}}>
+             {t('common.cancel')}
+           </Button>,
+           <Button key="save" type="primary" onClick={() => form.submit()}>
+             {t('common.save')}
+           </Button>,
+         ]}
+       >
+         <Form form={form} onFinish={handleSubmit} initialValues={user}>
+           <Form.Item
+             name="name"
+             label={t('user.profile.name')}
+             rules={[
+               { required: true, message: t('user.profile.nameRequired') }
+             ]}
+           >
+             <Input placeholder={t('user.profile.namePlaceholder')} />
+           </Form.Item>
+           
+           <Form.Item
+             name="email"
+             label={t('user.profile.email')}
+             rules={[
+               { required: true, message: t('user.profile.emailRequired') },
+               { type: 'email', message: t('user.profile.emailInvalid') }
+             ]}
+           >
+             <Input placeholder={t('user.profile.emailPlaceholder')} />
+           </Form.Item>
+         </Form>
+       </Modal>
+     );
+   }
+   ```
+
+5. **翻译键命名规范**
+   - 使用层级结构：`模块.子模块.键名`
+   - 键名使用 camelCase：`createProject`, `uploadFile`
+   - 通用键放在 `common` 模块下
+   - 错误消息使用 `Error` 后缀：`saveError`, `deleteError`
+   - 成功消息使用 `Success` 后缀：`saveSuccess`, `uploadSuccess`
+   - 确认消息使用 `Confirm` 后缀：`deleteConfirm`
+
+6. **动态内容翻译**
+   ```typescript
+   // 使用插值变量
+   const { t } = useTranslation();
+   
+   // 数量插值
+   t('dataset.itemCount', { count: 10 }); // "共 10 条数据"
+   
+   // 名称插值
+   t('user.welcome', { name: 'John' }); // "欢迎, John!"
+   
+   // 多变量插值
+   t('upload.progress', { 
+     current: 5, 
+     total: 10 
+   }); // "上传进度: 5/10"
+   
+   // 日期格式化
+   t('project.createdAt', { 
+     date: new Date().toLocaleDateString() 
+   }); // "创建时间: 2024/01/01"
+   ```
+
+### API 集成规范
+
+1. **HTTP 客户端配置**
+   ```typescript
+   // axios 配置
+   const apiClient = axios.create({
+     baseURL: import.meta.env.VITE_API_BASE_URL,
+     timeout: 10000,
+     headers: {
+       'Content-Type': 'application/json',
+     },
+   });
+
+   // 请求拦截器
+   apiClient.interceptors.request.use(
+     (config) => {
+       const token = getAuthToken();
+       if (token) {
+         config.headers.Authorization = `Bearer ${token}`;
+       }
+       return config;
+     },
+     (error) => Promise.reject(error)
+   );
+
+   // 响应拦截器 - 支持多语言错误处理
+   apiClient.interceptors.response.use(
+     (response) => response.data,
+     (error) => {
+       const { t } = useTranslation();
+       
+       if (error.response?.status === 401) {
+         message.error(t('auth.sessionExpired'));
+         logout();
+       } else if (error.response?.status >= 500) {
+         message.error(t('common.serverError'));
+       }
+       
+       return Promise.reject(error);
+     }
+   );
+   ```
+
+2. **API 服务封装 - 多语言版本**
+   ```typescript
+   import { useTranslation } from 'react-i18next';
+   import { message } from 'antd';
+
+   // 用户服务
+   export const userService = {
+     getCurrentUser: (): Promise<User> =>
+       apiClient.get('/api/v1/users/me'),
+     
+     updateProfile: async (data: Partial<User>): Promise<User> => {
+       try {
+         const result = await apiClient.put('/api/v1/users/me', data);
+         return result;
+       } catch (error) {
+         throw error;
+       }
+     },
+     
+     getUsers: (params: PaginationParams): Promise<PaginatedResponse<User>> =>
+       apiClient.get('/api/v1/users', { params }),
+   };
+
+   // 使用服务的 Hook
+   export function useUserService() {
+     const { t } = useTranslation();
+
+     const updateUserProfile = async (data: Partial<User>) => {
+       try {
+         await userService.updateProfile(data);
+         message.success(t('user.profile.updateSuccess'));
+       } catch (error: any) {
+         const errorMsg = error.response?.data?.message || t('user.profile.updateError');
+         message.error(errorMsg);
+         throw error;
+       }
+     };
+
+     return {
+       updateUserProfile,
+     };
+   }
+   ```
+
+3. **错误处理规范**
+   - 统一的错误消息显示
+   - 网络错误和业务错误区分
+   - 错误日志记录
+   - 用户友好的错误提示
+
+### 路由设计规范
+
+1. **路由结构**
+   ```typescript
+   const routes = [
+     {
+       path: '/',
+       element: <Layout />,
+       children: [
+         { path: '', element: <OverviewPage /> },
+         { path: 'prompts', element: <PromptsPage /> },
+         { path: 'prompts/:id', element: <PromptDetailPage /> },
+         { path: 'datasets', element: <DatasetsPage /> },
+         { path: 'datasets/:id', element: <DatasetDetailPage /> },
+         { path: 'evaluations', element: <EvaluationsPage /> },
+         { path: 'evaluations/:id', element: <EvaluationDetailPage /> },
+         { path: 'settings', element: <SettingsPage /> },
+       ],
+     },
+     {
+       path: '/auth',
+       element: <AuthLayout />,
+       children: [
+         { path: 'login', element: <LoginPage /> },
+         { path: 'register', element: <RegisterPage /> },
+         { path: 'forgot-password', element: <ForgotPasswordPage /> },
+       ],
+     },
+   ];
+   ```
+
+2. **路由守卫**
+   ```typescript
+   function PrivateRoute({ children }: { children: React.ReactNode }) {
+     const { user, loading } = useAuth();
+     
+     if (loading) return <Spinner />;
+     
+     if (!user) {
+       message.warning(t('auth.loginRequired'));
+       return <Navigate to="/auth/login" replace />;
+     }
+     
+     return <>{children}</>;
+   }
+   ```
+
+3. **页面级代码分割**
+   ```typescript
+   const PromptsPage = lazy(() => import('@/pages/prompts/PromptsPage'));
+   const DatasetsPage = lazy(() => import('@/pages/datasets/DatasetsPage'));
+   ```
+
+### 状态管理规范
+
+1. **Context 设计 - 支持多语言**
+   ```typescript
+   import { useTranslation } from 'react-i18next';
+
+   // 认证上下文
+   interface AuthContextType {
+     user: User | null;
+     loading: boolean;
+     login: (credentials: LoginCredentials) => Promise<void>;
+     logout: () => void;
+     updateUser: (user: Partial<User>) => void;
+   }
+
+   const AuthContext = createContext<AuthContextType | undefined>(undefined);
+
+   export function AuthProvider({ children }: { children: React.ReactNode }) {
+     const { t } = useTranslation();
+     const [user, setUser] = useState<User | null>(null);
+     const [loading, setLoading] = useState(true);
+
+     const login = async (credentials: LoginCredentials) => {
+       try {
+         setLoading(true);
+         const response = await authService.login(credentials);
+         setUser(response.user);
+         message.success(t('auth.loginSuccess'));
+       } catch (error) {
+         message.error(t('auth.loginError'));
+         throw error;
+       } finally {
+         setLoading(false);
+       }
+     };
+
+     const logout = () => {
+       setUser(null);
+       localStorage.removeItem('token');
+       message.info(t('auth.logoutSuccess'));
+     };
+
+     return (
+       <AuthContext.Provider value={{ user, loading, login, logout, updateUser: setUser }}>
+         {children}
+       </AuthContext.Provider>
+     );
+   }
+
+   export function useAuth() {
+     const context = useContext(AuthContext);
+     if (!context) {
+       throw new Error('useAuth must be used within AuthProvider');
+     }
+     return context;
+   }
+   ```
+
+2. **自定义 Hooks**
+   ```typescript
+   // 数据获取 Hook
+   function useApi<T>(
+     url: string,
+     options?: RequestOptions
+   ): {
+     data: T | null;
+     loading: boolean;
+     error: Error | null;
+     refetch: () => void;
+   } {
+     const [data, setData] = useState<T | null>(null);
+     const [loading, setLoading] = useState(true);
+     const [error, setError] = useState<Error | null>(null);
+
+     // 实现逻辑...
+
+     return { data, loading, error, refetch };
+   }
+   ```
+
+3. **状态持久化**
+   - 使用 localStorage 存储用户偏好设置
+   - 使用 sessionStorage 存储临时数据
+   - 敏感数据使用内存存储
+
+### 性能优化规范
+
+1. **组件优化**
+   - 使用 React.memo 优化纯组件
+   - 使用 useMemo 和 useCallback 优化计算和函数
+   - 避免在 render 中创建新对象和函数
+   - 使用 React.lazy 进行代码分割
+
+2. **打包优化**
+   ```typescript
+   // vite.config.ts 优化配置
+   export default defineConfig({
+     build: {
+       rollupOptions: {
+         output: {
+           manualChunks: {
+             vendor: ['react', 'react-dom'],
+             antd: ['antd', '@ant-design/icons'],
+             utils: ['axios', 'date-fns', 'clsx'],
+           },
+         },
+       },
+       chunkSizeWarningLimit: 1000,
+     },
+   });
+   ```
+
+3. **资源优化**
+   - 图片懒加载和压缩
+   - SVG 图标优化
+   - 字体文件优化
+   - 启用 gzip 压缩
+
+### 测试规范
+
+1. **测试类型**
+   - 单元测试：组件和工具函数测试
+   - 集成测试：用户交互流程测试
+   - E2E 测试：完整业务流程测试
+
+2. **测试工具**
+   - Vitest：单元测试框架
+   - React Testing Library：组件测试
+   - Playwright：E2E 测试
+   - Mock Service Worker：API 模拟
+
+3. **测试用例规范**
+   ```typescript
+   // 组件测试示例
+   describe('UserProfile', () => {
+     it('should render user information correctly', () => {
+       const user = mockUser();
+       render(<UserProfile user={user} />);
+       
+       expect(screen.getByText(user.name)).toBeInTheDocument();
+       expect(screen.getByText(user.email)).toBeInTheDocument();
+     });
+
+     it('should handle edit action', async () => {
+       const onEdit = vi.fn();
+       render(<UserProfile user={mockUser()} onEdit={onEdit} />);
+       
+       await user.click(screen.getByRole('button', { name: /edit/i }));
+       expect(onEdit).toHaveBeenCalled();
+     });
+   });
+   ```
+
+### 安全规范
+
+1. **XSS 防护**
+   - 使用 React 的自动转义功能
+   - 避免使用 dangerouslySetInnerHTML
+   - 对用户输入进行验证和清理
+   - 内容安全策略 (CSP) 配置
+
+2. **认证安全**
+   - JWT 令牌安全存储
+   - 自动令牌刷新机制
+   - 登录状态过期处理
+   - 敏感操作二次确认
+
+3. **数据保护**
+   - HTTPS 强制使用
+   - 敏感数据传输加密
+   - 本地存储数据加密
+   - 防止数据泄露
+
+### 国际化规范
+
+1. **多语言支持**
+   - 使用 react-i18next 进行国际化
+   - 文本内容外部化
+   - 支持动态语言切换
+   - RTL 语言支持
+
+2. **本地化内容**
+   ```typescript
+   // 语言文件结构
+   export const zh = {
+     common: {
+       save: '保存',
+       cancel: '取消',
+       delete: '删除',
+       edit: '编辑',
+     },
+     pages: {
+       prompts: {
+         title: '提示词管理',
+         create: '创建提示词',
+       },
+     };
+   }
+   ```
+
+### 三方库版本要求
+
+为确保项目的稳定性和一致性，指定以下关键库的版本要求：
+
+1. **核心框架**
+   - React == 19.0.0
+   - React DOM == 19.0.0
+   - TypeScript ~5.8.3
+   - Vite ^6.3.5
+
+2. **UI 框架**
+   - Ant Design ^5.25.1
+   - @ant-design/icons ^5.6.1
+   - @ant-design/pro-components ^2.8.7
+   - @ant-design/v5-patch-for-react-19 ^1.0.3
+   - styled-components ^6.1.18
+
+3. **样式和工具**
+   - Tailwind CSS ^4.1.5
+   - @tailwindcss/postcss ^4.1.5
+   - clsx ^2.1.1
+   - tailwind-merge ^2.5.5
+
+4. **路由和状态**
+   - react-router-dom ^6.22.2
+
+5. **HTTP 客户端**
+   - axios ^1.9.0
+
+6. **国际化**
+   - react-i18next ^15.1.4
+   - i18next ^24.2.0
+
+7. **工具库**
+   - date-fns ^4.1.0
+   - papaparse ^5.5.2 (CSV 解析)
+   - sonner ^1.7.1 (通知组件)
+   - react-diff-view ^3.3.1 (差异显示)
+   - unidiff ^1.0.4 (差异处理)
+
+8. **开发工具**
+   - @vitejs/plugin-react ^4.4.1
+   - ESLint ^9.25.0
+   - typescript-eslint ^8.30.1
+
+### 构建配置规范
+
+1. **Vite 配置详情**
+   ```typescript
+   export default defineConfig({
+     plugins: [react()],
+     resolve: {
+       alias: {
+         '@': path.resolve(__dirname, './src'),
+       },
+     },
+     server: {
+       port: 3000,
+       proxy: {
+         '/api': {
+           target: 'http://localhost:8000',
+           changeOrigin: true,
+           secure: false,
+         },
+       },
+     },
+     build: {
+       outDir: path.resolve(__dirname, '../server/app/public'),
+       emptyOutDir: true,
+       sourcemap: false,
+       minify: 'terser',
+       rollupOptions: {
+         output: {
+           manualChunks: (id) => {
+             if (id.includes('node_modules')) {
+               if (id.includes('react')) return 'react-vendor';
+               if (id.includes('antd')) return 'antd-vendor';
+               if (id.includes('i18next')) return 'i18n-vendor';
+               return 'vendor';
+             }
+           },
+         },
+       },
+     },
+   });
+   ```
+
+2. **TypeScript 配置详情**
+   - 严格模式启用
+   - 路径别名配置 (@/* 映射到 src/*)
+   - 现代 ES 模块支持
+   - JSX 转换为 react-jsx
+
+3. **样式配置**
+   - Tailwind CSS 自定义主题
+   - CSS 变量支持
+   - PostCSS 自动前缀
+   - 响应式断点定义
+
+### 性能优化规范
+
+1. **组件优化**
+   - 使用 React.memo 优化纯组件
+   - 使用 useMemo 和 useCallback 优化计算和函数
+   - 避免在 render 中创建新对象和函数
+   - 使用 React.lazy 进行代码分割
+
+2. **打包优化**
+   - 代码分割和懒加载
+   - 第三方库分包（包括 i18n 相关库）
+   - 资源压缩和优化
+   - Tree shaking
+
+3. **资源优化**
+   - 图片懒加载和压缩
+   - SVG 图标优化
+   - 字体文件优化
+   - 语言包按需加载
+
+### 组件分类和职责
+
+1. **基础 UI 组件** (`components/ui/`)：
+   - 可复用的基础组件
+   - 与业务逻辑无关
+   - 高度可配置
+   - 支持多语言
+
+2. **业务组件** (`components/`)：
+   - 特定业务功能组件
+   - 包含业务逻辑
+   - 可能依赖特定数据结构
+   - 必须支持多语言
+
+3. **页面组件** (`pages/`)：
+   - 路由级别组件
+   - 组合多个业务组件
+   - 处理页面级状态
+   - 设置页面标题（多语言）
+
+4. **布局组件** (`components/layouts/`)：
+   - 页面布局结构
+   - 导航和侧边栏
+   - 响应式布局 

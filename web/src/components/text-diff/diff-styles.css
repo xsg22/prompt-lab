@@ -1,0 +1,287 @@
+.diff-container {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.diff-card {
+  overflow: auto;
+}
+
+.diff-header {
+  display: flex;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 8px 0;
+  font-weight: bold;
+  background-color: #fafafa;
+}
+
+.diff-header-left, .diff-header-right {
+  flex: 1;
+  padding: 0 16px;
+}
+
+.diff-view {
+  margin-top: 8px;
+}
+
+/* 空格与特殊字符样式 */
+.space {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.space-char, .space-tab, .space-nl {
+  color: rgba(0, 0, 0, 0.3);
+  user-select: none;
+}
+
+.space-tab {
+  color: rgba(0, 100, 200, 0.4);
+}
+
+.space-nl {
+  color: rgba(200, 0, 0, 0.4);
+}
+
+/* 新增文本比较样式 */
+.comparison-card {
+  margin-bottom: 20px;
+}
+
+.diff-card-expected .ant-card-head {
+  background-color: #fafafa;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.diff-card-actual .ant-card-head {
+  background-color: #fafafa;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* 高亮样式 */
+.highlight-added {
+  background-color: #e6ffed;
+  color: #22863a;
+  font-weight: bold;
+  border: 1px solid #b4e2b4;
+  border-radius: 3px;
+  padding: 0 4px;
+  margin: 0 1px;
+}
+
+.highlight-removed {
+  background-color: #ffeef0;
+  color: #cb2431;
+  font-weight: bold;
+  border: 1px solid #e2b4b4;
+  border-radius: 3px;
+  padding: 0 4px;
+  margin: 0 1px;
+}
+
+/* JSON 比较相关样式 */
+.diff-expected.ant-card-bordered {
+  border-color: #ff4d4f;
+}
+
+.diff-actual.ant-card-bordered {
+  border-color: #1890ff;
+}
+
+/* JSON 键值对高亮 */
+.json-key {
+  color: #7c4dff;
+}
+
+.json-string {
+  color: #4caf50;
+}
+
+.json-number {
+  color: #f44336;
+}
+
+.json-boolean {
+  color: #2196f3;
+}
+
+.json-null {
+  color: #9e9e9e;
+}
+
+/* 定制样式以改善diff展示 */
+.diff-gutter-col {
+  width: 50px;
+  padding: 0 10px;
+  text-align: right;
+  background-color: #fafafa;
+}
+
+.diff-gutter-omit {
+  height: 24px;
+  background-color: #fafafa;
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.diff-code-omit {
+  height: 24px;
+  background-color: #fafafa;
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+  color: #999;
+  text-align: center;
+}
+
+.diff-code {
+  padding: 2px 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.diff-code-delete {
+  background-color: #ffecec;
+}
+
+.diff-code-insert {
+  background-color: #eaffea;
+}
+
+.diff-code-text {
+  white-space: pre-wrap;
+}
+
+.diff-decoration-content {
+  padding: 2px;
+  border-radius: 2px;
+}
+
+.diff-decoration-delete {
+  background-color: #ff8c8c;
+}
+
+.diff-decoration-insert {
+  background-color: #8cff8c;
+}
+
+/* 单词级高亮样式 */
+.diff-word-insert {
+  display: inline;
+  background-color: #acf2bd;
+  color: #154a25;
+  border-radius: 2px;
+  padding: 0 2px;
+  margin: 0 1px;
+  box-shadow: 0 0 0 1px #90e7a5;
+}
+
+.diff-word-delete {
+  display: inline;
+  background-color: #fdb8c0;
+  color: #86181d;
+  border-radius: 2px;
+  padding: 0 2px;
+  margin: 0 1px;
+  box-shadow: 0 0 0 1px #f9969f;
+}
+
+/* 更好的行号展示 */
+.diff-gutter {
+  color: rgba(0, 0, 0, 0.3);
+  background-color: #f8f8f8;
+  border-right: 1px solid #eee;
+  padding: 0 8px;
+  text-align: right;
+  user-select: none;
+}
+
+/* 修饰标记词块的样式 */
+.word-block {
+  display: inline-block;
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
+/* 修改和添加的断词样式 */
+.diff-code .token.word.inserted {
+  background-color: #acf2bd;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px #90e7a5;
+}
+
+.diff-code .token.word.deleted {
+  background-color: #fdb8c0;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px #f9969f;
+}
+
+/* 提高引号和其他标点符号的可见度 */
+.token.punctuation {
+  color: #5c6370;
+}
+
+/* JSON结构中添加和删除的属性 */
+.json-property-added {
+  background-color: #acf2bd;
+  border-radius: 2px;
+  padding: 0 2px;
+}
+
+.json-property-deleted {
+  background-color: #fdb8c0;
+  border-radius: 2px;
+  padding: 0 2px;
+}
+
+/* 优化空白字符显示 */
+.token.whitespace {
+  position: relative;
+}
+
+.token.whitespace.space::before {
+  content: '·';
+  color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+}
+
+/* 折叠功能相关样式 */
+.diff-collapse-section {
+  background-color: #fafafa;
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+  transition: all 0.2s ease;
+}
+
+.diff-collapse-section:hover {
+  background-color: #f0f0f0;
+}
+
+.diff-collapse-button {
+  color: #666 !important;
+  border: none !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease;
+}
+
+.diff-collapse-button:hover {
+  color: #1890ff !important;
+  background-color: rgba(24, 144, 255, 0.05) !important;
+}
+
+.diff-collapse-button:focus {
+  color: #1890ff !important;
+  background-color: rgba(24, 144, 255, 0.05) !important;
+}
+
+.diff-collapse-info {
+  font-size: 10px;
+  color: #999;
+  margin-left: 8px;
+}
+
+/* 展开时的底部分隔线 */
+.diff-expanded-footer {
+  background-color: #fafafa;
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+} 

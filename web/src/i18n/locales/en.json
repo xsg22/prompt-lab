@@ -1,0 +1,2638 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit", 
+    "create": "Create",
+    "confirm": "Confirm",
+    "reset": "Reset",
+    "search": "Search",
+    "filter": "Filter",
+    "loading": "Loading...",
+    "noData": "No data",
+    "success": "Success",
+    "error": "Error",
+    "warning": "Warning",
+    "copy": "Copy",
+    "view": "View",
+    "add": "Add",
+    "close": "Close",
+    "all": "All",
+    "createProject": "Create New Project",
+    "none": "None",
+    "status": "Status",
+    "description": "Description",
+    "name": "Name",
+    "tags": "Tags",
+    "creator": "Creator",
+    "updatedAt": "Updated",
+    "createdAt": "Created",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "nav": {
+    "prompts": "Prompts",
+    "datasets": "Datasets", 
+    "evaluations": "Evaluations",
+    "settings": "Settings"
+  },
+  "prompts": {
+    "title": "Prompt Registry",
+    "createPrompt": "Create Prompt",
+    "manageTag": "Tags",
+    "searchPlaceholder": "Search prompts...",
+    "noPromptsFound": "No matching prompts found",
+    "noPrompts": "No prompts",
+    "promptsCount": " prompts",
+    "tabs": {
+      "all": "All",
+      "favorites": "Favorites",
+      "mine": "Mine",
+      "templates": "Templates"
+    },
+    "groupBy": {
+      "none": "No grouping",
+      "creator": "By creator",
+      "tags": "By tags", 
+      "status": "By status"
+    },
+    "status": {
+      "active": "Active",
+      "draft": "Draft",
+      "archived": "Archived"
+    },
+    "actions": {
+      "favorite": "Favorite",
+      "unfavorite": "Unfavorite",
+      "editInfo": "Edit Info",
+      "batchSelect": "Batch",
+      "batchFavorite": "Batch Favorite",
+      "batchArchive": "Batch Archive",
+      "batchDelete": "Batch Delete",
+      "selectAll": "Select All"
+    },
+    "messages": {
+      "loadError": "Failed to load prompts",
+      "createSuccess": "Prompt created successfully",
+      "createError": "Failed to create prompt",
+      "updateSuccess": "Prompt updated",
+      "updateError": "Update failed",
+      "deleteSuccess": "Prompt deleted successfully", 
+      "deleteError": "Failed to delete prompt",
+      "copySuccess": "Prompt copied successfully",
+      "copyError": "Failed to copy prompt",
+      "favoriteAdded": "Added to favorites",
+      "favoriteRemoved": "Removed from favorites",
+      "favoriteError": "Operation failed",
+      "batchSuccess": "Batch operation completed",
+      "batchError": "Batch operation failed",
+      "selectPrompts": "Please select prompts to operate on",
+      "batchDeleteCount": "Deleted {{count}} prompts"
+    },
+    "modal": {
+      "create": {
+        "title": "Create New Prompt",
+        "nameLabel": "Prompt Name",
+        "namePlaceholder": "Enter prompt name",
+        "nameRequired": "Please enter prompt name",
+        "descriptionLabel": "Description",
+        "descriptionPlaceholder": "Briefly describe the function and purpose of this prompt",
+        "tagsLabel": "Tags",
+        "tagsPlaceholder": "Select tags",
+        "aiGenerate": {
+          "title": "✨ AI Smart Prompt Generation",
+          "description": "When enabled, the system will automatically generate high-quality prompt content based on name and description to help you get started quickly",
+          "enable": "Enable",
+          "disable": "Disable"
+        }
+      },
+      "edit": {
+        "title": "Edit Prompt",
+        "nameLabel": "Prompt Name",
+        "descriptionLabel": "Description (Optional)",
+        "statusLabel": "Status", 
+        "templateLabel": "Template"
+      },
+      "copy": {
+        "title": "Copy Prompt",
+        "nameLabel": "Prompt Name",
+        "copyNameSuffix": " (Copy)"
+      },
+      "tag": {
+        "title": "Tag Management",
+        "nameLabel": "Tag Name",
+        "namePlaceholder": "Tag name",
+        "nameRequired": "Please enter tag name",
+        "colorLabel": "Color",
+        "existing": "Existing Tags",
+        "createSuccess": "Tag created successfully",
+        "createError": "Failed to create tag",
+        "deleteConfirm": "Are you sure to delete this tag?",
+        "deleteDescription": "After deletion, all prompts using this tag will lose the tag.",
+        "deleteSuccess": "Tag deleted",
+        "deleteError": "Delete failed"
+      },
+      "delete": {
+        "title": "Are you sure to delete this prompt?",
+        "description": "It cannot be recovered after deletion, including all data.",
+        "batchTitle": "Are you sure to delete the selected prompts?"
+      }
+    },
+    "filter": {
+      "title": "Filter Settings",
+      "search": "Search",
+      "searchPlaceholder": "Search prompt names or descriptions...",
+      "tags": "Tags",
+      "tagsPlaceholder": "Select tags",
+      "status": "Status",
+      "creator": "Creator",
+      "creatorOptions": {
+        "all": "All",
+        "mine": "Mine",
+        "others": "Others"
+      },
+      "other": "Other Filters",
+      "favoritesOnly": "Favorites only",
+      "templatesOnly": "Templates only",
+      "sort": "Sort",
+      "sortBy": {
+        "updatedAt": "Updated time",
+        "createdAt": "Created time",
+        "name": "Name"
+      },
+      "sortOrder": {
+        "desc": "Descending",
+        "asc": "Ascending"
+      }
+    },
+    "card": {
+      "noDescription": "No description",
+      "unknownUser": "Unknown user",
+      "uncategorized": "Uncategorized",
+      "invalidTime": "Invalid time",
+      "unknownTime": "Unknown time"
+    },
+    "batch": {
+      "selectedCount": "Selected {{count}} items",
+      "selectFirst": "Please select prompts to operate on first"
+    },
+    "tooltips": {
+      "view": "View",
+      "edit": "Edit",
+      "favorite": "Favorite",
+      "unfavorite": "Unfavorite",
+      "createPrompt": "Create Prompt",
+      "manageTags": "Manage Tags",
+      "filter": "Filter"
+    }
+  },
+  "datasets": {
+    "title": "Dataset Management",
+    "createDataset": "Create Dataset",
+    "refresh": "Refresh",
+    "noDatasets": "No datasets",
+    "deleteSuccess": "Dataset deleted",
+    "deleteError": "Failed to delete dataset",
+    "loadError": "Failed to load datasets",
+    "totalCount": "Total {{total}} items",
+    "table": {
+      "name": "Name",
+      "description": "Description",
+      "variables": "Variables",
+      "creator": "Creator",
+      "updatedAt": "Updated",
+      "actions": "Actions",
+      "noDescription": "No description"
+    },
+    "actions": {
+      "viewDetails": "View Details",
+      "dataAnalysis": "Data Analysis",
+      "delete": "Delete"
+    },
+    "modal": {
+      "delete": {
+        "title": "Are you sure to delete this dataset?",
+        "description": "It cannot be recovered after deletion, including all dataset items."
+      }
+    }
+  },
+  "editor": {
+    "title": "Prompt Editor",
+    "save": "Save",
+    "saveWithChanges": "Save*",
+    "running": "Running",
+    "run": "Run",
+    "runAll": "Run All",
+    "stop": "Stop",
+    "cancel": "Cancel",
+    "currentVersion": "Current Version",
+    "goOverview": "Overview",
+    "modelConfig": "Model Config",
+    "selectModel": "Select Model",
+    "advancedParams": "Advanced Parameters (Optional)",
+    "temperature": "Control output randomness, higher is more random",
+    "topP": "Nucleus sampling, controls vocabulary selection range",
+    "maxTokens": "Maximum Tokens",
+    "testCases": "Test Cases",
+    "outputs": "Outputs",
+    "variablesTitle": "Variables",
+    "addVariable": "Add Variable",
+    "variableName": "Variable Name",
+    "variableValue": "Variable Value",
+    "deleteVariable": "Delete Variable",
+    "addTestCase": "Test Case",
+    "importFromJson": "Import from JSON",
+    "jsonImport": {
+      "title": "Import from JSON",
+      "description": "Input JSON format test data, key is variable name, value is variable value",
+      "placeholder": "Please input JSON format data, for example:\n{\n  \"variable1\": \"value1\",\n  \"variable2\": \"value2\"\n}",
+      "invalidJson": "JSON format is incorrect, please check the syntax",
+      "noVariables": "JSON data is empty or does not contain valid variables",
+      "success": "JSON test case import successfully",
+      "error": "Import failed, please check JSON format",
+      "unmatchedVariables": "The following variables do not exist in the current prompt: {{variables}}",
+      "unmatchedVariablesDescription": "These variables will be ignored, only matched variables will be imported.",
+      "parseSuccessMessage": "Parsed {{total}} variables, {{matched}} of which match the current prompt variables.",
+      "jsonDataLabel": "JSON Data:",
+      "currentVariablesLabel": "Current Prompt Variables:",
+      "confirmImport": "Are you sure to import this test case?"
+    },
+    "importFromDataset": "Import from Dataset",
+    "exportToDataset": "Export to Dataset",
+    "generateTestCases": "Generate Test Cases",
+    "intelligentGenerate": "AI Generate",
+    "editMode": "Edit Mode",
+    "viewMode": "View Mode",
+    "messageEdit": "Message Editor",
+    "addMessage": "Message",
+    "result": "Result",
+    "history": "History",
+    "copyCurrentCase": "Copy Current Case",
+    "deleteAll": "Delete All",
+    "clickToStart": "Click run button to start",
+    "generateAnswer": "Generating response...",
+    "callFailed": "Call Failed",
+    "ready": "Ready",
+    "maxTokensTooltip": "Maximum output length",
+    "presenceTooltip": "Reduce repetitive content",
+    "frequencyTooltip": "Reduce word frequency repetition",
+    "totalTime": "Total Time",
+    "totalCost": "Total Cost",
+    "executionProgress": "Execution Progress",
+    "successRate": "Success Rate",
+    "avgQuality": "Avg Quality",
+    "avgLatency": "Avg Latency",
+    "languages": {
+      "chinese": "Chinese",
+      "english": "English",
+      "compare": "Compare"
+    },
+    "languageVersions": {
+      "chineseVersion": "🇨🇳 Chinese Version",
+      "englishVersion": "🇺🇸 English Version"
+    },
+    "translation": {
+      "toChinese": "To ZH",
+      "toEnglish": "To EN"
+    },
+    "placeholders": {
+      "systemMessage": "You are a professional {{role}}...",
+      "userMessage": "Enter message...",
+      "systemMessageEn": "You are a professional {{role}}...",
+      "userMessageEn": "Enter message...",
+      "variableTip": "💡 Use {{variableName}} to insert variables, only letters, numbers and underscores allowed",
+      "versionComment": "Describe the main changes in this update...",
+      "charactersZh": "Chinese: {{count}} chars",
+      "charactersEn": "English: {{count}} chars",
+      "characters": "Characters: {{count}}"
+    },
+    "actions": {
+      "copyMessage": "Copy Message",
+      "deleteMessage": "Delete Message",
+      "copyResult": "Copy Result",
+      "viewDetails": "View Details",
+      "optimize": "Optimize Prompt",
+      "viewProgress": "View Progress",
+      "viewOptimization": "View Optimization",
+      "viewError": "View Error",
+      "modifyDescription": "Modify Description"
+    },
+    "status": {
+      "optimizing": "Optimizing",
+      "optimized": "Optimized",
+      "optimizeFailed": "Failed",
+      "hasFeedback": "Feedback"
+    },
+    "statistics": {
+      "totalTokens": "Total: {{count}}",
+      "completionTokens": "Completion: {{count}}",
+      "promptTokens": "Prompt: {{count}}"
+    },
+    "modals": {
+      "saveVersion": {
+        "title": "Save New Version",
+        "versionComment": "Version Comment",
+        "saveLanguage": "Save Language",
+        "messageCount": "Messages: {{count}}",
+        "variableCount": "Variables: {{count}}",
+        "testCaseCount": "Test Cases: {{count}}",
+        "confirmSave": "Confirm Save",
+        "diffTitle": "Change Comparison",
+        "diffWith": "Differences from version {{version}}",
+        "firstVersion": "This is the first version, no comparison available",
+        "firstVersionDesc": "This will be the first version of this prompt"
+      },
+      "deleteMessage": {
+        "title": "Confirm Delete",
+        "description": "Are you sure to delete this message?",
+        "deleteButton": "Delete"
+      },
+      "deleteAllCases": {
+        "title": "Confirm Delete All Test Cases",
+        "description": "About to delete all {{count}} test cases, this operation cannot be undone",
+        "confirmDelete": "Confirm Delete"
+      },
+      "switchVersion": {
+        "title": "Confirm Version Switch",
+        "description": "You have unsaved changes, are you sure to switch to version {{version}}?",
+        "tip": "Current changes will be lost after switching, recommend saving current version first.",
+        "confirmSwitch": "Confirm Switch"
+      }
+    },
+    "variables": {
+      "overview": "🔧 Variables Overview",
+      "noVariables": "No variables yet, use {{variableName}} in messages to add variables",
+      "clickToLocate": "Click to locate variable {{{{variable}}}} in message {{index}}",
+      "appearCount": "This variable appears {{count}} times in this message"
+    },
+    "messages": {
+      "saveSuccess": "Saved successfully",
+      "saveError": "Save failed",
+      "hasUnsavedChanges": "You have unsaved changes, are you sure to return?",
+      "deleteConfirm": "Are you sure to delete this variable?",
+      "variableNameRequired": "Please enter variable name",
+      "variableNameInvalid": "Variable name can only contain letters, numbers and underscores",
+      "variableExists": "Variable name already exists",
+      "keepOneMessage": "At least one message must be kept",
+      "copySuccess": "Copied successfully",
+      "copyFailed": "Copy failed",
+      "cancelRequest": "Request cancelled",
+      "modelCallError": "Error calling model",
+      "loadModelError": "Failed to load model list",
+      "versionSaved": "Prompt saved as new version ({{language}})",
+      "saveVersionError": "Failed to save template, please try again",
+      "deletedAllCases": "Deleted all {{count}} test cases",
+      "addedCases": "Added {{count}} test cases",
+      "translatedTo": "Successfully translated to {{language}}",
+      "translateError": "Translation failed, please try again",
+      "loadVersionError": "Failed to load version content",
+      "promptUpdated": "✅ Prompt updated successfully!",
+      "noChanges": "⚠️ No changes in prompt content"
+    },
+    "tabs": {
+      "editor": "Editor",
+      "variables": "vars",
+      "testCases": "Cases",
+      "outputs": "Outputs",
+      "assistant": "AI Assistant",
+      "history": "History",
+      "mode": "Mode"
+    }
+  },
+  "overview": {
+    "title": "Prompt Overview",
+    "editSelected": "Edit Selected",
+    "versionHistory": "Version History",
+    "versionContent": "Version Content",
+    "modelConfig": "Model Config",
+    "variableList": "Variable List",
+    "statistics": "Statistics",
+    "noContent": "No content",
+    "noMessages": "No messages in this version",
+    "noModelConfig": "No model configuration",
+    "noVariables": "No variables",
+    "selectVersionToView": "Select version to view content",
+    "messageContent": "Message Content",
+    "copyContent": "Copy Content",
+    "copyChinese": "Copy Chinese",
+    "copyEnglish": "Copy English",
+    "chineseVersion": "🇨🇳 Chinese Version",
+    "englishVersion": "🇺🇸 English Version",
+    "bilingualVersion": "🌐 Bilingual Version",
+    "modelName": "Model Name",
+    "variableCount": "Variables",
+    "versionCount": "{{count}} versions",
+    "variablesCount": "{{count}} vars",
+    "messageCount": "{{count}} messages",
+    "messagesCount": "{{count}} msgs",
+    "completeVersion": "Complete Version",
+    "overview": "Overview",
+    "messagesTitle": "Messages",
+    "parameterConfig": "Parameters",
+    "totalCharacters": "Total Characters",
+    "messageCountShort": "Messages",
+    "completeness": "Completeness",
+    "bilingual": "🌐 Bilingual",
+    "bilingualCompareMode": "💡 Bilingual Compare Mode",
+    "charactersCompare": "Chinese: {{zhCount}} chars | English: {{enCount}} chars",
+    "compareMode": "Compare Mode",
+    "more": "More",
+    "messages": {
+      "copySuccess": "Copied successfully",
+      "copyFailed": "Copy failed",
+      "loadVersionError": "Failed to load version"
+    }
+  },
+  "evaluations": {
+    "title": "Evaluation Tasks",
+    "createEvaluation": "Create Evaluation",
+    "editEvaluation": "Edit",
+    "viewHistory": "View History",
+    "deleteEvaluation": "Delete",
+    "table": {
+      "name": "Name",
+      "description": "Description",
+      "dataset": "Dataset",
+      "creator": "Creator",
+      "createdAt": "Created",
+      "updatedAt": "Updated",
+      "actions": "Actions"
+    },
+    "tooltips": {
+      "edit": "Edit",
+      "viewHistory": "View execution history",
+      "delete": "Delete"
+    },
+    "modal": {
+      "deleteConfirm": "Are you sure to delete this evaluation task?",
+      "deleteButton": "Delete"
+    },
+    "messages": {
+      "loadError": "Failed to load evaluation tasks",
+      "deleteSuccess": "Evaluation task deleted successfully",
+      "deleteError": "Failed to delete evaluation task"
+    },
+    "pagination": {
+      "totalCount": "Total {{total}} items"
+    }
+  },
+  "datasetDetail": {
+    "title": "Dataset Details",
+    "back": "Back",
+    "editInfo": "Edit Info",
+    "batchImport": "Batch Import",
+    "addData": "Add Data",
+    "enabledTotal": "Enabled/Total",
+    "status": "Status",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "name": "Name",
+    "createdAt": "Created",
+    "actions": "Actions",
+    "editing": "Editing...",
+    "edit": "Edit",
+    "copy": "Copy",
+    "copyItem": "Copy",
+    "delete": "Delete",
+    "batchDelete": "Batch Delete",
+    "cancelSelection": "Cancel Selection",
+    "search": "Search",
+    "noData": "No dataset items",
+    "selectedCount": "Selected {{count}} items",
+    "placeholders": {
+      "enterName": "Enter name",
+      "enterVariable": "Enter {{variable}}"
+    },
+    "modal": {
+      "deleteConfirm": "Confirm Delete",
+      "deleteDescription": "Are you sure to delete this item? This action cannot be undone.",
+      "batchDeleteConfirm": "Confirm Batch Delete",
+      "batchDeleteDescription": "Are you sure to delete selected {{count}} items?",
+      "deleteButton": "Delete"
+    },
+    "messages": {
+      "loadDatasetError": "Failed to load dataset",
+      "copySuccess": "Item copied successfully",
+      "copyError": "Failed to copy item, please try again",
+      "selectItemsToDelete": "Please select items to delete",
+      "batchDeleteSuccess": "Successfully deleted {{count}} items",
+      "batchDeleteError": "Batch delete failed, please try again",
+      "statusUpdateSuccess": "Item {{status}}",
+      "statusUpdateError": "Failed to update item status, please try again",
+      "deleteSuccess": "Item deleted successfully",
+      "deleteError": "Failed to delete item",
+      "loadError": "Failed to load data",
+      "updateSuccess": "Item updated successfully",
+      "createSuccess": "Item created successfully",
+      "saveError": "Save failed, please try again"
+    },
+    "pagination": {
+      "showTotal": "{{start}}-{{end}} of {{total}} items"
+    },
+    "validation": {
+      "nameRequired": "Please enter name",
+      "variableRequired": "Please enter {{variable}}"
+    }
+  },
+  "settings": {
+    "title": "Account Settings",
+    "changePassword": {
+      "title": "Change Password",
+      "description": "Update your account password",
+      "currentPassword": "Current Password",
+      "newPassword": "New Password",
+      "confirmNewPassword": "Confirm New Password",
+      "updatePassword": "Update Password",
+      "updating": "Updating...",
+      "placeholders": {
+        "currentPassword": "Enter current password",
+        "newPassword": "Enter new password",
+        "confirmNewPassword": "Re-enter new password"
+      }
+    },
+    "deleteAccount": {
+      "title": "Delete Account",
+      "description": "Permanently delete your account and all related data, this action cannot be undone",
+      "warning": "Please proceed with caution, all data will be unrecoverable after deletion.",
+      "deleteButton": "Delete My Account",
+      "processing": "Processing...",
+      "confirmTitle": "Confirm Account Deletion?",
+      "confirmContent": "This operation will permanently delete your account and all related data, and cannot be recovered.",
+      "confirmDeleteButton": "Confirm Deletion"
+    },
+    "validation": {
+      "currentPasswordRequired": "Please enter current password",
+      "newPasswordRequired": "Please enter new password",
+      "confirmPasswordRequired": "Please re-enter new password",
+      "passwordMinLength": "Password must be at least 6 characters",
+      "passwordMismatch": "New passwords do not match"
+    },
+    "messages": {
+      "loginRequired": "Please login first",
+      "passwordMismatch": "New passwords do not match",
+      "passwordUpdateSuccess": "Password updated successfully",
+      "passwordUpdateError": "Failed to update password",
+      "accountDeleteSuccess": "Account deleted successfully",
+      "accountDeleteError": "Failed to delete account",
+      "authCheckError": "Failed to verify login status"
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "description": "View and update your profile information",
+    "email": "Email",
+    "createdAt": "Account Created",
+    "editNickname": "Edit Nickname",
+    "nickname": "Nickname",
+    "updateProfile": "Update Profile",
+    "updating": "Updating...",
+    "placeholder": "Enter your nickname",
+    "validation": {
+      "nicknameMinLength": "Nickname must be at least 2 characters",
+      "nicknameMaxLength": "Nickname cannot exceed 50 characters"
+    },
+    "messages": {
+      "loginRequired": "Please login first",
+      "fetchError": "Failed to fetch user information",
+      "updateSuccess": "Profile updated successfully",
+      "updateError": "Failed to update profile"
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Sorry, the page you visited does not exist",
+    "backHome": "Back Home"
+  },
+  "projectSettings": {
+    "title": "Project Settings",
+    "tabs": {
+      "members": "Member Management",
+      "projectInfo": "Project Information",
+      "models": "Model Management",
+      "apiKeys": "API Keys",
+      "billing": "Billing"
+    },
+    "messages": {
+      "fetchProjectInfoError": "Failed to fetch project information"
+    },
+    "members": {
+      "title": "Workspace Members",
+      "description": "Collaborate in the workspace. Use the workspace selector in the navigation bar to switch workspaces.",
+      "invite": "Invite",
+      "remove": "Remove",
+      "roles": {
+        "admin": "Admin",
+        "member": "Member",
+        "readonly": "Read-only"
+      },
+      "modal": {
+        "title": "Invite Members",
+        "emailInvite": "Invite by Email",
+        "linkInvite": "Invite by Link",
+        "emailPlaceholder": "Enter email address",
+        "inviteButton": "Invite",
+        "generateLink": "Generate Invite Link",
+        "copyLink": "Copy Link",
+        "removeConfirm": "Are you sure to remove this member?"
+      },
+      "messages": {
+        "loadMembersError": "Failed to load members list",
+        "emailRequired": "Please enter email address",
+        "inviteSent": "Invitation sent",
+        "inviteError": "Invitation failed",
+        "unknownError": "Unknown error",
+        "generateLinkError": "Failed to generate invite link",
+        "linkCopied": "Link copied to clipboard",
+        "copyFailed": "Copy failed",
+        "memberRemoved": "Member removed",
+        "removeMemberError": "Failed to remove member",
+        "roleUpdated": "Role updated",
+        "updateRoleError": "Failed to update role"
+      }
+    },
+    "projectInfo": {
+      "title": "Project Basic Information",
+      "projectName": "Project Name",
+      "projectNamePlaceholder": "Enter project name",
+      "projectNameDescription": "Project name is used to identify your project, maximum 10 characters",
+      "saveChanges": "Save Changes",
+      "dangerousActions": "Dangerous Actions",
+      "deleteProject": "Delete Project",
+      "deleteProjectDescription": "Deleting this project will permanently remove all related data, including prompts, datasets, evaluation records, etc. This action cannot be undone.",
+      "deleteConfirmTitle": "Delete Project Confirmation",
+      "deleteConfirmModal": "Confirm Delete Project",
+      "deleteConfirmContent": "This operation will permanently delete the project and all its related data, including:",
+      "deleteConfirmWarning": "This action cannot be undone!",
+      "continueDelete": "I understand the risks, continue to delete",
+      "deleteConfirmInstruction": "To ensure you really want to delete project {{projectName}}, please enter the project name in the input box below:",
+      "deleteConfirmPlaceholder": "Enter \"{{projectName}}\" to confirm deletion",
+      "deleteConfirmNote": "You can only click the delete button after entering the project name",
+      "confirmDelete": "Confirm Delete",
+      "dataTypes": {
+        "prompts": "All prompts",
+        "datasets": "All datasets",
+        "evaluations": "All evaluation records",
+        "members": "All project members",
+        "apiConfigs": "All API configurations"
+      },
+      "validation": {
+        "nameRequired": "Please enter project name",
+        "nameMaxLength": "Project name cannot exceed 10 characters"
+      },
+      "messages": {
+        "fetchError": "Failed to fetch project information",
+        "updateSuccess": "Project information updated successfully",
+        "updateError": "Failed to update project information",
+        "nameNotMatch": "Project name does not match",
+        "nameNotMatchDescription": "Please enter the correct project name to confirm deletion",
+        "deleteSuccess": "Project deleted successfully",
+        "deleteSuccessDescription": "Project and all its data have been permanently deleted",
+        "deleteError": "Failed to delete project"
+      }
+    },
+    "modelsManagement": {
+      "title": "Model Management",
+      "show": "Show",
+      "hide": "Hide",
+      "selectModels": "Select Models",
+      "selected": "selected",
+      "functions": "Functions",
+      "vision": "Vision",
+      "messages": {
+        "customModelUpdated": "Custom model updated",
+        "customModelAdded": "Custom model added",
+        "operationFailed": "Failed to operate custom model",
+        "operationError": "Operation failed, please try again"
+      }
+    }
+  },
+  "evalHistory": {
+    "title": "Evaluation History",
+    "back": "Back",
+    "refresh": "Refresh",
+    "runType": "Run Type",
+    "status": "Status",
+    "progress": "Progress",
+    "resultStats": "Result Statistics",
+    "createdAt": "Created At",
+    "actions": "Actions",
+    "viewDetail": "View Details",
+    "runTypes": {
+      "draft": "Draft",
+      "batchEvaluation": "Batch Evaluation"
+    },
+    "statuses": {
+      "initializing": "Initializing",
+      "running": "Running",
+      "completed": "Completed",
+      "partialSuccess": "Partial Success"
+    },
+    "tooltips": {
+      "passedCases": "Passed Cases",
+      "unpassedCases": "Unpassed Cases",
+      "failedCases": "Failed Cases",
+      "taskSuccess": "Task Success",
+      "taskFailed": "Task Failed"
+    },
+    "statistics": {
+      "totalEvaluations": "Total Evaluations",
+      "completedEvaluations": "Completed Evaluations",
+      "runningEvaluations": "Running",
+      "recentEvaluation": "Recent Evaluation",
+      "successRate": "Success Rate"
+    },
+    "pagination": {
+      "totalRecords": "Total {{total}} evaluation records"
+    },
+    "emptyState": {
+      "description": "No evaluation history records",
+      "backToPipeline": "Back to Pipeline Configuration"
+    },
+    "messages": {
+      "loadHistoryError": "Failed to load evaluation history",
+      "loadPipelineInfoError": "Failed to load pipeline information"
+    }
+  },
+  "createProjectModal": {
+    "title": "Create New Project",
+    "projectName": "Project Name",
+    "projectNamePlaceholder": "Enter project name",
+    "create": "Create",
+    "cancel": "Cancel",
+    "validation": {
+      "nameRequired": "Please enter project name"
+    },
+    "messages": {
+      "createSuccess": "Project created successfully",
+      "createError": "Failed to create project, please try again",
+      "formValidationError": "Form validation failed"
+    }
+  },
+  "dataAnalysisModal": {
+    "title": "Create Data Analysis Prompt",
+    "cancel": "Cancel",
+    "createPrompt": "Create Analysis Prompt",
+    "addField": "Add Output Field",
+    "datasetInfo": {
+      "title": "Dataset Information",
+      "name": "Name:",
+      "description": "Description:",
+      "dataFields": "Data Fields:"
+    },
+    "form": {
+      "analysisDescription": "Analysis Purpose and Requirements",
+      "outputFields": "Output Fields Configuration",
+      "fieldName": "Field Name",
+      "fieldDescription": "Field Description and Requirements",
+      "analysisPlaceholder": "Please describe in detail what information you want to analyze from the data, for example:\n• Analyze sentiment trends in call content\n• Extract product features that customers care about\n• Identify complaint types and severity levels\n• Statistics key indicators and data patterns",
+      "fieldNamePlaceholder": "Field name",
+      "fieldDescriptionPlaceholder": "Field description and requirements",
+      "outputFieldsHelp": "Please define the field names and descriptions to be output, the system will generate analysis prompts based on these fields"
+    },
+    "validation": {
+      "analysisRequired": "Please describe what you want to analyze",
+      "analysisMinLength": "Please provide a more detailed analysis description, at least 10 characters"
+    },
+    "info": {
+      "title": "💡 Feature Description",
+      "content": "• The system will automatically generate professional data analysis prompts based on dataset structure and your analysis requirements\n• Automatically select 5 records from the dataset as test cases\n• Generated prompts will output analysis results in JSON format\n• After creation, you will automatically jump to the prompt editing page for debugging"
+    },
+    "messages": {
+      "fieldsRequired": "Please add at least one valid output field",
+      "createSuccess": "Data analysis prompt created successfully!",
+      "createError": "Failed to create data analysis prompt",
+      "createFailed": "Creation failed, please try again"
+    }
+  },
+  "testCaseGeneratorModal": {
+    "title": "AI Generate Test Cases",
+    "startGenerate": "Start Generate",
+    "regenerate": "Regenerate",
+    "cancel": "Cancel",
+    "addCases": "Add Cases",
+    "generating": "Generating...",
+    "generateConfig": "Generate Configuration",
+    "testCaseTypes": {
+      "normal": "Normal Cases",
+      "boundary": "Boundary Cases",
+      "error": "Error Cases"
+    },
+    "form": {
+      "quantity": "Quantity",
+      "quantityPlaceholder": "Quantity",
+      "variableConstraints": "Variable Constraints",
+      "variableConstraintsOptional": "(Optional)",
+      "variableConstraintPlaceholder": "e.g.: Must be a valid email format, no more than 50 characters",
+      "overallRequirements": "Overall Requirements",
+      "overallRequirementsOptional": "(Optional)",
+      "overallRequirementsPlaceholder": "e.g.: Generate real user data, focus on email format testing, include multi-region cases..."
+    },
+    "hints": {
+      "maxQuantity": "Maximum 100 for each type, set to 0 to skip generation for that type"
+    },
+    "validation": {
+      "addVariablesFirst": "Please add variables first before generating test cases",
+      "setQuantityFirst": "Please set at least one test case type quantity greater than 0",
+      "selectCasesFirst": "Please select at least one test case"
+    },
+    "messages": {
+      "generateSuccess": "Test cases generated successfully!",
+      "generateError": "Failed to generate test cases, please try again",
+      "generateFailed": "Failed to generate test cases"
+    }
+  },
+  "datasetActions": {
+    "importAndExport": "Import & Export",
+    "importFromDataset": "Import from Dataset",
+    "exportToDataset": "Export to Dataset"
+  },
+  "userNav": {
+    "login": "Login",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "billingSection": {
+    "title": "Billing Information",
+    "currentPlan": "Current Plan",
+    "changePlan": "Change Plan",
+    "requestUsage": "Request Usage",
+    "retrievalUsage": "Prompt Retrieval Usage",
+    "requests": "requests",
+    "retrieval": "retrievals",
+    "of": "of",
+    "learnMore": "Learn more about pricing in our",
+    "documentation": "documentation",
+    "orContact": "or contact us:",
+    "messages": {
+      "getBillingInfoError": "Failed to get billing information",
+      "cannotGetBillingInfo": "Unable to get billing information"
+    }
+  },
+  "apiKeysSection": {
+    "title": "PromptLab API Keys",
+    "createApiKey": "Create API Key",
+    "description": "API keys are used to authorize access to the PromptLab API. Please keep your keys secure and do not share them publicly.",
+    "usageExample": "Usage Example",
+    "createNewTitle": "Create New API Key",
+    "createSuccess": "API key created successfully! Please save this key, it will only be shown once.",
+    "nameColumn": "Name",
+    "keyColumn": "Key",
+    "createdColumn": "Created",
+    "lastUsedColumn": "Last Used",
+    "actionColumn": "Action",
+    "delete": "Delete",
+    "neverUsed": "Never used",
+    "keyNamePlaceholder": "API key name",
+    "create": "Create",
+    "copy": "Copy",
+    "done": "Done",
+    "deleteConfirmTitle": "Confirm Delete",
+    "deleteConfirmContent": "Are you sure you want to delete this API key? This action cannot be undone.",
+    "messages": {
+      "getApiKeysError": "Failed to get API keys",
+      "nameRequired": "Please enter key name",
+      "createSuccess": "API key created successfully",
+      "createError": "Failed to create API key",
+      "deleteSuccess": "API key deleted",
+      "deleteError": "Failed to delete API key",
+      "copySuccess": "API key copied to clipboard",
+      "copyError": "Copy failed"
+    }
+  },
+  "evalResultDetail": {
+    "title": "Evaluation Result Details",
+    "back": "Back",
+    "showDatasetColumns": "Show Dataset Columns",
+    "hideDatasetColumns": "Hide Dataset Columns",
+    "showFailedOnly": "Show Failed Only",
+    "showAll": "Show All",
+    "importFailedCases": "Import Failed Cases",
+    "refresh": "Refresh",
+    "statistics": {
+      "totalItems": "Total Items",
+      "passedItems": "Passed",
+      "failedItems": "Failed",
+      "progress": "Progress"
+    },
+    "columns": {
+      "datasetItem": "Dataset Item",
+      "actions": "Actions"
+    },
+    "modals": {
+      "importFailedCases": {
+        "title": "Import Failed Cases",
+        "selectPrompt": "Select Target Prompt",
+        "importing": "Importing...",
+        "importButton": "Import",
+        "cancel": "Cancel"
+      }
+    },
+    "statuses": {
+      "passed": "Passed",
+      "failed": "Failed",
+      "error": "Error"
+    },
+    "messages": {
+      "loadCellDataError": "Failed to load cell data",
+      "loadResultDetailError": "Failed to load evaluation result details",
+      "pollingError": "Polling update failed",
+      "importSuccess": "Import successful",
+      "importError": "Import failed"
+    },
+    "noData": "No data"
+  },
+  "landing": {
+    "nav": {
+      "welcome": "Welcome back, {{name}}",
+      "logout": "Logout",
+      "login": "Login",
+      "register": "Register"
+    },
+    "hero": {
+      "title": "Make AI Prompt Development\nMore Efficient and Professional",
+      "subtitle": "A one-stop prompt management platform designed for AI developers and content creators\nSignificantly improving development efficiency and quality through intelligent editors, automated evaluation, and team collaboration features",
+      "platformTag": "🚀 Professional AI Prompt Development Platform",
+      "enterConsole": "Enter Console",
+      "startUsing": "Start Using Now",
+      "watchDemo": "Watch Demo",
+      "freeRegister": "Register for Free",
+      "contactSales": "Contact Sales Team"
+    },
+    "stats": {
+      "activeUsers": "Active Users",
+      "createdPrompts": "Created Prompts", 
+      "runEvaluations": "Run Evaluations",
+      "averageEfficiency": "Avg Efficiency"
+    },
+    "features": {
+      "title": "Powerful Features, Professional Experience",
+      "subtitle": "Comprehensively enhance your prompt development workflow",
+      "smartEditor": {
+        "title": "Smart Prompt Editor",
+        "description": "Professional prompt creation and editing environment with syntax highlighting, real-time preview, and version control"
+      },
+      "dataManagement": {
+        "title": "Dataset Management",
+        "description": "Easily manage test datasets with batch import, visual preview, and intelligent annotation"
+      },
+      "autoEvaluation": {
+        "title": "Automated Evaluation",
+        "description": "Multi-dimensional evaluation system supporting exact matching, semantic similarity, LLM judgment, and other evaluation methods"
+      },
+      "teamCollaboration": {
+        "title": "Team Collaboration",
+        "description": "Multi-user collaborative workspace with permission management, tagging system, and bookmark features"
+      }
+    },
+    "evaluationMethods": {
+      "title": "Multi-dimensional Evaluation System",
+      "subtitle": "Support 8+ evaluation methods to comprehensively verify prompt effects",
+      "exactMatch": "Exact Match",
+      "multipleMatch": "Multiple Match",
+      "jsonExtraction": "JSON Extraction",
+      "llmAssertion": "LLM Assertion",
+      "regex": "Regular Expression",
+      "cosinesimilarity": "Cosine Similarity",
+      "codeExecution": "Code Execution",
+      "humanEvaluation": "Human Evaluation"
+    },
+    "useCases": {
+      "title": "Suitable for Multiple Scenarios",
+      "subtitle": "No matter what field you're in, PromptLab can help you succeed",
+      "aiDevelopment": {
+        "title": "AI Product Development",
+        "description": "Develop high-quality prompts for AI applications, ensuring accuracy and consistency of model outputs",
+        "examples": ["Chatbot Dialogue Optimization", "Content Generation Quality Control", "API Response Standardization"]
+      },
+      "contentCreation": {
+        "title": "Content Creation",
+        "description": "Optimize prompt strategies for creative writing, marketing copy, technical documentation, and other scenarios",
+        "examples": ["Marketing Copy Templates", "Technical Documentation Generation", "Creative Story Writing"]
+      },
+      "dataAnalysis": {
+        "title": "Data Analysis",
+        "description": "Build professional prompts for data analysis and report generation to improve analysis efficiency and quality",
+        "examples": ["Data Insight Extraction", "Automated Report Generation", "Trend Analysis Summary"]
+      },
+      "education": {
+        "title": "Education & Training",
+        "description": "Develop teaching assistant prompts for online education, training courses, and knowledge Q&A systems",
+        "examples": ["Personalized Learning Guidance", "Homework Grading Assistant", "Knowledge Point Analysis"]
+      }
+    },
+    "testimonials": {
+      "title": "User Feedback",
+      "subtitle": "See how other users evaluate PromptLab",
+      "user1": {
+        "name": "Li Ming",
+        "role": "AI Product Manager",
+        "company": "Innovation Technology Co., Ltd.",
+        "content": "PromptLab helped our team improve prompt development efficiency by 300%, and quality control is also more strict and reliable."
+      },
+      "user2": {
+        "name": "Wang Xiaohong",
+        "role": "NLP Engineer",
+        "company": "Intelligent Application R&D Center",
+        "content": "The evaluation system is very comprehensive, and multiple evaluation methods allow us to verify prompt effects from different perspectives."
+      },
+      "user3": {
+        "name": "Zhang Qiang",
+        "role": "Technical Director",
+        "company": "Digital Solutions",
+        "content": "The team collaboration feature is great, now the entire team can efficiently participate in prompt optimization work."
+      }
+    },
+    "callToAction": {
+      "title": "Ready to Boost Your AI Prompt Development Efficiency?",
+      "subtitle": "Join thousands of developers and start your professional prompt development journey now"
+    },
+    "footer": {
+      "description": "Professional AI prompt development and management platform, providing efficient prompt engineering solutions for developers and creators.",
+      "productFeatures": "Product Features",
+      "solutions": "Solutions",
+      "support": "Support & Help",
+      "contact": "Contact Info",
+      "copyright": "© 2024 PromptLab. All rights reserved.",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service",
+      "userAgreement": "User Agreement",
+      "smartEditor": "Smart Editor",
+      "datasetManagement": "Dataset Management",
+      "autoEvaluation": "Auto Evaluation",
+      "teamCollaboration": "Team Collaboration",
+      "aiDevelopment": "AI Product Development",
+      "contentCreation": "Content Creation",
+      "dataAnalysis": "Data Analysis",
+      "education": "Education & Training",
+      "documentation": "Documentation",
+      "community": "Community",
+      "customerService": "Customer Service"
+    }
+  },
+  "invite": {
+    "title": "{{inviterName}} invites you to join project {{projectName}}",
+    "joinProject": "Join Project",
+    "loginRequired": "Please login or register first",
+    "login": "Login",
+    "register": "Register",
+    "invalidInvite": "Invalid invite link",
+    "linkError": "Invite Link Error",
+    "backHome": "Back to Home",
+    "validatingInvite": "Validating invite link...",
+    "checkingLoginStatus": "Checking login status...",
+    "messages": {
+      "joinSuccess": "Successfully joined project",
+      "joinError": "Failed to join project, please try again",
+      "validateError": "Failed to validate invite link"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Prompt Lab",
+      "subtitle": "Building Intelligent Digital Future",
+      "emailPlaceholder": "Please enter email address",
+      "passwordPlaceholder": "Please enter password",
+      "submitText": "Login",
+      "noAccount": "Don't have an account?",
+      "registerNow": "Register Now",
+      "emailRequired": "Please enter email address!",
+      "emailInvalid": "Please enter a valid email address!",
+      "passwordRequired": "Please enter password!",
+      "passwordMinLength": "Password must be at least 6 characters!",
+      "autoLogin": "Auto Login",
+      "forgotPassword": "Forgot Password",
+      "loginSuccess": "Login successful",
+      "loginError": "Login failed, please check your credentials"
+    },
+    "register": {
+      "title": "Prompt Lab",
+      "subtitle": "Create Your Personal Account",
+      "emailPlaceholder": "Please enter email address",
+      "passwordPlaceholder": "Please set password",
+      "submitText": "Register",
+      "hasAccount": "Already have an account?",
+      "loginNow": "Login Now",
+      "emailRequired": "Please enter email address!",
+      "emailInvalid": "Please enter a valid email address!",
+      "passwordRequired": "Please enter password!",
+      "passwordMinLength": "Password must be at least 6 characters!",
+      "registerSuccess": "Registration successful, please login",
+      "registerError": "Registration failed, please try again later"
+    }
+  },
+  "modelsManagement": {
+    "title": "Model Management",
+    "subtitle": "Configure and manage large language model providers. Enabled models will be available in the prompt editor.",
+    "configSuggestion": "Configuration Suggestion",
+    "configSuggestionDesc": "For the best experience, it's recommended to configure multiple providers as alternatives. After configuration, you can select different models in the prompt editor.",
+    "loadingModels": "Loading model data...",
+    "loadModelsError": "Failed to load model data",
+    "hide": "Hide",
+    "show": "Show",
+    "selectModels": "Select Models",
+    "selected": "Selected",
+    "functions": "Function Calling",
+    "vision": "Vision",
+    "customModels": "Custom Models",
+    "addModel": "Add Model",
+    "noCustomModels": "No custom models",
+    "editCustomModel": "Edit Custom Model",
+    "addCustomModel": "Add Custom Model",
+    "displayName": "Display Name",
+    "displayNamePlaceholder": "e.g.: My GPT-4 Model",
+    "displayNameRequired": "Please enter display name",
+    "modelId": "Model ID",
+    "modelIdPlaceholder": "e.g.: gpt-4-turbo-preview",
+    "modelIdRequired": "Please enter model ID",
+    "modelIdTooltip": "Model ID is the unique identifier from the model provider, used to select the model in the prompt editor.",
+    "modelDescription": "Description",
+    "modelDescriptionPlaceholder": "Model description (optional)",
+    "contextWindow": "Context Window",
+    "maxTokens": "Max Output Tokens",
+    "inputPrice": "Input Price ($/1K tokens)",
+    "outputPrice": "Output Price ($/1K tokens)",
+    "deleteCustomModel": "Confirm Delete",
+    "deleteCustomModelDesc": "Are you sure you want to delete this custom model?",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "customModelDeleted": "Custom model deleted",
+    "deleteCustomModelError": "Delete failed, please try again",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "notConfigured": "Not Configured",
+    "noDescription": "No description",
+    "models": "models",
+    "configure": "Configure",
+    "add": "Add",
+    "configInfo": "Configuration Info",
+    "enabledModels": "Enabled Models",
+    "testConnection": "Test Connection",
+    "website": "Website",
+    "deleteProvider": "Delete",
+    "deleteProviderConfirm": "Confirm Delete",
+    "deleteProviderDesc": "Are you sure you want to delete this provider configuration? After deletion, you will not be able to use models from this provider.",
+    "notConfiguredYet": "This provider has not been configured yet",
+    "configureNow": "Configure Now",
+    "editProvider": "Edit",
+    "configProvider": "Configure",
+    "configDescription": "Configuration Description",
+    "name": "Name",
+    "nameRequired": "Please enter name",
+    "nameDefaultValue": "My {{providerName}}",
+    "authConfig": "Authentication Configuration",
+    "required": "*",
+    "fieldRequired": "Please enter {{fieldName}}",
+    "modelSelection": "Model Selection",
+    "selectModelsToEnable": "Select models to enable",
+    "selectAtLeastOneModel": "Please select at least one model",
+    "providerConfigUpdated": "Provider configuration updated",
+    "providerConfigured": "Provider configured",
+    "configProviderError": "Configuration failed, please try again",
+    "connectionTestSuccess": "Connection test successful",
+    "connectionTestError": "Connection test failed, please check configuration",
+    "providerEnabled": "Provider enabled",
+    "providerDisabled": "Provider disabled",
+    "toggleProviderError": "Operation failed, please try again",
+    "providerDeleted": "Provider deleted",
+    "deleteProviderError": "Delete failed, please try again",
+    "messages": {
+      "customModelUpdated": "Custom model updated",
+      "customModelAdded": "Custom model added",
+      "operationFailed": "Operation failed",
+      "operationError": "Operation failed, please try again"
+    }
+  },
+  "editDatasetModal": {
+    "editDataset": "Edit Dataset",
+    "createDataset": "Create Dataset",
+    "cancel": "Cancel",
+    "save": "Save",
+    "create": "Create",
+    "loadingDatasetInfo": "Loading dataset information...",
+    "datasetName": "Dataset Name",
+    "datasetNameRequired": "Please enter dataset name",
+    "datasetNamePlaceholder": "Enter dataset name",
+    "datasetDescription": "Dataset Description",
+    "datasetDescriptionPlaceholder": "Enter dataset description",
+    "associatedPrompt": "Associated Prompt",
+    "associatedPromptRequired": "Please select associated prompt",
+    "selectAssociatedPrompt": "Select associated prompt",
+    "promptVersion": "Prompt Version",
+    "promptVersionRequired": "Please select prompt version",
+    "selectPromptVersion": "Select prompt version",
+    "variablesList": "Variables List",
+    "selectVariables": "Select variables",
+    "variableDescriptions": "Variable Descriptions",
+    "variableDescriptionsHint": "Add descriptions for each variable to help generate more accurate data analysis prompts",
+    "variableDescriptionPlaceholder": "Please enter description for {{variable}}",
+    "variablesListLabel": "Variables List:",
+    "variablesHint": "These variables will be used to create dataset entries. You can set different variable values for each entry later.",
+    "evaluationStrategy": "Evaluation Strategy",
+    "evaluationStrategyRequired": "Please select evaluation strategy",
+    "exactMatch": "Exact Match",
+    "keywordMatch": "Keyword Match",
+    "jsonStructureMatch": "JSON Structure Match",
+    "promptEvaluation": "Prompt Evaluation",
+    "strategyConfig": "Strategy Configuration (JSON)",
+    "strategyConfigPlaceholder": "Please enter strategy configuration (JSON format, optional)",
+    "invalidJsonFormat": "Please enter valid JSON format",
+    "messages": {
+      "loadDatasetDetailsFailed": "Failed to load dataset details",
+      "createUpdateSuccess": "Dataset {{action}} successfully",
+      "createUpdateFailed": "Failed to {{action}} dataset, please try again",
+      "updated": "updated",
+      "created": "created"
+    }
+  },
+  "layouts": {
+  },
+  "uploadSteps": {
+    "fileSelect": {
+      "csvFormatRequired": "Please select a CSV format file",
+      "fileReadSuccess": "File read successfully, click next to preview",
+      "fileReadError": "File read failed, please reselect",
+      "templateDownloadSuccess": "Template file downloaded successfully",
+      "exampleName": "This is item name",
+      "exampleValue": "Example value",
+      "title": "Select CSV File",
+      "instructions": "Instructions",
+      "requiredFields": "Please ensure the CSV file contains the following required fields:",
+      "enabledField": "Item enabled status (0/1 or true/false)",
+      "nameField": "Item name",
+      "variableValue": "Variable value",
+      "downloadTemplate": "Download CSV Template",
+      "uploadText": "Click or drag CSV file here",
+      "uploadHint": "Supports single CSV file upload, file size not exceeding 10MB",
+      "nextStepPreview": "Next: Preview Data",
+      "selectedFile": "Selected file:"
+    },
+    "preview": {
+      "title": "Data Preview & Validation",
+      "analyzing": "Analyzing file content...",
+      "startPreview": "Start Preview",
+      "previewError": "Preview failed",
+      "uploadStartError": "Upload start failed",
+      "validationPassed": "File validation passed, ready to upload",
+      "validationFailed": "File has issues, please check before upload",
+      "totalRows": "Total rows",
+      "validRows": "Valid rows",
+      "invalidRows": "Invalid rows",
+      "missingRequiredFields": "Missing required fields",
+      "missingFieldsDescription": "The following fields are required but not found in the file:",
+      "extraFields": "Extra fields",
+      "extraFieldsDescription": "The file contains the following extra fields (will be ignored; you can add these fields when editing the dataset):",
+      "dataErrorsFound": "Found {{count}} data errors",
+      "rowError": "Row {{rowNumber}}:",
+      "moreErrors": "... {{count}} more errors",
+      "dataPreviewTitle": "Data Preview (First 10 rows)",
+      "emptyValue": "(empty)",
+      "uploadOptions": "Upload options:",
+      "skipInvalidRows": "Skip invalid rows",
+      "stopUpload": "Stop upload",
+      "skipInvalidDescription": "Will skip {{invalidRows}} invalid rows, upload {{validRows}} valid rows",
+      "stopUploadDescription": "Stop upload when encountering invalid rows, please fix data issues first",
+      "previousStep": "Previous",
+      "startUpload": "Start Upload"
+    },
+    "progress": {
+      "title": "Upload Progress",
+      "getStatusError": "Failed to get upload status",
+      "taskInfoLost": "Upload task information lost",
+      "restartUpload": "Please restart the upload process",
+      "initializing": "Initializing upload task...",
+      "stopMonitoring": "Stopped monitoring upload progress",
+      "preparingStatus": "Preparing...",
+      "uploadingStatus": "Uploading...",
+      "completedStatus": "Upload completed",
+      "failedStatus": "Upload failed",
+      "unknownStatus": "Unknown status",
+      "totalRows": "Total rows:",
+      "processedRows": "Processed:",
+      "successRows": "Success:",
+      "failedRows": "Failed:",
+      "estimatedTime": "Estimated time remaining: {{time}}",
+      "completedTime": "Completed at: {{time}}",
+      "stopMonitoringBtn": "Stop Monitoring",
+      "viewResults": "View Results",
+      "uploadFailedMsg": "Upload Failed",
+      "uploadFailedDesc": "Please check network connection or contact administrator",
+      "timeFormatSeconds": "{{seconds}}s",
+      "timeFormatMinutes": "{{minutes}}m {{seconds}}s",
+      "timeFormatHours": "{{hours}}h {{minutes}}m"
+    },
+    "result": {
+      "getResultError": "Failed to get upload results",
+      "fetchingResults": "Fetching upload results...",
+      "retryTaskCreated": "Retry task created, please check results later",
+      "retryFailed": "Retry failed",
+      "errorReportDownloaded": "Error report downloaded successfully",
+      "uploadSuccessTitle": "Upload Successful!",
+      "uploadSuccessSubtitle": "Successfully uploaded {{count}} items to dataset",
+      "partialSuccessTitle": "Partial Upload Success",
+      "partialSuccessSubtitle": "Successfully uploaded {{successCount}} items, {{failedCount}} items failed",
+      "uploadFailedTitle": "Upload Failed",
+      "uploadFailedSubtitle": "All data upload failed, please check data format and retry",
+      "uploadStatistics": "Upload Statistics",
+      "fileName": "File name:",
+      "totalRows": "Total rows:",
+      "successRate": "Success rate:",
+      "successRows": "Success rows:",
+      "failedRows": "Failed rows:",
+      "completedTime": "Completed time:",
+      "errorDetails": "Error Details ({{count}} errors)",
+      "downloadErrorReport": "Download Error Report",
+      "rowNumber": "Row Number",
+      "errorType": "Error Type",
+      "errorMessage": "Error Message",
+      "originalData": "Original Data",
+      "retryFailedRows": "Retry Failed Rows",
+      "finish": "Finish",
+      "partialSuccessHint": "Hint",
+      "partialSuccessDescription": "Part of the data was uploaded successfully. You can download the error report to view failure reasons and re-upload failed rows after fixing the data."
+    }
+  },
+  "promptAssistant": {
+    "impactLevels": {
+      "low": "Low Impact",
+      "medium": "Medium Impact", 
+      "high": "High Impact"
+    },
+    "modificationTypes": {
+      "add_message": "Add Message",
+      "modify_message": "Modify Message",
+      "delete_message": "Delete Message",
+      "reorder_messages": "Reorder Messages",
+      "add_variable": "Add Variable",
+      "modify_variable": "Modify Variable",
+      "delete_variable": "Delete Variable"
+    }
+  },
+  "evaluationSteps": {
+    "categories": {
+      "dataSource": "Data Source",
+      "transform": "Data Transform",
+      "assertion": "Assertion",
+      "ai": "AI Evaluation",
+      "comparison": "Comparison"
+    },
+    "stepTypes": {
+      "prompt_template": {
+        "name": "Prompt Template",
+        "description": "Execute prompt template and return result"
+      },
+      "human_input": {
+        "name": "Human Input",
+        "description": "Add human evaluation input"
+      },
+      "static_value": {
+        "name": "Static Value",
+        "description": "Set a fixed value"
+      },
+      "parse_value": {
+        "name": "Parse Value",
+        "description": "Parse values from text in specified format"
+      },
+      "json_extraction": {
+        "name": "JSON Extraction",
+        "description": "Extract field values from JSON data"
+      },
+      "exact_match": {
+        "name": "Exact Match",
+        "description": "Check if text matches exactly"
+      },
+      "exact_multi_match": {
+        "name": "Multi Exact Match",
+        "description": "Check if text matches any of multiple options"
+      },
+      "contains": {
+        "name": "Contains Check",
+        "description": "Check if text contains specified content"
+      },
+      "regex": {
+        "name": "Regular Expression",
+        "description": "Validate text format using regular expressions"
+      },
+      "type_validation": {
+        "name": "Type Validation",
+        "description": "Validate if data type is correct"
+      },
+      "numeric_distance": {
+        "name": "Numeric Distance",
+        "description": "Calculate distance between two numbers"
+      },
+      "cosine_similarity": {
+        "name": "Cosine Similarity",
+        "description": "Calculate cosine similarity of text vectors"
+      },
+      "llm_assertion": {
+        "name": "LLM Assertion",
+        "description": "Use large language model for intelligent judgment"
+      },
+      "code_execution": {
+        "name": "Code Execution",
+        "description": "Execute custom Python code"
+      },
+      "custom_api": {
+        "name": "Custom API",
+        "description": "Call external API for evaluation"
+      }
+    },
+    "common": {
+      "execute": "Execute",
+      "result": "Result",
+      "passed": "Passed",
+      "failed": "Failed",
+      "error": "Error",
+      "configure": "Configure",
+      "inputRef": "Input Reference",
+      "expectedValue": "Expected Value",
+      "actualValue": "Actual Value",
+      "threshold": "Threshold",
+      "caseSensitive": "Case Sensitive",
+      "pattern": "Pattern",
+      "field": "Field",
+      "dataType": "Data Type",
+      "apiUrl": "API URL",
+      "method": "Request Method",
+      "headers": "Headers",
+      "body": "Request Body",
+      "code": "Code",
+      "prompt": "Prompt",
+      "model": "Model",
+      "temperature": "Temperature",
+      "maxTokens": "Max Tokens",
+      "loading": "Executing...",
+      "noResult": "No Result",
+      "executionTime": "Execution Time",
+      "score": "Score",
+      "similarity": "Similarity",
+      "distance": "Distance",
+      "unsupportedStepType": "Configuration for this step type is not supported",
+      "options": "Options",
+      "ignoreCase": "Ignore Case",
+      "ignoreWhitespace": "Ignore Whitespace",
+      "inputType": "Input Type",
+      "text": "Text",
+      "number": "Number",
+      "select": "Select",
+      "slider": "Slider",
+      "optionsOnePerLine": "Options (one per line)",
+      "enterOptionsOnePerLine": "Enter options, one per line",
+      "minValue": "Min Value",
+      "maxValue": "Max Value",
+      "step": "Step",
+      "defaultValue": "Default Value",
+      "defaultValuePlaceholder": "Default value",
+      "enterText": "Please enter text",
+      "save": "Save",
+      "jsonPath": "JSON Path",
+      "enterJsonPath": "Enter JSON path, e.g.: 'data.results[0].value'",
+      "commonJsonPathExamples": "Common JSON path examples:",
+      "assertionPrompt": "Assertion Prompt",
+      "enterAssertionPrompt": "Enter LLM assertion prompt, e.g.: 'Does the output contain the main points?'",
+      "outputFormat": "Output Format",
+      "trueFalse": "Yes/No",
+      "score": "Score (0-10)",
+      "containsText": "Contains Text",
+      "enterContainsText": "Enter text that should be contained",
+      "ignoreCaseLabel": "Ignore Case",
+      "yes": "Yes",
+      "no": "No",
+      "regexPattern": "Regex Pattern",
+      "enterRegexPattern": "Enter regex pattern",
+      "staticValue": "Static Value",
+      "enterStaticValue": "Enter static value to return",
+      "referenceValue": "Reference Value",
+      "maxDistance": "Max Distance",
+      "expectedType": "Expected Type",
+      "string": "String",
+      "boolean": "Boolean",
+      "array": "Array",
+      "object": "Object",
+      "targetType": "Target Type",
+      "referenceText": "Reference Text",
+      "enterReferenceText": "Enter reference text for similarity calculation",
+      "codeLanguage": "Code Language",
+      "enterCode": "Enter code, you can access all column data through the data variable",
+      "apiEndpointUrl": "API Endpoint URL",
+      "enterApiEndpointUrl": "Please enter API endpoint URL",
+      "requestHeaders": "Request Headers",
+      "requestHeadersPlaceholder": "Request headers in JSON format",
+      "requestMethod": "Request Method",
+      "requestBody": "Request Body",
+      "requestBodyPlaceholder": "Request body in JSON format",
+      "promptTemplate": "Prompt Template",
+      "selectPromptTemplate": "Please select prompt template",
+      "templateVersion": "Template Version",
+      "selectTemplateVersion": "Please select template version",
+      "variableReferences": "Variable References",
+      "selectVariableReferences": "Select variable references",
+      "loadDatasetItemsError": "Failed to load dataset items",
+      "maxSelectionWarning": "Maximum 5 items can be selected",
+      "matchPair": "Match Pair",
+      "inputColumn": "Input Column",
+      "selectInputColumn": "Select input column",
+      "selectInputColumnRequired": "Please select input column",
+      "inputJsonPathRequired": "Please enter JSON path",
+      "jsonPathPlaceholder": "e.g.: user.name or data[0].id",
+      "jsonPathTooltip": "Extract specific field values from input column JSON data for comparison",
+      "expectedValueType": "Expected Value Type",
+      "fromColumn": "From Column",
+      "fixedValue": "Fixed Value",
+      "expectedColumn": "Expected Column",
+      "selectExpectedColumn": "Select expected column",
+      "selectExpectedColumnRequired": "Please select expected column",
+      "expectedJsonPathPlaceholder": "e.g.: expected.name or result[0].value",
+      "expectedJsonPathTooltip": "Extract specific field values from expected column JSON data for comparison",
+      "fixedExpectedValue": "Fixed Expected Value",
+      "fixedExpectedValueRequired": "Please enter fixed expected value",
+      "fixedExpectedValuePlaceholder": "Enter fixed expected value",
+      "matchOptions": "Match Options",
+      "selectMatchOptions": "Select match options",
+      "noneAsEmpty": "None as empty string",
+      "matchPairConfiguration": "Match Pair Configuration",
+      "addMatchPair": "Add Match Pair",
+      "noMatchPairs": "No match pairs configured",
+      "addFirstMatchPair": "Add First Match Pair",
+      "usageInstructions": "Usage Instructions:",
+      "instructionAllMatch": "Overall evaluation succeeds only when all match pairs pass",
+      "instructionExpectedModes": "Expected value supports two modes:",
+      "instructionFromColumnMode": "From Column: Get expected value from specified data column",
+      "instructionFixedValueMode": "Fixed Value: Directly specify a fixed expected value",
+      "instructionJsonExtraction": "JSON path extraction can be enabled separately for input and expected columns",
+      "instructionJsonFormat": "JSON path format: user.name (object property), data[0].id (array element)",
+      "instructionFailureDetails": "If a match pair fails, detailed failure reasons will be recorded in results",
+      "loadTemplatesError": "Failed to load prompt templates",
+      "loadTemplateDetailsError": "Failed to load template details",
+      "selectPromptTemplateRequired": "Please select prompt template",
+      "variableMappings": "Variable Mappings",
+      "variableMappingDescription": "Select reference values for variables in the prompt. You can use original dataset variables or execution results from previous columns",
+      "selectReferenceSource": "Select reference source",
+      "previousColumnOutputs": "Previous Column Outputs",
+      "validation": {
+        "required": "This field is required",
+        "invalidNumber": "Please enter a valid number",
+        "invalidJson": "Please enter valid JSON format",
+        "invalidRegex": "Please enter a valid regular expression",
+        "invalidUrl": "Please enter a valid URL"
+      }
+    }
+  },
+  "evalPipelineDetail": {
+    "lastColumnMustBeBoolean": "The last column return value must be Boolean type for success rate calculation"
+  },
+  "modelsManagement": {
+    "title": "Model Management",
+    "subtitle": "Configure and manage your AI model providers, enable required models to meet different usage scenarios.",
+    "configSuggestion": "Configuration Suggestion",
+    "configSuggestionDesc": "It is recommended to configure multiple providers to ensure service stability. Different provider models have their own characteristics and can meet different usage needs.",
+    "loadingModels": "Loading model data...",
+    "loadModelsError": "Failed to load model data",
+    "configProviderError": "Failed to configure provider",
+    "connectionTestError": "Connection test failed",
+    "toggleProviderError": "Failed to toggle provider status",
+    "deleteProviderError": "Failed to delete provider",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "notConfigured": "Not Configured",
+    "models": "models",
+    "configure": "Configure",
+    "add": "Add",
+    "configInfo": "Configuration Info",
+    "enabledModels": "Enabled Models",
+    "testConnection": "Test Connection",
+    "website": "Website",
+    "deleteProviderConfirm": "Confirm delete provider?",
+    "deleteProviderDesc": "After deletion, you will not be able to use models from this provider. Please confirm the operation.",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "deleteProvider": "Delete Provider",
+    "notConfiguredYet": "This provider has not been configured yet",
+    "configureNow": "Configure Now",
+    "editProvider": "Edit Provider",
+    "configProvider": "Configure Provider",
+    "configDescription": "Configure provider information",
+    "name": "Configuration Name",
+    "nameRequired": "Please enter configuration name",
+    "nameDefaultValue": "{{providerName}} Configuration",
+    "authConfig": "Authentication Configuration",
+    "required": "*",
+    "fieldRequired": "Please enter {{fieldName}}",
+    "modelSelection": "Model Selection",
+    "selectModelsToEnable": "Select models to enable",
+    "selectAtLeastOneModel": "Please select at least one model",
+    "providerConfigUpdated": "Provider configuration updated",
+    "providerConfigured": "Provider configured successfully",
+    "connectionTestSuccess": "Connection test successful",
+    "providerEnabled": "Provider enabled",
+    "providerDisabled": "Provider disabled",
+    "providerDeleted": "Provider deleted",
+    "noDescription": "No description",
+    "hide": "Hide",
+    "show": "Show",
+    "selectModels": "Select Models",
+    "selected": "selected",
+    "functions": "Functions",
+    "vision": "Vision",
+    "customModels": "Custom Models",
+    "addModel": "Add Model",
+    "addCustomModel": "Add Custom Model",
+    "editCustomModel": "Edit Custom Model",
+    "deleteCustomModel": "Delete Custom Model",
+    "deleteCustomModelDesc": "Confirm delete this custom model?",
+    "customModelDeleted": "Custom model deleted",
+    "deleteCustomModelError": "Failed to delete custom model",
+    "modelId": "Model ID",
+    "displayName": "Display Name",
+    "displayNameRequired": "Please enter display name",
+    "displayNamePlaceholder": "e.g.: GPT-4 Turbo",
+    "modelIdRequired": "Please enter model ID",
+    "modelIdPlaceholder": "e.g.: gpt-4-turbo-preview",
+    "modelIdTooltip": "Model identifier used in provider API",
+    "modelDescription": "Model Description",
+    "modelDescriptionPlaceholder": "Describe the features and use cases of this model",
+    "contextWindow": "Context Window",
+    "maxTokens": "Max Output Tokens",
+    "inputPrice": "Input Price ($/1K tokens)",
+    "outputPrice": "Output Price ($/1K tokens)",
+    "noCustomModels": "No custom models",
+    "messages": {
+      "customModelUpdated": "Custom model updated",
+      "customModelAdded": "Custom model added",
+      "operationFailed": "Operation failed",
+      "operationError": "Operation failed, please try again"
+    }
+  },
+  "testCaseGeneratorModal": {
+    "title": "Smart Test Case Generation",
+    "generateConfig": "Generation Config",
+    "generating": "Generating...",
+    "startGenerate": "Start Generation",
+    "regenerate": "Regenerate", 
+    "cancel": "Cancel",
+    "addCases": "Add Test Cases",
+    "testCaseTypes": {
+      "normal": "Normal Cases",
+      "boundary": "Boundary Cases", 
+      "error": "Error Cases"
+    },
+    "form": {
+      "quantityPlaceholder": "Quantity",
+      "variableConstraints": "Variable Constraints",
+      "variableConstraintsOptional": "optional",
+      "variableConstraintPlaceholder": "Set constraints for this variable, e.g.: must be a valid email address",
+      "overallRequirements": "Overall Requirements",
+      "overallRequirementsOptional": "optional",
+      "overallRequirementsPlaceholder": "Describe overall requirements for test cases, e.g.: test cases should cover e-commerce scenarios"
+    },
+    "validation": {
+      "addVariablesFirst": "Please add variables first",
+      "setQuantityFirst": "Please set test case quantity first",
+      "selectCasesFirst": "Please select test cases to add"
+    },
+    "messages": {
+      "generateSuccess": "Test cases generated successfully",
+      "generateError": "Failed to generate test cases",
+      "generateFailed": "Failed to generate test cases, please try again"
+    },
+    "hints": {
+      "maxQuantity": "* Each type can generate up to 100 test cases"
+    }
+  },
+  "editDatasetModal": {
+    "editDataset": "Edit Dataset",
+    "createDataset": "Create Dataset",
+    "cancel": "Cancel",
+    "save": "Save",
+    "create": "Create",
+    "loadingDatasetInfo": "Loading dataset information...",
+    "datasetName": "Dataset Name",
+    "datasetNameRequired": "Please enter dataset name",
+    "datasetNamePlaceholder": "Enter dataset name",
+    "datasetDescription": "Dataset Description",
+    "datasetDescriptionPlaceholder": "Enter dataset description (optional)",
+    "variablesList": "Variables List",
+    "selectVariables": "Select or enter variable names",
+    "variableDescriptions": "Variable Descriptions",
+    "variableDescriptionsHint": "Add descriptions for each variable to help users understand their purpose and format requirements",
+    "variableDescriptionPlaceholder": "Add description for {{variable}} variable",
+    "messages": {
+      "loadDatasetDetailsFailed": "Failed to load dataset details",
+      "createUpdateSuccess": "Dataset {{action}} successfully",
+      "createUpdateFailed": "Failed to {{action}} dataset",
+      "created": "created",
+      "updated": "updated",
+      "operationFailed": "Operation failed"
+    }
+  },
+  "importFromDatasetModal": {
+    "title": "Import Test Cases from Dataset",
+    "cancel": "Cancel",
+    "import": "Import",
+    "importCount": "Import ({{count}} items)",
+    "selectDataset": "Select Dataset",
+    "selectDatasetRequired": true,
+    "selectDatasetPlaceholder": "Please select a dataset",
+    "variableMappings": "Variable Mappings",
+    "variableMappingTitle": "🔄 Variable Mappings",
+    "editMapping": "Edit Mapping",
+    "finishEditing": "Finish Editing",
+    "mappingDescription": "Map dataset variables (left) to prompt variables (right):",
+    "selectDatasetVariable": "Select dataset variable",
+    "dataItemSelection": "Data Item Selection",
+    "dataItemSelectionHint": "Select data items to import (up to 10). The table supports horizontal scrolling to view all variable columns.",
+    "selectColumn": "Select",
+    "nameColumn": "Name",
+    "unnamed": "Unnamed",
+    "loading": "Loading...",
+    "noData": "No data items",
+    "selectedItems": "Selected {{count}} data items",
+    "messages": {
+      "loadDatasetsError": "Failed to load dataset list",
+      "loadDatasetItemsError": "Failed to load dataset items",
+      "maxSelectionWarning": "You can select up to 10 data items",
+      "selectItemsWarning": "Please select data items to import",
+      "missingMappingsWarning": "Please configure mappings for the following variables: {{variables}}",
+      "importSuccess": "Successfully imported {{count}} test cases",
+      "importError": "Failed to import test cases, please try again",
+      "operationFailed": "Operation failed"
+    }
+  },
+  "exportToDatasetModal": {
+    "title": "Export to Dataset",
+    "cancel": "Cancel",
+    "import": "Import",
+    "searchDatasetPlaceholder": "Search datasets",
+    "selectExistingDataset": "Select existing dataset:",
+    "noDescription": "No description",
+    "variables": "Variables: {{variables}}",
+    "noVariables": "No variables",
+    "emptyDatasets": "No datasets available, please create a new dataset",
+    "createNewDataset": "Create New Dataset",
+    "createNewDatasetTitle": "Create New Dataset:",
+    "backToSelection": "Back to Selection",
+    "datasetName": "Dataset Name",
+    "datasetNameRequired": "Please enter dataset name",
+    "datasetNamePlaceholder": "Enter dataset name",
+    "description": "Description",
+    "descriptionPlaceholder": "Dataset description (optional)",
+    "variablesNote": "Note: The dataset will use variables from the current prompt template ({{variables}})",
+    "messages": {
+      "loadDatasetsError": "Failed to load dataset list",
+      "selectDatasetWarning": "Please select a dataset or create a new dataset",
+      "createAndImportSuccess": "Successfully created dataset \"{{name}}\" and imported {{count}} test cases",
+      "importSuccess": "Successfully imported {{count}} test cases to dataset \"{{name}}\"",
+      "importFailedWithDetail": "Import failed: {{detail}}",
+      "importError": "Failed to import test cases, please try again",
+      "operationFailed": "Operation failed"
+    }
+  },
+  "datasetItemSelectionModal": {
+    "title": "Select Data Items",
+    "cancel": "Cancel",
+    "confirmSelection": "Confirm Selection ({{count}})",
+    "selectionHint": "Select data items to include in the evaluation task (up to 5). The table supports horizontal scrolling to view all variable columns.",
+    "selectColumn": "Select",
+    "nameColumn": "Name",
+    "unnamed": "Unnamed",
+    "loading": "Loading...",
+    "noData": "No data items",
+    "selectedItems": "Selected {{count}} data items",
+    "selectedFirstFive": "Selected first 5 data items",
+    "messages": {
+      "loadDatasetItemsError": "Failed to load dataset items",
+      "operationFailed": "Operation failed"
+    }
+  },
+  "promptAssistant": {
+    "impactLevels": {
+      "low": "Low Impact",
+      "medium": "Medium Impact",
+      "high": "High Impact"
+    },
+    "modificationTypes": {
+      "add_message": "Add Message",
+      "modify_message": "Modify Message",
+      "delete_message": "Delete Message",
+      "reorder_messages": "Reorder Messages",
+      "add_variable": "Add Variable",
+      "modify_variable": "Modify Variable",
+      "delete_variable": "Delete Variable"
+    },
+    "actionProposal": {
+      "confirmApplyTitle": "Confirm Apply Modification",
+      "confirmApplyContent": "Are you sure you want to apply this modification proposal?",
+      "confirmApplyNote": "This operation will directly modify your prompt content.",
+      "apply": "Apply",
+      "cancel": "Cancel",
+      "reject": "Reject",
+      "applied": "Applied",
+      "applyModification": "Apply Modification",
+      "previewDiff": "Preview Diff",
+      "close": "Close",
+      "messageIndex": "Message #{{index}}",
+      "modificationPreview": "Modification Preview",
+      "modificationSummary": "{{count}} modifications in total",
+      "viewDetails": "View Modification Details",
+      "previewTitle": "Modification Preview - {{title}}",
+      "messages": {
+        "applyFailed": "Failed to apply modification"
+      }
+    }
+  },
+  "evaluationColumnModal": {
+    "title": "Add Evaluation Column",
+    "cancel": "Cancel",
+    "save": "Save",
+    "add": "Add",
+    "backToList": "Back to List",
+    "selectTypePrompt": "Select the type of evaluation column to add:",
+    "columnName": "Column Name",
+    "columnNameRequired": "Please enter column name",
+    "columnNamePlaceholder": "Please enter column name",
+    "config": "Configuration",
+    "variableReference": "Variable Reference",
+    "useColumnAsInput": "Use previous column value as input",
+    "useColumnAsExpected": "Use previous column value as expected value",
+    "selectReferenceColumn": "Select reference column",
+    "selectReferenceColumnRequired": "Please select reference column",
+    "selectReferenceColumnPlaceholder": "Select reference column",
+    "duplicateWithVariable": "Column name \"{{name}}\" conflicts with dataset variable, please use a different name",
+    "duplicateWithColumn": "Column name \"{{name}}\" already exists, please use a different name",
+    "messages": {
+      "validationFailed": "Form validation failed"
+    }
+  },
+  "uploadDatasetWizard": {
+    "title": "Batch Upload Dataset",
+    "uploadInProgress": "Upload is in progress, please close later",
+    "steps": {
+      "selectFile": "Select File",
+      "preview": "Preview & Confirm", 
+      "uploading": "Upload Progress",
+      "complete": "Complete"
+    }
+  },
+  "createEvaluationPipeline": {
+    "title": "Create Evaluation Task",
+    "cancel": "Cancel",
+    "create": "Create",
+    "name": "Name",
+    "nameRequired": "Please enter name",
+    "namePlaceholder": "Enter name",
+    "dataset": "Dataset",
+    "datasetRequired": "Please select dataset",
+    "datasetPlaceholder": "Please select dataset",
+    "dataItemSelection": "Data Item Selection",
+    "dataItemSelectionHint": "Select data items to include in the evaluation task (maximum 5). The table supports horizontal scrolling to view all variable columns. If not selected, the system will automatically use the first 5 enabled data items.",
+    "selectColumn": "Select",
+    "nameColumn": "Name",
+    "unnamed": "Unnamed",
+    "loading": "Loading...",
+    "noData": "No data items",
+    "selectedItems": "Selected {{count}} data items",
+    "maxSelectionWarning": "Maximum 5 data items can be selected",
+    "selectedFirstFive": "Selected first 5 data items",
+    "messages": {
+      "loadDatasetsError": "Failed to load datasets",
+      "loadDatasetItemsError": "Failed to load dataset items",
+      "createSuccess": "Evaluation task created successfully",
+      "createError": "Failed to create evaluation task",
+      "operationFailed": "Operation failed"
+    }
+  },
+  "requestDetailsModal": {
+    "title": "Request Details",
+    "copyRawRequest": "Copy Raw Request",
+    "close": "Close",
+    "overview": {
+      "model": "Model",
+      "executionTime": "Execution Time",
+      "cost": "Cost",
+      "inputTokens": "Input Tokens",
+      "outputTokens": "Output Tokens",
+      "totalTokens": "Total Tokens"
+    },
+    "sections": {
+      "modelConfig": "🔧 Model Config",
+      "inputMessages": "💬 Input Messages",
+      "testCase": "🧪 Test Case",
+      "outputError": "❌ Output Error",
+      "outputResult": "✅ Output Result"
+    },
+    "requestTime": "Request Time: {{time}}",
+    "messages": {
+      "noRequestDetails": "No request details to copy",
+      "copySuccess": "Raw request copied to clipboard",
+      "copyFailed": "Copy failed"
+    }
+  },
+  "promptHistoryDrawer": {
+    "title": "History",
+    "noHistory": "No history records",
+    "executionTime": "Time: {{time}}ms",
+    "tokens": "Tokens: {{count}}",
+    "cost": "Cost: ${{amount}}",
+    "pagination": "{{start}}-{{end}} of {{total}} items",
+    "messages": {
+      "fetchError": "Failed to fetch history data",
+      "operationFailed": "Operation failed"
+    }
+  },
+  "dataAnalysisModal": {
+    "title": "Create Data Analysis Prompt",
+    "cancel": "Cancel",
+    "createPrompt": "Create Prompt",
+    "addField": "Add Output Field",
+    "datasetInfo": {
+      "title": "Dataset Information",
+      "name": "Name: ",
+      "description": "Description: ",
+      "dataFields": "Data Fields: "
+    },
+    "form": {
+      "analysisDescription": "Analysis Description",
+      "analysisPlaceholder": "Please describe in detail how you want AI to analyze the data in this dataset. For example:\n• Analyze user behavior patterns\n• Identify outliers in the data\n• Summarize key metrics and trends\n• Generate business insights and recommendations",
+      "outputFields": "Output Field Definition",
+      "outputFieldsHelp": "Define the output format for AI analysis results. Each field will be returned as a property of the JSON object.",
+      "fieldNamePlaceholder": "Field name (e.g.: trend_analysis)",
+      "fieldDescriptionPlaceholder": "Field description (e.g.: Analyze data trend changes)"
+    },
+    "validation": {
+      "analysisRequired": "Please enter analysis description",
+      "analysisMinLength": "Analysis description must be at least 10 characters"
+    },
+    "info": {
+      "title": "Tips",
+      "content": "The system will generate a professional data analysis prompt based on your configuration.\nThe generated prompt will include the dataset structure information and return analysis results according to your defined output format.\nYou can further customize and optimize the analysis logic in the prompt editor."
+    },
+    "messages": {
+      "fieldsRequired": "Please add at least one valid output field",
+      "createSuccess": "Data analysis prompt created successfully",
+      "createError": "Failed to create prompt",
+      "createFailed": "Failed to create prompt, please try again"
+    }
+  },
+  "createProjectModal": {
+    "title": "Create New Project",
+    "cancel": "Cancel",
+    "create": "Create",
+    "projectName": "Project Name",
+    "projectNamePlaceholder": "Please enter project name",
+    "validation": {
+      "nameRequired": "Please enter project name"
+    },
+    "messages": {
+      "createSuccess": "Project created successfully",
+      "createError": "Failed to create project",
+      "formValidationError": "Form validation failed"
+    }
+  },
+  "apiKeysSection": {
+    "title": "API Keys",
+    "description": "API keys are used to authenticate requests to this project. You can create and manage multiple keys.",
+    "createApiKey": "Create API Key",
+    "nameColumn": "Name",
+    "keyColumn": "Key",
+    "createdColumn": "Created",
+    "lastUsedColumn": "Last Used",
+    "actionColumn": "Action",
+    "neverUsed": "Never used",
+    "delete": "Delete",
+    "deleteConfirmTitle": "Confirm Delete API Key",
+    "deleteConfirmContent": "This action cannot be undone. Applications using this key will no longer be able to access the API.",
+    "createNewTitle": "Create New API Key",
+    "keyNamePlaceholder": "Enter key name",
+    "create": "Create",
+    "createSuccess": "API key created successfully! Please save this key as it will not be shown again.",
+    "copy": "Copy",
+    "done": "Done",
+    "usageExample": "Usage Example",
+    "messages": {
+      "getApiKeysError": "Failed to get API keys",
+      "nameRequired": "Please enter key name",
+      "createError": "Failed to create API key",
+      "deleteSuccess": "API key deleted successfully",
+      "deleteError": "Failed to delete API key",
+      "copySuccess": "API key copied to clipboard",
+      "copyError": "Copy failed"
+    }
+  },
+  "projectSettings": {
+    "projectInfo": {
+      "title": "Project Information",
+      "projectName": "Project Name",
+      "projectNameDescription": "The project name will be displayed throughout the application.",
+      "projectNamePlaceholder": "Enter project name",
+      "saveChanges": "Save Changes",
+      "dangerousActions": "Dangerous Actions",
+      "deleteProject": "Delete Project",
+      "deleteProjectDescription": "Once deleted, the project and all its data cannot be recovered.",
+      "deleteConfirmTitle": "Delete Project Confirmation",
+      "deleteConfirmContent": "This action will permanently delete the project and all its data, including:",
+      "dataTypes": {
+        "prompts": "All prompts and versions",
+        "datasets": "All datasets and data items",
+        "evaluations": "All evaluation tasks and results",
+        "members": "All members and permissions",
+        "apiConfigs": "All API configurations"
+      },
+      "deleteConfirmWarning": "This action cannot be undone!",
+      "continueDelete": "Continue Delete",
+      "deleteConfirmModal": "Confirm Delete Project",
+      "deleteConfirmInstruction": "Please enter the project name {{projectName}} to confirm deletion:",
+      "deleteConfirmPlaceholder": "Enter {{projectName}} to confirm deletion",
+      "deleteConfirmNote": "Enter the project name to enable deletion",
+      "confirmDelete": "Confirm Delete",
+      "validation": {
+        "nameRequired": "Please enter project name",
+        "nameMaxLength": "Project name cannot exceed 10 characters"
+      },
+      "messages": {
+        "fetchError": "Failed to fetch project information",
+        "updateSuccess": "Project information updated successfully",
+        "updateError": "Failed to update project information",
+        "nameNotMatch": "Project name does not match",
+        "nameNotMatchDescription": "Please enter the correct project name to confirm deletion",
+        "deleteSuccess": "Project deleted successfully",
+        "deleteSuccessDescription": "The project and all its data have been permanently deleted",
+        "deleteError": "Failed to delete project"
+      }
+    }
+  },
+  "projectSettings": {
+    "members": {
+      "title": "Member Management",
+      "description": "Manage project members and permissions. Only administrators can invite, remove members and modify permissions.",
+      "invite": "Invite Member",
+      "remove": "Remove",
+      "roles": {
+        "admin": "Admin",
+        "member": "Member",
+        "readonly": "Readonly"
+      },
+      "modal": {
+        "title": "Invite Member",
+        "emailInvite": "Invite by Email",
+        "emailPlaceholder": "Enter email address",
+        "inviteButton": "Send Invite",
+        "linkInvite": "Invite by Link",
+        "generateLink": "Generate Invite Link",
+        "copyLink": "Copy Link",
+        "removeConfirm": "Confirm to remove this member?"
+      },
+      "messages": {
+        "loadMembersError": "Failed to load member list",
+        "emailRequired": "Please enter email address",
+        "inviteSent": "Invitation sent",
+        "inviteError": "Invitation failed",
+        "unknownError": "Unknown error",
+        "generateLinkError": "Failed to generate invite link",
+        "linkCopied": "Invite link copied to clipboard",
+        "copyFailed": "Copy failed",
+        "memberRemoved": "Member removed",
+        "removeMemberError": "Failed to remove member",
+        "roleUpdated": "Permission updated successfully",
+        "updateRoleError": "Failed to update permission"
+      }
+    }
+  },
+  "userButton": {
+    "profile": "Profile",
+    "accountSettings": "Account Settings",
+    "logout": "Logout"
+  },
+  "auth": {
+    "login": {
+      "title": "PromptLab",
+      "subtitle": "Professional AI Prompt Management Platform",
+      "submitText": "Sign In",
+      "emailPlaceholder": "Enter email",
+      "passwordPlaceholder": "Enter password",
+      "emailRequired": "Please enter email address",
+      "emailInvalid": "Please enter a valid email address",
+      "passwordRequired": "Please enter password",
+      "passwordMinLength": "Password must be at least 6 characters",
+      "noAccount": "Don't have an account?",
+      "registerNow": "Sign up now",
+      "loginSuccess": "Login successful",
+      "loginError": "Login failed, please check your email and password"
+    },
+    "register": {
+      "title": "PromptLab",
+      "subtitle": "Professional AI Prompt Management Platform",
+      "submitText": "Sign Up",
+      "emailPlaceholder": "Enter email",
+      "passwordPlaceholder": "Enter password",
+      "emailRequired": "Please enter email address",
+      "emailInvalid": "Please enter a valid email address",
+      "passwordRequired": "Please enter password",
+      "passwordMinLength": "Password must be at least 6 characters",
+      "hasAccount": "Already have an account?",
+      "loginNow": "Sign in now",
+      "registerSuccess": "Registration successful",
+      "registerError": "Registration failed, please try again"
+    }
+  },
+  "promptEditorPage": {
+    "messages": {
+      "loadModelListFailed": "Failed to load model list",
+      "loadVersionContentFailed": "Failed to load version content", 
+      "saveTemplateFailed": "Failed to save template, please try again",
+      "promptUpdatedSuccess": "✅ Prompt updated successfully!",
+      "operationFailed": "Operation failed",
+      "loadDataFailed": "Failed to load data",
+      "loadAvailableModelsFailed": "Failed to load available models",
+      "noTestCasesOrFailed": "No test cases or failed to load test cases",
+      "translationFailed": "Translation process failed",
+      "userCancelledRequest": "User cancelled request",
+      "modelCallError": "Error calling model",
+      "versionSavedSuccess": "Prompt saved as new version ({{language}})",
+      "contentNoChanges": "⚠️ Prompt content has no changes",
+      "useBackupScroll": "Using backup scroll method"
+    },
+    "ui": {
+      "promptEditor": "🚀 {{name}}",
+      "returnToViewMode": {
+        "title": "Return to View Mode",
+        "description": "You have unsaved changes, are you sure you want to return?",
+        "okText": "Confirm",
+        "cancelText": "Cancel"
+      },
+      "modelConfig": "Model",
+      "defaultValue": "Default",
+      "tooltips": {
+        "maxOutputLength": "Maximum output length",
+        "reduceRepetition": "Reduce repetitive content occurrence",
+        "reduceFrequency": "Reduce word frequency repetition"
+      },
+      "languageLabels": {
+        "chinese": "Chinese",
+        "english": "EN",
+        "mixed": "Mixed"
+      },
+      "mode": {
+        "testing": "Testing",
+        "writing": "Writing"
+      },
+      "confirmDelete": {
+        "title": "Confirm Delete",
+        "description": "Are you sure you want to delete this message?",
+        "okText": "Delete",
+        "cancelText": "Cancel"
+      },
+      "confirmDeleteAllTestCases": {
+        "title": "Confirm Delete All Test Cases",
+        "okText": "Confirm Delete",
+        "cancelText": "Cancel"
+      },
+      "messagePlaceholders": {
+        "system": "You are a professional {{role}}...",
+        "default": "Enter message...",
+        "systemEn": "You are a professional {{role}}...",
+        "defaultEn": "Enter message..."
+      },
+      "variableHint": "💡 Use {{variable}} to insert variables, only letters, numbers, and underscores allowed",
+      "languageSwitch": {
+        "chinese": "Chinese",
+        "english": "English"
+      },
+      "clickToLocateTestCase": "Click to locate corresponding test case",
+      "optimization": {
+        "viewProgress": "View Optimization Progress",
+        "viewDetails": "View Optimization Details",
+        "viewError": "View Error Information",
+        "modifyDescription": "Modify Description",
+        "optimizePrompt": "Optimize Prompt"
+      },
+      "actions": {
+        "copyResult": "Copy Result",
+        "viewDetails": "View Details"
+      },
+      "generating": "Generating...",
+      "versionNote": {
+        "rules": "Please enter version note"
+      },
+      "promptContent": "Prompt Content ({{language}})",
+      "promptContentEn": "Prompt Content (English Version)",
+      "promptContentZh": "Prompt Content (中文版本)",
+      "changes": "Changes",
+      "itemChanges": "Changes",
+      "changeComparison": "Change Comparison Area",
+      "modelConfigChanges": "Model Configuration Changes",
+      "promptContentChanges": "Prompt Content Changes",
+      "englishChanges": "English Changes",
+      "chineseChanges": "Chinese Changes",
+      "noChanges": "If no changes",
+      "firstVersionNoChanges": "This is the first version, no changes to compare",
+      "testCaseOperations": {
+        "deletedAllSuccess": "Deleted all {{count}} test cases",
+        "addedSuccess": "Added {{count}} test cases",
+        "testCaseTag": "Case{{index}}",
+        "generating": "Generating response...",
+        "callFailed": "❌ Call failed",
+        "userCancelled": "User cancelled request",
+        "modelCallErrorWithIndex": "Test case {{index}} model call error:",
+        "userCancelledWithIndex": "Test case {{index}} request cancelled by user"
+      },
+      "optimization": {
+        "optimizing": "Optimizing",
+        "completed": "Optimized",
+        "failed": "Optimization failed", 
+        "hasFeedback": "Feedback provided",
+        "score": "{{score}}/100"
+      },
+      "versions": {
+        "firstVersionTitle": "This will be the first version of this prompt"
+      },
+      "variableTooltip": {
+        "appearsCount": "This variable appears {{count}} times in this message",
+        "clickToLocate": "Click to locate variable in message {{messageIndex}}"
+      }
+    }
+  },
+  "assistantChat": {
+    "messages": {
+      "copySuccess": "Copied to clipboard",
+      "copyFailed": "Copy failed",
+      "applyError": "Failed to apply modification:"
+    },
+    "ui": {
+      "copy": "Copy",
+      "retry": "Retry",
+      "greeting": "Hello! I'm Xiaobai, your intelligent prompt assistant",
+      "description": "I can help you write and optimize AI prompts to make your AI conversations more precise and effective",
+      "pendingActions": "Pending modification proposals",
+      "clearChat": "Clear chat",
+      "sendMessage": "Send message",
+      "thinking": "Thinking...",
+      "inputPlaceholder": "Ask how to optimize your prompt...",
+      "inputPlaceholderFull": "Enter your question... (Enter to send, Shift+Enter for new line)",
+      "functionDisabled": "Function temporarily unavailable",
+      "assistantTitle": "Prompt Assistant - Xiaobai",
+      "askMeExample": "You can ask me like this:",
+      "thinkingStatus": "Thinking...",
+      "initializing": "Initializing assistant..."
+    },
+    "messages": {
+      "stopGeneration": "Content generation stopped",
+      "generationFailed": "Generation failed, please retry",
+      "proposalNotFound": "Corresponding modification proposal not found",
+      "applyFailed": "Failed to apply modification",
+      "applyFailedRetry": "Failed to apply modification, please retry",
+      "proposalRejected": "Modification proposal rejected",
+      "noMessageToRegenerate": "No message found to regenerate"
+    },
+    "tooltips": {
+      "copyContent": "Copy content",
+      "regenerate": "Regenerate",
+      "pendingActions": "Pending modification proposals",
+      "clearChat": "Clear chat",
+      "expandEditor": "Expand editor"
+    },
+    "suggestions": {
+      "translate": {
+        "design": "How to design a good translation prompt for \"{{name}}\"?",
+        "elements": "What elements should a translation prompt include?",
+        "template": "Give me a translation task prompt template"
+      },
+      "summary": {
+        "design": "How to design a high-quality summary prompt for \"{{name}}\"?",
+        "practices": "What are the best practices for summary prompts?",
+        "template": "Give me a text summarization prompt template"
+      },
+      "writing": {
+        "design": "How to design a creative prompt for \"{{name}}\"?",
+        "structure": "How should writing prompts be structured?",
+        "template": "Give me a content generation prompt template"
+      },
+      "analysis": {
+        "design": "How to design an analytical prompt for \"{{name}}\"?",
+        "points": "What are the key points for analytical judgment prompts?",
+        "template": "Give me an analysis and classification prompt template"
+      },
+      "dialogue": {
+        "design": "How to design a dialogue prompt for \"{{name}}\"?",
+        "chatbot": "How should chatbot prompts be written?",
+        "template": "Give me a customer service dialogue prompt template"
+      },
+      "general": {
+        "quickWrite": "How to quickly write an effective prompt for \"{{name}}\"?",
+        "template": "Give me a general prompt template",
+        "basedOnName": "Based on the task name, what should this prompt include?",
+        "howToWrite": "How to quickly write an effective prompt?",
+        "structure": "What is a good prompt structure?"
+      },
+      "optimization": {
+        "analyze": "Analyze what problems the current prompt has",
+        "accuracy": "How to make responses more accurate?",
+        "variables": "Recommend some variable designs"
+      }
+    }
+  },
+  "longTextEditor": {
+    "ui": {
+      "placeholder": "Please enter text",
+      "expandEditor": "Expand editor",
+      "formatJSON": "Format JSON",
+      "cancel": "Cancel",
+      "save": "Save",
+      "plainText": "Plain text",
+      "codeMode": "Code mode",
+      "characterCount": "Character count: {{count}}"
+    }
+  },
+  "modeToggle": {
+    "tooltips": {
+      "chatMode": "Consultation mode: Discuss prompt design ideas and best practices with the assistant",
+      "agentMode": "Agent mode: Let the assistant directly modify prompt content"
+    }
+  },
+  "jsonDisplay": {
+    "messages": {
+      "copySuccess": "Copy successful",
+      "copyFailed": "Copy failed"
+    },
+    "ui": {
+      "noContent": "No content",
+      "textContent": "Text content",
+      "jsonContent": "JSON content",
+      "copy": "Copy",
+      "copyJSON": "Copy JSON",
+      "copyOriginal": "Copy original",
+      "close": "Close"
+    }
+  },
+  "usageProgress": {
+    "ui": {
+      "unlimited": "Unlimited",
+      "dailyLabel": " (Daily)",
+      "viewDetails": "Click to view usage details",
+      "totalUsage": "Total Usage",
+      "dailyUsage": "Daily Usage",
+      "featureNotEnabled": "Feature not enabled"
+    }
+  },
+  "promptOptimizer": {
+    "ui": {
+      "firstRoundOptimization": "First Round Optimization",
+      "secondRoundOptimization": "Second Round Optimization",
+      "thirdRoundOptimization": "Third Round Optimization", 
+      "optimizationComplete": "Optimization Complete",
+      "basicProblemAnalysis": "Basic Problem Analysis",
+      "deepStructureAdjustment": "Deep Structure Adjustment",
+      "refinedImprovement": "Refined Improvement",
+      "selectBestVersion": "Select Best Version",
+      "promptComparison": "Prompt Comparison",
+      "originalVsFinalVersion": "Original vs Final Optimized Version",
+      "executingRoundOptimization": "Executing Round {round} Optimization...",
+      "roundOptimization": "Round {round} Optimization",
+      "score": "Score: {score}",
+      "roundOptimizationComparison": "Round {round} Optimization Comparison",
+      "optimizationCompleted": "Optimization Completed!",
+      "aiSmartOptimization": "AI Smart Optimization",
+      "multiRoundIterativeOptimization": "Multi-Round Iterative Optimization",
+      "userFeedbackOverview": "User Feedback Overview",
+      "initialScore": "Initial Score: {score}/100",
+      "bestScore": "Best Score: {score}/100",
+      "caseDescription": "Case Description",
+      "expectedOutput": "Expected Output",
+      "noDescription": "No Description",
+      "analysisResult": "🔍 Analysis Result:",
+      "rejected": "Rejected",
+      "best": "Best",
+      "rejectedWarning": "⚠️ This round optimization was rejected: Score({score}) is below baseline, using previous best result to continue optimization",
+      "resultComparison": "Result Comparison",
+      "originalResult": "Original Result",
+      "optimizedResult": "Optimized Result",
+      "aiEvaluation": "🎯 AI Evaluation:",
+      "testResults": "🧪 Test Results:",
+      "afterRounds": "After {rounds} rounds of optimization, the best prompt version has been generated for you",
+      "finalOptimizationComparison": "Final Optimization Comparison:",
+      "analyzing": "AI is analyzing and optimizing your prompt, please wait"
+    },
+    "messages": {
+      "confirmTerminateOptimization": "Confirm Terminate Optimization",
+      "terminateOptimizationContent": "Optimization is in progress. Closing the dialog will terminate the current optimization process. Are you sure you want to close?",
+      "confirmClose": "Confirm Close",
+      "cancel": "Cancel",
+      "continueOptimization": "Continue Optimization",
+      "optimizationCompleted": "Optimization completed",
+      "roundOptimizationFailed": "Round {round} optimization failed, please retry",
+      "roundOptimizationStarted": "Round {round} optimization started calling AI",
+      "roundOptimizationCancelled": "Round {round} optimization was cancelled",
+      "roundOptimizationSuccess": "Round {round} optimization successful",
+      "roundOptimizationRejected": "Round {round} optimization was rejected",
+      "invalidJsonFormat": "No valid JSON format {type} result found",
+      "optimization": "optimization",
+      "evaluation": "evaluation",
+      "optimizationFailed": "Optimization process failed, please retry",
+      "applyOptimized": "Applied optimized prompt"
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "returnToFeedback": "Return to Feedback",
+      "restartOptimization": "Restart Optimization",
+      "continueOptimization": "Continue Optimization",
+      "applyBestVersion": "Apply Best Version",
+      "close": "Close"
+    },
+    "evaluation": {
+      "promptExpert": "Prompt Optimization Expert",
+      "currentPrompt": "Current Prompt:",
+      "specificEvaluation": "Specific evaluation description",
+      "promptIssues": ["Prompt Issue 1", "Prompt Issue 2"],
+      "improvements": ["Improvement 1", "Improvement 2"],
+      "issues": ["Existing Issue 1", "Existing Issue 2"],
+      "recommendation": "Specific improvement suggestions for the prompt"
+    }
+  },
+  "apiKeysSection": {
+    "messages": {
+      "unknownError": "Unknown error"
+    }
+  },
+  "evalResultDetailPage": {
+    "messages": {
+      "pollingUpdateFailed": "Polling update failed",
+      "loadCellDataFailed": "Failed to load cell data",
+      "getPromptInfoFailed": "Failed to get prompt information",
+      "loadEvalResultDetailFailed": "Failed to load evaluation result details",
+      "getFailedCasesDataFailed": "Failed to get failed cases data",
+      "getVariableMappingFailed": "Failed to get variable mapping",
+      "selectPromptToImport": "Please select a prompt to import",
+      "noFailedCasesFound": "No failed cases data found",
+      "saveTestCaseFailed": "Failed to save test case",
+      "importFailedCasesSuccess": "Successfully imported {{count}} failed cases to prompt",
+      "importFailed": "Import failed, please try again",
+      "importFailedCasesFailed": "Failed to import failed cases",
+      "operationFailed": "Operation failed"
+    },
+    "ui": {
+      "promptLabel": "Prompt {promptId}",
+      "loadFailedMessage": "Failed to load evaluation result details",
+      "dataId": "Data ID",
+      "scoreLabels": {
+        "excellent": "Excellent",
+        "good": "Good",
+        "average": "Average",
+        "belowAverage": "Below Average",
+        "poor": "Poor",
+        "veryPoor": "Very Poor"
+      },
+      "promptTemplate": "Prompt: {{promptName}} (v{{versionNumber}})",
+      "promptTemplateDefault": "Prompt Template",
+      "loading": "Loading...",
+      "executionProgress": "⏳ Execution Progress",
+      "taskProgress": "📊 Task Progress",
+      "totalCases": "Total Cases",
+      "passedCases": "Passed Cases",
+      "failedCases": "Failed Cases",
+      "errorCases": "Error Cases",
+      "on": "On",
+      "off": "Off",
+      "show": "Show",
+      "hide": "Hide",
+      "pagination": "{start}-{end} of {total} data rows",
+      "noData": "No Data",
+      "confirmImport": "Confirm Import",
+      "cancel": "Cancel",
+      "selectPromptPlaceholder": "Please select a prompt to import failed cases",
+      "importTip": "💡 Tip: After importing, you can see these failed cases in the test cases section of the prompt editor page. They will be marked as \"error type\" for easy debugging and optimization.",
+      "back": "Back",
+      "evalResultDetails": "Evaluation Result Details",
+      "evalSummary": "Evaluation Summary",
+      "successRate": "Success Rate",
+      "realtimeUpdating": "Real-time Updating",
+      "casesPassed": "{passed} / {total} cases passed",
+      "executing": "Executing...",
+      "testInfo": "Test Information",
+      "evalPrompts": "Evaluation Prompts",
+      "createdAt": "Created at:",
+      "updatedAt": "Updated at:",
+      "evalDetails": "Evaluation Details",
+      "showFailedOnly": "Show Failed Only",
+      "importFailedCases": "Import Failed Cases",
+      "datasetColumns": "Dataset Columns",
+      "hidden": "Hidden",
+      "showColumns": "Show columns:",
+      "importFailedCasesToPrompt": "Import Failed Cases to Prompt",
+      "importDescription": "Import failed cases from the current evaluation to the specified prompt's test cases for error reproduction and debugging.",
+      "failedCasesStats": "Failed Cases Statistics:",
+      "unpassedCases": "Unpassed cases:",
+      "errorCasesDetail": "Error cases:",
+      "totalFailedCases": "Total: {total} failed cases will be imported. (Maximum 100 records)",
+      "selectTargetPrompt": "Select target prompt:",
+      "variableMappingRelation": "Variable Mapping Relations:",
+      "variableMappingDescription": "Dataset variables will be converted to prompt variables according to the following mapping relations:",
+      "noVariableMappingWarning": "Note: No variable mapping configuration found, will try to match directly using the same variable names."
+    }
+  },
+  "evalPipelineDetailPage": {
+    "ui": {
+      "confirmDelete": {
+        "title": "Confirm Delete",
+        "content": "Are you sure you want to delete this evaluation column? Related evaluation results will also be deleted."
+      },
+      "executeFullEvaluation": {
+        "title": "Execute Full Evaluation",
+        "okText": "Confirm Execute",
+        "cancelText": "Cancel",
+        "description": "You will perform a full evaluation on all records in the dataset:",
+        "recordCount": "Dataset records: {{count}} items",
+        "columnCount": "Evaluation columns: {{count}} items",
+        "warningTitle": "⚠️ Important Notice:",
+        "warningItems": {
+          "async": "Evaluation will run asynchronously and may take a long time",
+          "canClose": "You can close the page during execution without affecting progress",
+          "viewHistory": "You can view results in evaluation history after completion"
+        }
+      },
+      "dataset": "Dataset:",
+      "selectDataset": "Select Dataset",
+      "selectDataItems": "Select Data Items",
+      "noMatchingDatasets": "No matching datasets",
+      "fullExecution": "Full Execution",
+      "loading": "Loading...",
+      "datasetColumns": "Dataset Columns",
+      "hidden": "Hidden",
+      "shown": "Shown",
+      "hiddenColumns": "Hidden {{count}} columns",
+      "showColumns": "Show columns:",
+      "addEvaluationColumn": "Add Evaluation Column",
+      "dataId": "Data ID",
+      "dataName": "Data Name",
+      "execute": "Execute",
+      "notExecuted": "Not executed",
+      "executing": "Executing",
+      "success": "Success",
+      "failed": "Failed",
+      "noSamplesInDataset": "No samples in dataset",
+      "pleaseSelectDataset": "Please select a dataset first"
+    },
+    "messages": {
+      "operationFailed": "Operation failed",
+      "loadPipelineFailed": "Failed to load pipeline",
+      "loadDatasetFailed": "Failed to load dataset",
+      "updateDatasetFailed": "Failed to update dataset",
+      "dataItemsUpdatedSuccess": "Data items updated successfully",
+      "updateDataItemFailed": "Failed to update data item",
+      "addColumnFailed": "Failed to add column",
+      "saveSuccess": "Save successful",
+      "saveFailed": "Save failed",
+      "executeCellFailed": "Failed to execute cell",
+      "pleaseSelectDatasetFirst": "Please select a dataset first",
+      "pleaseAddEvaluationColumn": "Please add evaluation column first",
+      "fullEvaluationStarted": "Full evaluation started, you can view progress in evaluation history",
+      "startFullEvaluationFailed": "Failed to start full evaluation"
+    }
+  },
+  "optimizationTrigger": {
+    "ui": {
+      "optimizePrompt": "Optimize Prompt",
+      "singleOptimization": "Single Optimization",
+      "startOptimization": "Start Optimization",
+      "cancel": "Cancel",
+      "close": "Close",
+      "optimizing": "Optimizing",
+      "aiAnalyzing": "AI Analyzing",
+      "optimizingPrompt": "Optimizing prompt...",
+      "aiAnalyzingDescription": "AI is analyzing your feedback, generating optimization plan and validating effectiveness, please wait",
+      "optimizationRequirementLabel": "Optimization Requirements:",
+      "expectedOutputLabel": "Expected Output:",
+      "originalOutputResult": "Original Output Result",
+      "singleOptimizationDescription": {
+        "title": "Single Optimization Description",
+        "line1": "AI will specifically optimize this case, analyze problems, improve prompts and validate effectiveness.",
+        "line2": "The optimization process runs in the background, you can continue processing other cases."
+      },
+      "optimizationRequirement": {
+        "label": "Optimization Requirements",
+        "rules": "Please describe how you want to optimize this result",
+        "placeholder": "Please describe how you want to optimize this result, for example: more friendly tone, more standardized format, more detailed content, etc..."
+      },
+      "expectedOutput": {
+        "label": "Expected Output (Optional)",
+        "placeholder": "If you have specific expected output, please provide it here..."
+      }
+    },
+    "messages": {
+      "formValidationFailed": "Form validation failed"
+    }
+  },
+  "testCaseCard": {
+    "ui": {
+      "testCase": "Case {{index}}",
+      "selected": "Selected",
+      "typeLabels": {
+        "normal": "Normal",
+        "boundary": "Boundary", 
+        "error": "Error",
+        "manual": "Manual"
+      },
+      "inputPlaceholder": "Enter {{key}} value"
+    }
+  }
+}

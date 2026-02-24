@@ -1,0 +1,14 @@
+{
+  "max_concurrent_tasks": 5,
+  "max_concurrent_items_per_task": 10,
+  "task_timeout_minutes": 5,
+  "retry_delays": [
+    0,
+    30,
+    120,
+    300
+  ],
+  "cleanup_completed_tasks_days": 7,
+  "scheduler_interval_seconds": 5,
+  "log_retention_days": 30
+}

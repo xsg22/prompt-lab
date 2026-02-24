@@ -1,0 +1,826 @@
+---
+description: 服务端的技术架构描述和开发规范要求，包含完整的目录结构、技术文档索引和开发规范
+globs: 
+alwaysApply: false
+---
+# PromptLab 后端设计文档
+
+## 项目概述
+
+PromptLab 是一个提示词工程平台，用于创建、测试和评估 LLM 提示词。后端使用 Python 和 FastAPI 框架实现，负责提供 API 接口、数据存储和业务逻辑处理。
+
+## 目录结构
+
+```
+server/
+├── alembic/                    # 数据库迁移脚本
+│   ├── versions/               # 版本迁移文件
+│   │   └── 001_initial_migration.py  # 初始迁移
+│   └── env.py                  # alembic 环境配置
+├── app/                        # 应用代码
+│   ├── api/                    # API 路由
+│   │   ├── v1/                 # API 版本 v1
+│   │   │   ├── endpoints/      # API 端点
+│   │   │   │   ├── auth.py     # 认证相关 API
+│   │   │   │   ├── datasets.py # 数据集相关 API
+│   │   │   │   ├── evaluations.py # 评估相关 API
+│   │   │   │   ├── invites.py  # 邀请相关 API
+│   │   │   │   ├── llm.py      # LLM 配置 API
+│   │   │   │   ├── projects.py # 项目相关 API
+│   │   │   │   ├── prompts.py  # 提示词相关 API
+│   │   │   │   ├── requests.py # 请求记录 API
+│   │   │   │   └── users.py    # 用户相关 API
+│   │   │   └── api.py          # API 路由聚合
+│   │   └── deps.py             # API 依赖注入
+│   ├── core/                   # 核心功能
+│   │   ├── config.py           # 应用配置
+│   │   ├── error_handlers.py   # 错误处理器
+│   │   ├── eval_config.py      # 评估配置
+│   │   ├── logging.py          # 日志配置
+│   │   ├── middlewares.py      # 中间件
+│   │   └── security.py         # 安全相关
+│   ├── db/                     # 数据库
+│   │   ├── base.py             # 数据库连接基类
+│   │   └── session.py          # 会话管理
+│   ├── models/                 # 数据库模型 (SQLAlchemy ORM)
+│   │   ├── apikey.py           # API 密钥模型
+│   │   ├── base.py             # 基础模型
+│   │   ├── base_models.py      # 基础模型定义
+│   │   ├── billing.py          # 计费模型
+│   │   ├── project_model.py    # 项目模型
+│   │   ├── dataset.py          # 数据集模型
+│   │   ├── dataset_upload.py   # 数据集上传模型
+│   │   ├── eval_result_row_task.py # 评估行任务模型
+│   │   ├── eval_task.py        # 评估任务模型
+│   │   ├── evaluation.py       # 评估模型
+│   │   ├── project.py          # 项目模型
+│   │   ├── prompt.py           # 提示词模型
+│   │   └── user.py             # 用户模型
+│   ├── schemas/                # Pydantic 模型 (API 数据模型)
+│   │   ├── apikey.py           # API 密钥模式
+│   │   ├── base.py             # 基础模式
+│   │   ├── billing.py          # 计费模式
+│   │   ├── dataset.py          # 数据集模式
+│   │   ├── dataset_upload.py   # 数据集上传模式
+│   │   ├── eval_result_row_task.py # 评估行任务模式
+│   │   ├── eval_task.py        # 评估任务模式
+│   │   ├── evaluation.py       # 评估模式
+│   │   ├── llm.py              # LLM 模式
+│   │   ├── model.py            # 模型模式
+│   │   ├── pagination.py       # 分页模式
+│   │   ├── project.py          # 项目模式
+│   │   ├── prompt.py           # 提示词模式
+│   │   ├── request.py          # 请求模式
+│   │   └── user.py             # 用户模式
+│   ├── services/               # 业务逻辑层
+│   │   ├── auth.py             # 认证服务
+│   │   ├── background_task_service.py # 后台任务服务
+│   │   ├── base.py             # 基础服务
+│   │   ├── dataset.py          # 数据集服务
+│   │   ├── dataset_upload_service.py # 数据集上传服务
+│   │   ├── eval_row_task_executor.py # 评估行任务执行器
+│   │   ├── eval_row_task_manager.py  # 评估行任务管理器
+│   │   ├── eval_task_executor.py     # 评估任务执行器
+│   │   ├── eval_task_manager.py      # 评估任务管理器
+│   │   ├── eval_task_scheduler.py    # 评估任务调度器
+│   │   ├── evaluation.py       # 评估服务
+│   │   ├── evaluation_engine.py # 评估引擎
+│   │   ├── file_processor.py   # 文件处理器
+│   │   ├── llm.py              # LLM 服务
+│   │   ├── project.py          # 项目服务
+│   │   ├── prompt.py           # 提示词服务
+│   │   ├── request.py          # 请求服务
+│   │   └── user.py             # 用户服务
+│   ├── utils/                  # 工具函数
+│   │   ├── datasets_util.py    # 数据集工具
+│   │   ├── db_utils.py         # 数据库工具
+│   │   └── email.py            # 邮件工具
+│   ├── public/                 # 静态文件服务
+│   │   ├── assets/             # 前端构建资源
+│   │   ├── favicon.png         # 网站图标
+│   │   ├── index.html          # 前端入口
+│   │   └── vite.svg            # Vite 图标
+│   └── main.py                 # 应用入口点
+├── config/                     # 配置文件
+│   ├── eval_task_config.json   # 评估任务配置
+│   └── prompts/                # 提示词配置
+├── docs/                       # 技术文档
+│   ├── backend_redesign.md     # 完整的后端重构设计和规范文档
+│   ├── database_session_fix.md # SQLAlchemy并发冲突问题的解决方案
+│   ├── dataset_upload_fix.md   # 解决数据库会话管理问题的修复方案
+│   ├── eval_config_migration.md # 从数据库表改为配置文件管理的迁移方案
+│   ├── evaluation_task_persistence.md # 可靠的评估任务执行系统的详细技术设计
+│   ├── fastapi_dependency_fix.md # 解决FastAPI依赖注入类型问题的方案
+│   ├── llm_async_save.md       # LLM服务异步保存优化方案，提升API响应性能
+│   ├── refactoring_status.md   # 重构工作的完成状态和进展报告
+│   ├── refactoring_tasks.md    # 详细的重构任务和进度跟踪
+│   └── unified_scheduler.md    # 支持列任务和行任务的统一调度系统设计
+├── scripts/                    # 脚本文件
+├── sql/                        # SQL 脚本
+│   └── mysql-schema.sql        # MySQL 数据库架构
+├── tests/                      # 测试代码
+├── .gitignore                  # Git 忽略文件配置
+├── alembic.ini                 # Alembic 配置
+├── main.py                     # 应用启动脚本
+├── requirements.txt            # 依赖库
+├── start_service.sh            # 服务启动脚本
+├── test_unified_scheduler.py   # 统一调度器测试文件
+└── README.md                   # 项目说明
+```
+
+## 技术文档索引
+
+`server/docs/` 目录包含详细的技术设计文档，通过功能描述可以快速找到对应的技术方案：
+
+### 架构重构类文档
+- **后端重构设计** (`backend_redesign.md`) - 完整的后端重构设计和规范文档，包含目录结构、开发规范和技术细节
+- **重构任务清单** (`refactoring_tasks.md`) - 详细的重构任务分解和进度跟踪
+- **重构状态报告** (`refactoring_status.md`) - 重构工作的完成状态和进展报告
+
+### 性能优化类文档  
+- **LLM服务异步保存** (`llm_async_save.md`) - LLM服务异步保存优化方案，提升API响应性能
+- **统一任务调度器** (`unified_scheduler.md`) - 支持列任务和行任务的统一调度系统设计
+
+### 问题修复类文档
+- **数据库会话并发修复** (`database_session_fix.md`) - SQLAlchemy并发冲突问题的解决方案
+- **数据集上传修复** (`dataset_upload_fix.md`) - 解决数据库会话管理问题的修复方案  
+- **FastAPI依赖注入修复** (`fastapi_dependency_fix.md`) - 解决FastAPI依赖注入类型问题的方案
+
+### 系统设计类文档
+- **评估任务持久化** (`evaluation_task_persistence.md`) - 可靠的评估任务执行系统的详细技术设计
+- **评估配置系统迁移** (`eval_config_migration.md`) - 从数据库表改为配置文件管理的迁移方案
+
+这些文档记录了项目的关键技术决策、问题解决方案和系统设计，是开发和维护的重要参考资料。
+
+## 开发规范
+
+### 代码风格规范
+
+1. 使用 [Black](https://black.readthedocs.io) 进行代码格式化
+2. 使用 [isort](https://pycqa.github.io/isort) 对导入进行排序
+3. 使用 [Flake8](https://flake8.pycqa.org) 进行代码质量检查
+4. 使用类型提示，并通过 [mypy](http://mypy-lang.org) 检查
+5. 命名规范：
+   - 文件名：蛇形命名法（snake_case）
+   - 类名：帕斯卡命名法（PascalCase）
+   - 变量和函数名：蛇形命名法（snake_case）
+   - 常量：全大写蛇形命名法（UPPER_SNAKE_CASE）
+
+### 架构规范
+
+1. **分层架构**：
+   - API 层 (api/v1/endpoints)：处理 HTTP 请求和响应
+   - 服务层 (services)：实现业务逻辑
+   - 数据访问层 (models)：处理数据库交互
+   - 模式层 (schemas)：定义 API 数据模型
+
+2. **依赖注入**：
+   - 使用 FastAPI 的依赖注入系统
+   - 将数据库会话等依赖通过参数传递给需要的函数
+
+3. **接口一致性**：
+   - API 接口遵循 RESTful 设计原则
+   - 统一的响应格式和错误处理
+
+4. **配置管理**：
+   - 使用环境变量进行配置
+   - 通过 Pydantic 的 BaseSettings 管理配置
+
+### 数据库使用规范
+
+1. **ORM 使用规范**：
+   - 使用 SQLAlchemy 作为 ORM 框架
+   - 使用异步 SQLAlchemy 进行数据库操作
+   - 数据库模型放在 models 目录下，每个模型对应一个文件
+
+2. **数据库连接管理**：
+   - 使用连接池管理数据库连接
+   - 通过依赖注入获取数据库会话
+   - 适当配置连接池参数，确保性能和稳定性
+
+3. **事务管理**：
+   - 使用异步上下文管理器进行事务管理
+   - 保证操作的原子性
+   - 出现异常时回滚事务
+
+4. **迁移管理**：
+   - 使用 Alembic 进行数据库迁移
+   - 所有模式更改通过迁移脚本实现
+   - 迁移脚本要有清晰的注释
+   - 已实现初始化迁移脚本 `001_initial_migration.py`
+
+### 数据模型规范
+
+1. **模型设计**：
+   - 使用 SQLAlchemy 定义数据库模型
+   - 使用 Pydantic 定义 API 模型
+   - 明确区分 ORM 模型和 API 模型
+
+2. **模型验证**：
+   - 使用 Pydantic 进行数据验证
+   - 自定义验证器处理复杂验证逻辑
+
+3. **关系定义**：
+   - 明确定义模型之间的关系
+   - 使用关系的懒加载（lazy loading）策略
+
+### API 设计规范
+
+1. **版本控制**：
+   - 在 URL 中包含 API 版本（如 /api/v1/）
+   - 保持向后兼容性
+
+2. **端点命名**：
+   - 使用名词表示资源
+   - 使用复数形式表示集合
+   - 使用正确的 HTTP 方法（GET、POST、PUT、DELETE）
+
+3. **查询参数**：
+   - 使用查询参数进行过滤、排序和分页
+   - 参数命名要清晰且一致
+
+4. **响应格式**：
+   - 使用pydantic对象作为返回类型
+
+5. **错误处理**：
+   - 使用标准 HTTP 状态码
+   - 提供详细的错误消息
+   - 统一的错误响应格式
+
+6. **文档**：
+   - 使用 FastAPI 的交互式文档
+   - 为每个端点提供详细说明
+
+### 安全规范
+
+1. **认证**：
+   - 使用 JWT 进行用户认证
+   - 适当的令牌过期管理
+   - 支持刷新令牌
+
+2. **授权**：
+   - 基于角色的访问控制
+   - 细粒度的权限管理
+
+3. **敏感数据**：
+   - 密码哈希存储（使用 bcrypt）
+   - 敏感配置使用环境变量
+
+4. **安全头部**：
+   - 设置适当的 HTTP 安全头部
+   - CORS 配置
+
+### 三方库使用规范
+
+1. **依赖管理**：
+   - 使用 pyproject.toml 或 requirements.txt 管理依赖
+   - 指定依赖的版本
+   - 区分开发依赖和生产依赖
+
+2. **推荐的库**：
+   - FastAPI：Web 框架
+   - SQLAlchemy：ORM 框架
+   - Pydantic：数据验证
+   - Alembic：数据库迁移
+   - python-jose：JWT 处理
+   - passlib：密码哈希
+   - uvicorn：ASGI 服务器
+   - asyncmy：异步 MySQL 驱动
+   - pytest：测试框架
+   - httpx：HTTP 客户端
+
+3. **库的封装**：
+   - 不要直接在业务代码中使用第三方库的 API
+   - 创建抽象层，封装第三方库
+   - 便于将来替换或升级
+
+### 日志规范
+
+1. **日志配置**：
+   - 定义清晰的日志级别
+   - 配置适当的日志格式
+   - 根据环境调整日志详细程度
+
+2. **日志内容**：
+   - 包含请求 ID 以便跟踪
+   - 记录关键业务事件
+   - 记录错误和异常详情
+
+3. **监控与告警**：
+   - 集成日志监控工具
+   - 设置关键错误的告警机制
+
+### 测试规范
+
+1. **测试类型**：
+   - 单元测试：服务和工具函数
+   - 集成测试：API 端点
+   - 性能测试：关键路径
+
+2. **测试覆盖率**：
+   - 尽可能高的测试覆盖率
+   - 重点测试关键业务逻辑
+
+3. **测试数据**：
+   - 使用测试夹具提供测试数据
+   - 避免测试间的数据依赖
+
+## 重构策略
+
+重构将分为以下几个阶段进行：
+
+1. **环境准备**：
+   - 设置新的目录结构
+   - 配置开发工具（linter、formatter）
+
+2. **基础架构重构**：
+   - 重构配置管理
+   - 重构数据库连接
+   - 重构认证系统
+
+3. **模型层重构**：
+   - 分离 ORM 模型和 Pydantic 模型
+   - 重构数据库模型关系
+
+4. **服务层重构**：
+   - 重新实现业务逻辑
+   - 添加事务管理
+
+5. **API 层重构**：
+   - 重构 API 路由
+   - 实现版本控制
+   - 统一响应和错误处理
+
+6. **测试与文档**：
+   - 编写测试用例
+   - 更新 API 文档 
+
+## 技术细节规范
+
+### 三方库版本要求
+
+为确保项目的稳定性和一致性，指定以下关键库的版本要求：
+
+1. **核心框架**
+   - FastAPI == 0.104.1
+   - Pydantic[email] == 2.5.1
+   - Pydantic-settings == 2.0.0
+   - SQLAlchemy == 2.0.41
+   - Alembic == 1.13.1
+   - Uvicorn == 0.24.0
+
+2. **数据库相关**
+   - asyncmy == 0.2.10 (异步 MySQL 驱动)
+
+3. **认证与安全**
+   - python-jose[cryptography] == 3.3.0
+   - passlib[bcrypt] == 1.7.4
+   - bcrypt >= 3.1.7, < 4.0.0
+   - python-multipart == 0.0.6
+
+4. **工具与实用程序**
+   - httpx == 0.25.1 (HTTP 客户端)
+   - python-dotenv == 1.0.0 (环境变量加载)
+   - chardet == 5.2.0 (字符编码检测)
+
+5. **LLM API 调用**
+   - litellm == 1.72.1 (统一 LLM API 接口)
+
+6. **测试相关**
+   - pytest >= 7.4.0, < 8.0.0
+   - pytest-asyncio >= 0.23.0, < 0.24.0
+   - pytest-cov >= 4.1.0, < 5.0.0
+   - aiosqlite >= 0.19.0 (用于测试)
+
+依赖管理使用`requirements.txt`和可选的`dev-requirements.txt`分别管理生产和开发依赖。
+
+### 代码风格规范详细说明
+
+1. **格式化工具配置**
+   - Black配置: 行长度限制为88字符，跳过字符串规范化
+   ```toml
+   [tool.black]
+   line-length = 88
+   skip-string-normalization = true
+   target-version = ["py39"]
+   ```
+
+   - isort配置: 与Black兼容，多行输出为垂直
+   ```toml
+   [tool.isort]
+   profile = "black"
+   multi_line_output = 3
+   ```
+
+   - Flake8配置: 忽略E203, E501等与Black冲突的规则
+   ```ini
+   [flake8]
+   max-line-length = 88
+   extend-ignore = E203, W503
+   exclude = .git,__pycache__,alembic,venv,.venv
+   ```
+
+2. **命名规范详细规则**
+   - 模块名: 使用全小写，如`user_service.py`
+   - 类名: 使用大驼峰，如`UserService`
+   - 函数名: 使用小写加下划线，如`get_user_by_id`
+   - 变量名: 使用小写加下划线，如`user_email`
+   - 常量名: 使用全大写加下划线，如`MAX_CONNECTIONS`
+   - 私有方法/属性: 使用单下划线前缀，如`_validate_user`
+   - 更私有的方法/属性: 使用双下划线前缀，如`__hash_password`
+   - 类型变量: 使用大驼峰，通常单个大写字母或者描述性名称，如`T`, `UserType`
+
+3. **文档字符串规范**
+   - 使用Google风格文档字符串
+   - 为所有公共函数、方法和类编写文档字符串
+   - 包含参数、返回值和异常的描述
+   ```python
+   def get_user_by_id(user_id: int) -> User:
+       """获取指定ID的用户信息.
+       
+       Args:
+           user_id: 用户ID
+           
+       Returns:
+           User: 用户对象
+           
+       Raises:
+           HTTPException: 当用户不存在时抛出404错误
+       """
+   ```
+
+4. **导入顺序规范**
+   - 标准库导入
+   - 相关第三方库导入
+   - 本地应用/库特定导入
+   - 每组之间用空行分隔
+
+### 数据库使用详细规范
+
+1. **SQLAlchemy连接配置**
+   ```python
+   # 异步连接池配置
+   engine = create_async_engine(
+       settings.DATABASE_URL,
+       echo=settings.SQL_ECHO,
+       pool_size=settings.DB_POOL_SIZE,
+       max_overflow=settings.DB_MAX_OVERFLOW,
+       pool_timeout=settings.DB_POOL_TIMEOUT,
+       pool_recycle=settings.DB_POOL_RECYCLE,
+       pool_pre_ping=True,
+   )
+   ```
+
+2. **会话管理标准做法**
+   ```python
+   # 依赖注入获取数据库会话
+   async def get_db() -> AsyncGenerator[AsyncSession, None]:
+       async with AsyncSessionLocal() as session:
+           try:
+               yield session
+           finally:
+               await session.close()
+   ```
+
+3. **事务管理最佳实践**
+   ```python
+   async def create_user_with_profile(user_data, profile_data):
+       async with AsyncSessionLocal() as session:
+           async with session.begin():
+               try:
+                   # 创建用户
+                   db_user = User(**user_data)
+                   session.add(db_user)
+                   await session.flush()  # 获取用户ID
+                   
+                   # 创建资料
+                   db_profile = Profile(user_id=db_user.id, **profile_data)
+                   session.add(db_profile)
+                   
+                   await session.commit()
+                   return db_user
+               except Exception as e:
+                   await session.rollback()
+                   raise
+   ```
+
+4. **查询性能优化指南**
+   - 使用`select`语句而非过时的查询语法
+   - 只查询需要的列: `select(User.id, User.email)`
+   - 恰当使用`joined_load`和`selectin_load`进行关系加载
+   - 为频繁查询创建索引
+   - 使用分页查询大量数据
+   - 使用`with_for_update`处理并发修改
+
+### API响应格式规范
+
+1. **统一响应结构**
+   ```json
+   {
+     "data": {
+       // 响应数据对象
+     },
+     "meta": {
+       "page": 1,
+       "page_size": 10,
+       "total_count": 100
+     }
+   }
+   ```
+
+2. **错误响应结构**
+   ```json
+   {
+     "error": {
+       "code": "not_found",
+       "message": "用户未找到",
+       "details": {
+         "user_id": 123
+       }
+     }
+   }
+   ```
+
+3. **分页响应规范**
+   - 查询参数: `page`, `page_size`
+   - 响应包含`meta`字段，包含分页信息
+   - 默认页大小为20，最大为100
+
+4. **数据过滤规范**
+   - 查询参数命名：`filter_{field_name}`
+   - 范围过滤：`min_{field_name}`, `max_{field_name}`
+   - 排序参数：`sort_by` (格式: `field_name:asc/desc`)
+
+### 错误处理详细规范
+
+1. **HTTP状态码使用规范**
+   - 200 OK: 成功请求
+   - 201 Created: 资源创建成功
+   - 204 No Content: 成功但无返回内容
+   - 400 Bad Request: 无效请求参数
+   - 401 Unauthorized: 未授权(未认证)
+   - 403 Forbidden: 权限不足
+   - 404 Not Found: 资源不存在
+   - 422 Unprocessable Entity: 请求格式正确但语义错误
+   - 429 Too Many Requests: 请求过多
+   - 500 Internal Server Error: 服务器错误
+
+2. **错误码规范**
+   - `validation_error`: 输入验证错误
+   - `authentication_error`: 认证失败
+   - `permission_denied`: 权限不足
+   - `not_found`: 资源不存在
+   - `conflict`: 资源冲突
+   - `rate_limited`: 请求频率限制
+   - `internal_error`: 内部服务错误
+   - `service_unavailable`: 服务不可用
+   - `database_error`: 数据库错误
+
+3. **异常处理中间件**
+   - 捕获所有未处理异常
+   - 记录异常详情到日志
+   - 转换为适当的HTTP响应
+   - 隐藏敏感错误信息
+   - 包含请求ID以便追踪
+
+### 安全实现详细规范
+
+1. **JWT配置详情**
+   ```python
+   # JWT配置
+   ACCESS_TOKEN_EXPIRE_MINUTES = 30
+   REFRESH_TOKEN_EXPIRE_DAYS = 7
+   ALGORITHM = "HS256"
+   JWT_SECRET_KEY = settings.JWT_SECRET_KEY
+   JWT_REFRESH_SECRET_KEY = settings.JWT_REFRESH_SECRET_KEY
+   ```
+
+2. **密码哈希配置**
+   ```python
+   # 密码哈希
+   pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+   
+   # 哈希密码
+   def get_password_hash(password: str) -> str:
+       return pwd_context.hash(password)
+       
+   # 验证密码
+   def verify_password(plain_password: str, hashed_password: str) -> bool:
+       return pwd_context.verify(plain_password, hashed_password)
+   ```
+
+3. **安全头部设置**
+   ```python
+   # 中间件配置
+   app.add_middleware(
+       CORSMiddleware,
+       allow_origins=settings.CORS_ORIGINS,
+       allow_credentials=True,
+       allow_methods=["*"],
+       allow_headers=["*"],
+       expose_headers=["X-Request-ID"],
+   )
+   
+   app.add_middleware(
+       SecurityHeadersMiddleware,
+       content_security_policy="default-src 'self';",
+       x_frame_options="DENY",
+       x_content_type_options="nosniff",
+       referrer_policy="strict-origin-when-cross-origin",
+       permissions_policy="geolocation=(), microphone=()",
+   )
+   ```
+
+4. **API密钥验证**
+   ```python
+   async def verify_api_key(api_key: str = Security(api_key_header)) -> Project:
+       if not api_key:
+           raise HTTPException(
+               status_code=status.HTTP_401_UNAUTHORIZED,
+               detail="API密钥缺失",
+           )
+       
+       # 从数据库查找项目
+       project = await get_project_by_api_key(api_key)
+       if not project:
+           raise HTTPException(
+               status_code=status.HTTP_401_UNAUTHORIZED,
+               detail="无效的API密钥",
+           )
+       
+       return project
+   ```
+
+### 日志记录详细规范
+
+1. **日志级别定义**
+   - DEBUG: 开发环境详细信息
+   - INFO: 正常操作信息，请求处理
+   - WARNING: 潜在问题，需要关注
+   - ERROR: 错误影响功能，但服务仍然运行
+   - CRITICAL: 严重错误，服务无法正常运行
+
+2. **结构化日志格式**
+   ```python
+   # 日志配置
+   LOG_FORMAT = "%(asctime)s - %(levelname)s - [%(name)s] [%(filename)s:%(lineno)d] - %(message)s"
+   JSON_LOG_FORMAT = {
+       "timestamp": "%(asctime)s",
+       "level": "%(levelname)s",
+       "logger": "%(name)s",
+       "file": "%(filename)s",
+       "line": "%(lineno)d",
+       "message": "%(message)s",
+       "request_id": "%(request_id)s",
+       "user_id": "%(user_id)s",
+   }
+   ```
+
+3. **请求日志标准**
+   - 每个请求生成唯一请求ID
+   - 记录请求方法、路径、状态码、处理时间
+   - 记录用户ID（如已认证）
+   - 不记录敏感数据（密码、令牌）
+
+4. **日志上下文传递**
+   ```python
+   # 请求中间件
+   @app.middleware("http")
+   async def logging_middleware(request: Request, call_next):
+       request_id = str(uuid.uuid4())
+       request.state.request_id = request_id
+       
+       # 设置上下文
+       context_var.set({"request_id": request_id})
+       
+       # 记录请求
+       logger.info(
+           f"请求开始: {request.method} {request.url.path}",
+           extra={
+               "request_id": request_id,
+               "method": request.method,
+               "path": request.url.path,
+           },
+       )
+       
+       # 处理请求
+       response = await call_next(request)
+       
+       # 记录响应
+       logger.info(
+           f"请求结束: {request.method} {request.url.path} - {response.status_code}",
+           extra={
+               "request_id": request_id,
+               "method": request.method,
+               "path": request.url.path,
+               "status_code": response.status_code,
+           },
+       )
+       
+       return response
+   ```
+
+### 测试详细规范
+
+1. **测试覆盖率要求**
+   - 总体代码覆盖率目标: 80%以上
+   - 业务逻辑服务覆盖率: 90%以上
+   - API端点覆盖率: 85%以上
+   - 工具函数覆盖率: 95%以上
+
+2. **单元测试要求**
+   - 每个服务类至少有一个对应的测试类
+   - 每个公共方法至少有一个测试用例
+   - 测试边界条件和错误情况
+   - 使用mock隔离依赖
+
+3. **集成测试要求**
+   - 每个API端点至少有基本CRUD测试
+   - 测试权限和认证逻辑
+   - 使用测试数据库而非mock
+   - 测试复杂业务流程
+
+4. **测试数据管理**
+   ```python
+   # 测试夹具示例
+   @pytest.fixture
+   async def test_user(db_session):
+       """创建测试用户"""
+       user_data = {
+           "email": "test@example.com",
+           "hashed_password": get_password_hash("password"),
+           "is_active": True,
+       }
+       user = User(**user_data)
+       db_session.add(user)
+       await db_session.commit()
+       await db_session.refresh(user)
+       return user
+   ```
+
+5. **测试环境配置**
+   - 使用SQLite或内存数据库进行测试
+   - 每次测试运行前重建数据库
+   - 使用单独的配置文件(.env.test)
+   - 使用pytest-cov生成覆盖率报告
+
+### 性能优化指南
+
+1. **数据库查询优化**
+   - 使用`EXPLAIN`分析查询计划
+   - 为频繁查询创建适当索引
+   - 避免N+1查询问题，使用JOIN或子查询
+   - 大表查询使用分页
+   - 使用部分索引和复合索引减少索引大小
+
+2. **API响应优化**
+   - 使用异步处理耗时操作
+   - 实现缓存机制(Redis)
+   - 限制嵌套关系深度
+   - 支持部分字段选择
+   - 压缩响应数据
+
+3. **内存使用优化**
+   - 避免大对象加载到内存
+   - 使用生成器处理大数据集
+   - 设置适当的连接池大小
+   - 定期监控内存使用情况
+
+4. **LLM调用优化**
+   - 实现请求批处理
+   - 使用流式响应处理大型输出
+   - 实现模型结果缓存
+   - 优先使用向量嵌入而非完整文本处理
+
+### 部署环境配置指南
+
+1. **容器化配置**
+   ```dockerfile
+   FROM python:3.9-slim
+   
+   WORKDIR /app
+   
+   RUN apt-get update && apt-get install -y \
+       gcc \
+       libpq-dev \
+       && rm -rf /var/lib/apt/lists/*
+   
+   COPY requirements.txt .
+   RUN pip install --no-cache-dir -r requirements.txt
+   
+   COPY . .
+   
+   CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+   ```
+
+2. **环境变量管理**
+   - 使用.env文件进行本地开发
+   - 生产环境使用环境变量
+   - 敏感信息使用机密管理服务
+   - 不同环境有不同配置文件(.env.dev, .env.prod)
+
+3. **监控与可观测性**
+   - 集成Prometheus监控指标
+   - 使用OpenTelemetry进行分布式追踪
+   - 配置健康检查端点
+   - 设置性能基准和告警 

@@ -1,0 +1,2637 @@
+{
+  "common": {
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "删除", 
+    "edit": "编辑",
+    "create": "创建",
+    "confirm": "确定",
+    "reset": "重置",
+    "search": "搜索",
+    "filter": "筛选",
+    "loading": "加载中...",
+    "noData": "暂无数据",
+    "success": "成功",
+    "error": "错误",
+    "warning": "警告",
+    "copy": "复制",
+    "view": "查看",
+    "add": "添加",
+    "close": "关闭",
+    "all": "全部",
+    "createProject": "创建新项目",
+    "none": "无",
+    "status": "状态",
+    "description": "描述",
+    "name": "名称",
+    "tags": "标签",
+    "creator": "创建者",
+    "updatedAt": "更新时间",
+    "createdAt": "创建时间",
+    "yes": "是",
+    "no": "否"
+  },
+  "nav": {
+    "prompts": "提示词库",
+    "datasets": "数据集管理",
+    "evaluations": "提示词评估",
+    "settings": "项目设置"
+  },
+  "prompts": {
+    "title": "提示词管理",
+    "createPrompt": "创建提示词",
+    "manageTag": "标签",
+    "searchPlaceholder": "搜索提示词...",
+    "noPromptsFound": "没有找到匹配的提示词",
+    "noPrompts": "暂无提示词",
+    "promptsCount": "个提示词",
+    "tabs": {
+      "all": "全部",
+      "favorites": "收藏",
+      "mine": "我的",
+      "templates": "模板"
+    },
+    "groupBy": {
+      "none": "不分组",
+      "creator": "按创建者",
+      "tags": "按标签",
+      "status": "按状态"
+    },
+    "status": {
+      "active": "活跃",
+      "draft": "草稿", 
+      "archived": "已归档"
+    },
+    "actions": {
+      "favorite": "收藏",
+      "unfavorite": "取消收藏",
+      "editInfo": "编辑信息",
+      "batchSelect": "批量",
+      "batchFavorite": "批量收藏",
+      "batchArchive": "批量归档",
+      "batchDelete": "批量删除",
+      "selectAll": "全选"
+    },
+    "messages": {
+      "loadError": "加载提示词列表失败",
+      "createSuccess": "提示词创建成功",
+      "createError": "创建提示词失败",
+      "updateSuccess": "提示词已更新",
+      "updateError": "更新失败",
+      "deleteSuccess": "提示词删除成功",
+      "deleteError": "删除提示词失败",
+      "copySuccess": "提示词复制成功",
+      "copyError": "复制提示词失败",
+      "favoriteAdded": "已添加到收藏",
+      "favoriteRemoved": "已取消收藏",
+      "favoriteError": "操作失败",
+      "batchSuccess": "批量操作完成",
+      "batchError": "批量操作失败",
+      "selectPrompts": "请先选择要操作的提示词",
+      "batchDeleteCount": "已删除 {{count}} 个提示词"
+    },
+    "modal": {
+      "create": {
+        "title": "创建新提示词",
+        "nameLabel": "提示词名称",
+        "namePlaceholder": "输入提示词名称",
+        "nameRequired": "请输入提示词名称",
+        "descriptionLabel": "描述",
+        "descriptionPlaceholder": "简要描述此提示词的功能和用途",
+        "tagsLabel": "标签",
+        "tagsPlaceholder": "选择标签",
+        "aiGenerate": {
+          "title": "AI智能生成提示词",
+          "description": "开启后，系统会根据名称和描述自动生成优质的提示词内容，帮助您快速开始创作",
+          "enable": "开启",
+          "disable": "关闭"
+        }
+      },
+      "edit": {
+        "title": "编辑提示词",
+        "nameLabel": "提示词名称",
+        "descriptionLabel": "描述（可选）",
+        "statusLabel": "状态",
+        "templateLabel": "模板"
+      },
+      "copy": {
+        "title": "复制提示词",
+        "nameLabel": "提示词名称",
+        "copyNameSuffix": " (副本)"
+      },
+      "tag": {
+        "title": "标签管理",
+        "nameLabel": "标签名称",
+        "namePlaceholder": "标签名称",
+        "nameRequired": "请输入标签名称",
+        "colorLabel": "颜色",
+        "existing": "现有标签",
+        "createSuccess": "标签创建成功",
+        "createError": "创建标签失败",
+        "deleteConfirm": "确定删除这个标签吗？",
+        "deleteDescription": "删除后，所有使用此标签的提示词将失去该标签。",
+        "deleteSuccess": "标签已删除",
+        "deleteError": "删除失败"
+      },
+      "delete": {
+        "title": "确定要删除这个提示词吗?",
+        "description": "删除后将无法恢复，包括所有的数据。",
+        "batchTitle": "确定要删除选中的提示词吗？"
+      }
+    },
+    "filter": {
+      "title": "筛选设置",
+      "search": "搜索",
+      "searchPlaceholder": "搜索提示词名称或描述...",
+      "tags": "标签",
+      "tagsPlaceholder": "选择标签",
+      "status": "状态",
+      "creator": "创建者",
+      "creatorOptions": {
+        "all": "全部",
+        "mine": "我的",
+        "others": "其他人"
+      },
+      "other": "其他筛选",
+      "favoritesOnly": "仅显示收藏",
+      "templatesOnly": "仅显示模板",
+      "sort": "排序",
+      "sortBy": {
+        "updatedAt": "更新时间",
+        "createdAt": "创建时间",
+        "name": "名称"
+      },
+      "sortOrder": {
+        "desc": "降序",
+        "asc": "升序"
+      }
+    },
+    "card": {
+      "noDescription": "无描述",
+      "unknownUser": "未知用户",
+      "uncategorized": "未分类",
+      "invalidTime": "无效时间",
+      "unknownTime": "未知时间"
+    },
+    "batch": {
+      "selectedCount": "已选择 {{count}} 项",
+      "selectFirst": "请先选择要操作的提示词"
+    },
+    "tooltips": {
+      "view": "查看",
+      "edit": "编辑",
+      "favorite": "收藏",
+      "unfavorite": "取消收藏",
+      "createPrompt": "新建提示词",
+      "manageTags": "管理标签",
+      "filter": "筛选"
+    }
+  },
+  "datasets": {
+    "title": "数据集管理",
+    "createDataset": "创建数据集",
+    "refresh": "刷新",
+    "noDatasets": "暂无数据集",
+    "deleteSuccess": "数据集已删除",
+    "deleteError": "删除数据集失败",
+    "loadError": "加载数据集列表失败",
+    "totalCount": "共 {{total}} 条数据",
+    "table": {
+      "name": "名称",
+      "description": "描述",
+      "variables": "变量",
+      "creator": "创建人",
+      "updatedAt": "更新时间",
+      "actions": "操作",
+      "noDescription": "无描述"
+    },
+    "actions": {
+      "viewDetails": "查看详情",
+      "dataAnalysis": "数据分析",
+      "delete": "删除"
+    },
+    "modal": {
+      "delete": {
+        "title": "确定要删除这个数据集吗?",
+        "description": "删除后将无法恢复，包括所有的数据集条目。"
+      }
+    }
+  },
+  "editor": {
+    "title": "提示词编辑器",
+    "save": "保存",
+    "saveWithChanges": "保存*",
+    "running": "运行中",
+    "run": "运行",
+    "runAll": "运行全部",
+    "stop": "停止",
+    "cancel": "取消",
+    "currentVersion": "当前版本",
+    "goOverview": "去概览",
+    "modelConfig": "模型配置",
+    "selectModel": "选择模型",
+    "advancedParams": "高级参数（可选）",
+    "temperature": "控制输出的随机性，越高越随机",
+    "topP": "核采样，控制词汇选择范围",
+    "maxTokens": "最大令牌数",
+    "testCases": "测试用例",
+    "outputs": "输出结果",
+    "variablesTitle": "变量",
+    "addVariable": "添加变量",
+    "variableName": "变量名",
+    "variableValue": "变量值",
+    "deleteVariable": "删除变量",
+    "addTestCase": "用例",
+    "importFromJson": "从JSON导入",
+    "importFromDataset": "从数据集导入",
+    "exportToDataset": "导出到数据集",
+    "generateTestCases": "生成测试用例",
+    "intelligentGenerate": "智能生成",
+    "jsonImport": {
+      "title": "通过JSON导入测试用例",
+      "description": "输入JSON格式的测试数据，键为变量名，值为变量值",
+      "placeholder": "请输入JSON格式的数据，例如：\n{\n  \"变量1\": \"值1\",\n  \"变量2\": \"值2\"\n}",
+      "invalidJson": "JSON格式不正确，请检查语法",
+      "noVariables": "JSON数据为空或不包含有效变量",
+      "success": "JSON测试用例导入成功",
+      "error": "导入失败，请检查JSON格式",
+      "unmatchedVariables": "以下变量在当前提示词中不存在：{{variables}}",
+      "unmatchedVariablesDescription": "这些变量将被忽略，只会导入匹配的变量。",
+      "parseSuccessMessage": "已解析 {{total}} 个变量，其中 {{matched}} 个匹配当前提示词变量。",
+      "jsonDataLabel": "JSON数据：",
+      "currentVariablesLabel": "当前提示词变量：",
+      "confirmImport": "是否导入这个测试用例？"
+    },
+    "editMode": "编辑模式",
+    "viewMode": "查看模式",
+    "messageEdit": "消息编辑",
+    "addMessage": "消息",
+    "result": "结果",
+    "history": "历史",
+    "copyCurrentCase": "复制当前用例",
+    "deleteAll": "删除所有",
+    "clickToStart": "点击运行按钮开始",
+    "generateAnswer": "正在生成回答...",
+    "callFailed": "调用失败",
+    "ready": "就绪",
+    "maxTokensTooltip": "最大输出长度",
+    "presenceTooltip": "减少重复内容的出现",
+    "frequencyTooltip": "降低词频重复",
+    "totalTime": "总耗时",
+    "totalCost": "总费用",
+    "executionProgress": "执行进度",
+    "successRate": "成功率",
+    "avgQuality": "平均质量",
+    "avgLatency": "平均延迟",
+    "languages": {
+      "chinese": "中文",
+      "english": "English",
+      "compare": "对照"
+    },
+    "languageVersions": {
+      "chineseVersion": "🇨🇳 中文版本",
+      "englishVersion": "🇺🇸 English版本"
+    },
+    "translation": {
+      "toChinese": "译中",
+      "toEnglish": "译英"
+    },
+    "placeholders": {
+      "systemMessage": "你是一个专业的{{角色}}...",
+      "userMessage": "输入消息...",
+      "systemMessageEn": "You are a professional {{role}}...",
+      "userMessageEn": "Enter message...",
+      "variableTip": "💡 使用 {{变量名}} 插入变量, 只能使用文字、数字、下划线",
+      "versionComment": "描述本次修改的主要内容...",
+      "charactersZh": "中文: {{count}} 字符",
+      "charactersEn": "英文: {{count}} 字符",
+      "characters": "字符数: {{count}}"
+    },
+    "actions": {
+      "copyMessage": "复制消息",
+      "deleteMessage": "删除消息",
+      "copyResult": "复制结果",
+      "viewDetails": "查看详情",
+      "optimize": "优化提示词",
+      "viewProgress": "查看优化进度",
+      "viewOptimization": "查看优化详情",
+      "viewError": "查看错误信息",
+      "modifyDescription": "修改描述"
+    },
+    "status": {
+      "optimizing": "优化中",
+      "optimized": "已优化",
+      "optimizeFailed": "优化失败",
+      "hasFeedback": "已反馈"
+    },
+    "statistics": {
+      "totalTokens": "Total: {{count}}",
+      "completionTokens": "Completion: {{count}}",
+      "promptTokens": "Prompt: {{count}}"
+    },
+    "modals": {
+      "saveVersion": {
+        "title": "保存新版本",
+        "versionComment": "版本备注",
+        "saveLanguage": "保存语言",
+        "messageCount": "消息: {{count}} 条",
+        "variableCount": "变量: {{count}} 个",
+        "testCaseCount": "测试用例: {{count}} 个",
+        "confirmSave": "确认保存",
+        "diffTitle": "变更对比",
+        "diffWith": "与版本 {{version}} 的差异",
+        "firstVersion": "这是第一个版本，没有变更对比",
+        "firstVersionDesc": "这将是该提示词的第一个版本"
+      },
+      "deleteMessage": {
+        "title": "确认删除",
+        "description": "确定要删除这条消息吗？",
+        "deleteButton": "删除"
+      },
+      "deleteAllCases": {
+        "title": "确认删除所有测试用例",
+        "description": "即将删除所有 {{count}} 个测试用例，此操作不可撤销",
+        "confirmDelete": "确认删除"
+      },
+      "switchVersion": {
+        "title": "确认切换版本",
+        "description": "您有未保存的更改，确定要切换到版本 {{version}} 吗？",
+        "tip": "切换后当前的更改将会丢失，建议先保存当前版本。",
+        "confirmSwitch": "确定切换"
+      }
+    },
+    "variables": {
+      "overview": "🔧 变量总览",
+      "noVariables": "暂无变量，在消息中使用 {{变量名}} 来添加变量",
+      "clickToLocate": "点击定位到第{{index}}条消息中的变量 {{{{variable}}}}",
+      "appearCount": "该变量在此消息中出现{{count}}次"
+    },
+    "messages": {
+      "saveSuccess": "保存成功",
+      "saveError": "保存失败",
+      "hasUnsavedChanges": "您有未保存的更改，确定要返回吗？",
+      "deleteConfirm": "确定要删除这个变量吗？",
+      "variableNameRequired": "请输入变量名",
+      "variableNameInvalid": "变量名只能包含字母、数字和下划线",
+      "variableExists": "变量名已存在",
+      "keepOneMessage": "至少需要保留一条消息",
+      "copySuccess": "复制成功",
+      "copyFailed": "复制失败",
+      "cancelRequest": "已取消请求",
+      "modelCallError": "调用模型时出错",
+      "loadModelError": "加载模型列表失败",
+      "versionSaved": "提示词已保存为新版本 ({{language}})",
+      "saveVersionError": "保存模板失败，请重试",
+      "deletedAllCases": "已删除所有 {{count}} 个测试用例",
+      "addedCases": "已添加 {{count}} 个测试用例",
+      "translatedTo": "已成功翻译为{{language}}",
+      "translateError": "翻译失败，请重试",
+      "loadVersionError": "加载版本内容失败",
+      "promptUpdated": "✅ 提示词已成功更新！",
+      "noChanges": "⚠️ 提示词内容没有变化"
+    },
+    "tabs": {
+      "editor": "编辑器",
+      "testCases": "测试用例",
+      "outputs": "输出",
+      "assistant": "AI助手",
+      "history": "历史版本",
+      "mode": "模式"
+    }
+  },
+  "overview": {
+    "title": "提示词概览",
+    "editSelected": "编辑选中",
+    "versionHistory": "版本历史",
+    "versionContent": "版本内容",
+    "modelConfig": "模型配置",
+    "variableList": "变量列表",
+    "statistics": "统计信息",
+    "noContent": "暂无内容",
+    "noMessages": "此版本暂无消息内容",
+    "noModelConfig": "暂无模型配置",
+    "noVariables": "暂无变量",
+    "selectVersionToView": "选择版本查看内容",
+    "messageContent": "消息内容",
+    "copyContent": "复制内容",
+    "copyChinese": "复制中文",
+    "copyEnglish": "复制英文",
+    "chineseVersion": "🇨🇳 中文版本",
+    "englishVersion": "🇺🇸 英文版本",
+    "bilingualVersion": "🌐 双语版本",
+    "modelName": "模型名称",
+    "variableCount": "变量数",
+    "versionCount": "{{count}}版本",
+    "variablesCount": "{{count}}变量",
+    "messageCount": "{{count}}条消息",
+    "messagesCount": "{{count}}消息",
+    "completeVersion": "完整版本",
+    "overview": "概览",
+    "messagesTitle": "消息内容",
+    "parameterConfig": "参数配置",
+    "totalCharacters": "总字符数",
+    "messageCountShort": "消息数",
+    "completeness": "完整度",
+    "bilingual": "🌐 双语",
+    "bilingualCompareMode": "💡 双语对照模式",
+    "charactersCompare": "中文: {{zhCount}} 字符 | 英文: {{enCount}} 字符",
+    "compareMode": "对照模式",
+    "more": "更多",
+    "messages": {
+      "copySuccess": "复制成功",
+      "copyFailed": "复制失败",
+      "loadVersionError": "加载版本失败"
+    }
+  },
+  "evaluations": {
+    "title": "评估任务",
+    "createEvaluation": "创建评估",
+    "editEvaluation": "编辑",
+    "viewHistory": "查看执行历史",
+    "deleteEvaluation": "删除",
+    "table": {
+      "name": "名称",
+      "description": "描述",
+      "dataset": "数据集",
+      "creator": "创建者",
+      "createdAt": "创建时间",
+      "updatedAt": "更新时间",
+      "actions": "操作"
+    },
+    "tooltips": {
+      "edit": "编辑",
+      "viewHistory": "查看执行历史",
+      "delete": "删除"
+    },
+    "modal": {
+      "deleteConfirm": "确定要删除这个评估任务吗?",
+      "deleteButton": "删除"
+    },
+    "messages": {
+      "loadError": "加载评估任务失败",
+      "deleteSuccess": "删除评估任务成功",
+      "deleteError": "删除评估任务失败"
+    },
+    "pagination": {
+      "totalCount": "共 {{total}} 条数据"
+    }
+  },
+  "datasetDetail": {
+    "title": "数据集详情",
+    "back": "返回",
+    "editInfo": "编辑信息",
+    "batchImport": "批量导入",
+    "addData": "添加数据",
+    "enabledTotal": "启用/总数",
+    "status": "状态",
+    "enabled": "已启用",
+    "disabled": "已禁用",
+    "name": "名称",
+    "createdAt": "创建时间",
+    "actions": "操作",
+    "editing": "编辑中...",
+    "edit": "编辑",
+    "copy": "复制",
+    "copyItem": "复制",
+    "delete": "删除",
+    "batchDelete": "批量删除",
+    "cancelSelection": "取消选择",
+    "search": "搜索",
+    "noData": "暂无数据集条目",
+    "selectedCount": "已选择 {{count}} 项",
+    "placeholders": {
+      "enterName": "请输入名称",
+      "enterVariable": "请输入{{variable}}"
+    },
+    "modal": {
+      "deleteConfirm": "确认删除",
+      "deleteDescription": "确定要删除这个条目吗？此操作不可恢复。",
+      "batchDeleteConfirm": "确认批量删除",
+      "batchDeleteDescription": "确定要删除选中的 {{count}} 个条目吗？",
+      "deleteButton": "删除"
+    },
+    "messages": {
+      "loadDatasetError": "加载数据集失败",
+      "copySuccess": "条目复制成功",
+      "copyError": "复制条目失败，请重试",
+      "selectItemsToDelete": "请选择要删除的条目",
+      "batchDeleteSuccess": "成功删除 {{count}} 个条目",
+      "batchDeleteError": "批量删除失败，请重试",
+      "statusUpdateSuccess": "条目已{{status}}",
+      "statusUpdateError": "更新条目状态失败，请重试",
+      "deleteSuccess": "条目删除成功",
+      "deleteError": "删除条目失败",
+      "loadError": "加载数据失败",
+      "updateSuccess": "条目更新成功",
+      "createSuccess": "条目创建成功",
+      "saveError": "保存失败，请重试"
+    },
+    "pagination": {
+      "showTotal": "第 {{start}}-{{end}} 条/总共 {{total}} 条"
+    },
+    "validation": {
+      "nameRequired": "请输入名称",
+      "variableRequired": "请输入{{variable}}"
+    }
+  },
+  "settings": {
+    "title": "账号设置",
+    "changePassword": {
+      "title": "修改密码",
+      "description": "更新您的账号密码",
+      "currentPassword": "当前密码",
+      "newPassword": "新密码",
+      "confirmNewPassword": "确认新密码",
+      "updatePassword": "更新密码",
+      "updating": "更新中...",
+      "placeholders": {
+        "currentPassword": "输入当前密码",
+        "newPassword": "输入新密码",
+        "confirmNewPassword": "再次输入新密码"
+      }
+    },
+    "deleteAccount": {
+      "title": "注销账号",
+      "description": "永久删除您的账号和所有相关数据，此操作不可撤销",
+      "warning": "请谨慎操作，注销后所有数据将无法恢复。",
+      "deleteButton": "注销我的账号",
+      "processing": "处理中...",
+      "confirmTitle": "确认注销账号？",
+      "confirmContent": "此操作将永久删除您的账号和所有相关数据，且无法恢复。",
+      "confirmDeleteButton": "确认注销"
+    },
+    "validation": {
+      "currentPasswordRequired": "请输入当前密码",
+      "newPasswordRequired": "请输入新密码",
+      "confirmPasswordRequired": "请再次输入新密码",
+      "passwordMinLength": "密码长度至少为 6 个字符",
+      "passwordMismatch": "两次输入的新密码不一致"
+    },
+    "messages": {
+      "loginRequired": "请先登录",
+      "passwordMismatch": "两次输入的新密码不一致",
+      "passwordUpdateSuccess": "密码修改成功",
+      "passwordUpdateError": "修改密码失败",
+      "accountDeleteSuccess": "账号已成功注销",
+      "accountDeleteError": "注销账号失败",
+      "authCheckError": "验证登录状态失败"
+    }
+  },
+  "profile": {
+    "title": "个人资料",
+    "description": "查看和更新您的个人资料信息",
+    "email": "电子邮箱",
+    "createdAt": "账号创建时间",
+    "editNickname": "修改昵称",
+    "nickname": "昵称",
+    "updateProfile": "更新资料",
+    "updating": "更新中...",
+    "placeholder": "请输入您的昵称",
+    "validation": {
+      "nicknameMinLength": "昵称长度至少为 2 个字符",
+      "nicknameMaxLength": "昵称长度不能超过 50 个字符"
+    },
+    "messages": {
+      "loginRequired": "请先登录",
+      "fetchError": "获取用户信息失败",
+      "updateSuccess": "个人资料更新成功",
+      "updateError": "更新个人资料失败"
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "抱歉，您访问的页面不存在",
+    "backHome": "返回首页"
+  },
+  "projectSettings": {
+    "title": "项目设置",
+    "tabs": {
+      "members": "成员管理",
+      "projectInfo": "项目信息",
+      "models": "模型管理",
+      "apiKeys": "API Keys",
+      "billing": "账单"
+    },
+    "messages": {
+      "fetchProjectInfoError": "获取项目信息失败"
+    },
+    "members": {
+      "title": "工作区成员",
+      "description": "一起使用工作区。使用导航栏中的工作区选择器切换工作区。",
+      "invite": "邀请",
+      "remove": "移除",
+      "roles": {
+        "admin": "管理员",
+        "member": "成员",
+        "readonly": "只读"
+      },
+      "modal": {
+        "title": "邀请成员",
+        "emailInvite": "通过邮箱邀请",
+        "linkInvite": "通过链接邀请",
+        "emailPlaceholder": "输入邮箱地址",
+        "inviteButton": "邀请",
+        "generateLink": "生成邀请链接",
+        "copyLink": "复制链接",
+        "removeConfirm": "确定要移除该成员吗？"
+      },
+      "messages": {
+        "loadMembersError": "获取成员列表失败",
+        "emailRequired": "请输入邮箱地址",
+        "inviteSent": "邀请已发送",
+        "inviteError": "邀请失败",
+        "unknownError": "未知错误",
+        "generateLinkError": "生成邀请链接失败",
+        "linkCopied": "链接已复制到剪贴板",
+        "copyFailed": "复制失败",
+        "memberRemoved": "成员已移除",
+        "removeMemberError": "移除成员失败",
+        "roleUpdated": "角色已更新",
+        "updateRoleError": "修改权限失败"
+      }
+    },
+    "projectInfo": {
+      "title": "项目基础信息",
+      "projectName": "项目名称",
+      "projectNamePlaceholder": "请输入项目名称",
+      "projectNameDescription": "项目名称用于标识您的项目，最多10个字符",
+      "saveChanges": "保存更改",
+      "dangerousActions": "危险操作",
+      "deleteProject": "删除项目",
+      "deleteProjectDescription": "删除此项目将永久移除所有相关数据，包括提示词、数据集、评估记录等。此操作不可恢复。",
+      "deleteConfirmTitle": "删除项目确认",
+      "deleteConfirmModal": "确认删除项目",
+      "deleteConfirmContent": "此操作将永久删除该项目及其所有相关数据，包括：",
+      "deleteConfirmWarning": "此操作不可恢复！",
+      "continueDelete": "我知道风险，继续删除",
+      "deleteConfirmInstruction": "为了确保您真的要删除项目 {{projectName}}，请在下方输入框中输入项目名称：",
+      "deleteConfirmPlaceholder": "请输入 \"{{projectName}}\" 确认删除",
+      "deleteConfirmNote": "输入项目名称后才能点击删除按钮",
+      "confirmDelete": "确认删除",
+      "dataTypes": {
+        "prompts": "所有提示词",
+        "datasets": "所有数据集",
+        "evaluations": "所有评估记录",
+        "members": "所有项目成员",
+        "apiConfigs": "所有API配置"
+      },
+      "validation": {
+        "nameRequired": "请输入项目名称",
+        "nameMaxLength": "项目名称不能超过10个字符"
+      },
+      "messages": {
+        "fetchError": "获取项目信息失败",
+        "updateSuccess": "项目信息更新成功",
+        "updateError": "更新项目信息失败",
+        "nameNotMatch": "项目名称不匹配",
+        "nameNotMatchDescription": "请输入正确的项目名称以确认删除",
+        "deleteSuccess": "项目删除成功",
+        "deleteSuccessDescription": "项目及其所有数据已被永久删除",
+        "deleteError": "删除项目失败"
+      }
+    },
+    "modelsManagement": {
+      "title": "模型管理",
+      "show": "显示",
+      "hide": "隐藏",
+      "selectModels": "选择模型",
+      "selected": "个已选择",
+      "functions": "函数",
+      "vision": "视觉",
+      "messages": {
+        "customModelUpdated": "自定义模型已更新",
+        "customModelAdded": "自定义模型已添加",
+        "operationFailed": "操作自定义模型失败",
+        "operationError": "操作失败，请重试"
+      }
+    }
+  },
+  "evalHistory": {
+    "title": "评估历史",
+    "back": "返回",
+    "refresh": "刷新",
+    "runType": "运行类型",
+    "status": "状态",
+    "progress": "进度",
+    "resultStats": "结果统计",
+    "createdAt": "创建时间",
+    "actions": "操作",
+    "viewDetail": "查看详情",
+    "runTypes": {
+      "draft": "草稿",
+      "batchEvaluation": "批量评估"
+    },
+    "statuses": {
+      "initializing": "初始化中",
+      "running": "执行中",
+      "completed": "执行完毕",
+      "partialSuccess": "部分成功"
+    },
+    "tooltips": {
+      "passedCases": "通过用例",
+      "unpassedCases": "未通过用例",
+      "failedCases": "失败用例",
+      "taskSuccess": "任务成功",
+      "taskFailed": "任务失败"
+    },
+    "statistics": {
+      "totalEvaluations": "总评估次数",
+      "completedEvaluations": "完成评估",
+      "runningEvaluations": "执行中",
+      "recentEvaluation": "最近评估",
+      "successRate": "成功率"
+    },
+    "pagination": {
+      "totalRecords": "共 {{total}} 条评估记录"
+    },
+    "emptyState": {
+      "description": "暂无评估历史记录",
+      "backToPipeline": "返回流水线配置"
+    },
+    "messages": {
+      "loadHistoryError": "加载评估历史失败",
+      "loadPipelineInfoError": "加载流水线信息失败"
+    }
+  },
+  "createProjectModal": {
+    "title": "创建新项目",
+    "projectName": "项目名称",
+    "projectNamePlaceholder": "输入项目名称",
+    "create": "创建",
+    "cancel": "取消",
+    "validation": {
+      "nameRequired": "请输入项目名称"
+    },
+    "messages": {
+      "createSuccess": "项目创建成功",
+      "createError": "创建项目失败，请重试",
+      "formValidationError": "表单验证失败"
+    }
+  },
+  "dataAnalysisModal": {
+    "title": "创建数据分析提示词",
+    "cancel": "取消",
+    "createPrompt": "创建分析提示词",
+    "addField": "添加输出字段",
+    "datasetInfo": {
+      "title": "数据集信息",
+      "name": "名称：",
+      "description": "描述：",
+      "dataFields": "数据字段："
+    },
+    "form": {
+      "analysisDescription": "分析目的和要求",
+      "outputFields": "输出字段配置",
+      "fieldName": "字段名称",
+      "fieldDescription": "字段描述和要求",
+      "analysisPlaceholder": "请详细描述你想要从数据中分析出什么信息，例如：\n• 分析通话内容的情感倾向\n• 提取客户关心的产品特征\n• 识别投诉类型和严重程度\n• 统计关键指标和数据模式",
+      "fieldNamePlaceholder": "字段名称",
+      "fieldDescriptionPlaceholder": "字段描述和要求",
+      "outputFieldsHelp": "请定义需要输出的字段名称和描述，系统将基于这些字段生成分析提示词"
+    },
+    "validation": {
+      "analysisRequired": "请描述你想要分析什么",
+      "analysisMinLength": "请提供更详细的分析描述，至少10个字符"
+    },
+    "info": {
+      "title": "💡 功能说明",
+      "content": "• 系统将基于数据集结构和你的分析要求自动生成专业的数据分析提示词\n• 自动从数据集中选择5条记录作为测试用例\n• 生成的提示词将以JSON格式输出分析结果\n• 创建完成后将自动跳转到提示词编辑页面进行调试"
+    },
+    "messages": {
+      "fieldsRequired": "请至少添加一个有效的输出字段",
+      "createSuccess": "数据分析提示词创建成功！",
+      "createError": "创建数据分析提示词失败",
+      "createFailed": "创建失败，请重试"
+    }
+  },
+  "testCaseGeneratorModal": {
+    "title": "智能生成测试用例",
+    "startGenerate": "开始生成",
+    "regenerate": "重新生成",
+    "cancel": "取消",
+    "addCases": "添加用例",
+    "generating": "正在生成...",
+    "generateConfig": "生成配置",
+    "testCaseTypes": {
+      "normal": "正常情况",
+      "boundary": "边界情况",
+      "error": "异常情况"
+    },
+    "form": {
+      "quantity": "数量",
+      "quantityPlaceholder": "数量",
+      "variableConstraints": "变量约束",
+      "variableConstraintsOptional": "（可选）",
+      "variableConstraintPlaceholder": "例如：必须是有效的邮箱格式，长度不超过50个字符",
+      "overallRequirements": "总体要求",
+      "overallRequirementsOptional": "（可选）",
+      "overallRequirementsPlaceholder": "例如：生成真实用户数据、重点测试邮箱格式、包含多国地区案例..."
+    },
+    "hints": {
+      "maxQuantity": "每种类型最多100个，设置为0则不生成该类型"
+    },
+    "validation": {
+      "addVariablesFirst": "请先添加变量后再生成测试用例",
+      "setQuantityFirst": "请至少设置一种测试用例的数量大于0",
+      "selectCasesFirst": "请至少选择一个测试用例"
+    },
+    "messages": {
+      "generateSuccess": "测试用例生成成功！",
+      "generateError": "生成测试用例失败，请重试",
+      "generateFailed": "生成测试用例失败"
+    }
+  },
+  "datasetActions": {
+    "importAndExport": "导入导出",
+    "importFromDataset": "从数据集导入",
+    "exportToDataset": "导出到数据集"
+  },
+  "userNav": {
+    "login": "登录",
+    "profile": "个人资料",
+    "settings": "设置",
+    "logout": "登出"
+  },
+  "billingSection": {
+    "title": "账单信息",
+    "currentPlan": "当前计划",
+    "changePlan": "更改计划",
+    "requestUsage": "请求使用量",
+    "retrievalUsage": "提示词检索使用量",
+    "requests": "请求",
+    "retrieval": "检索",
+    "of": "of",
+    "learnMore": "了解更多关于定价的信息，请查看我们的",
+    "documentation": "文档",
+    "orContact": "或联系我们：",
+    "messages": {
+      "getBillingInfoError": "获取账单信息失败",
+      "cannotGetBillingInfo": "无法获取账单信息"
+    }
+  },
+  "apiKeysSection": {
+    "title": "PromptLab API Keys",
+    "createApiKey": "创建API密钥",
+    "description": "API密钥用于授权对PromptLab API的访问。请妥善保管您的密钥，不要在公共场合分享。",
+    "usageExample": "使用示例",
+    "createNewTitle": "创建新API密钥",
+    "createSuccess": "API密钥创建成功！请保存此密钥，它只会显示一次。",
+    "nameColumn": "名称",
+    "keyColumn": "密钥",
+    "createdColumn": "创建时间",
+    "lastUsedColumn": "最后使用",
+    "actionColumn": "操作",
+    "delete": "删除",
+    "neverUsed": "从未使用",
+    "keyNamePlaceholder": "API密钥名称",
+    "create": "创建",
+    "copy": "复制",
+    "done": "完成",
+    "deleteConfirmTitle": "确认删除",
+    "deleteConfirmContent": "确定要删除这个API密钥吗？此操作无法撤销。",
+    "messages": {
+      "getApiKeysError": "获取API密钥失败",
+      "nameRequired": "请输入密钥名称",
+      "createSuccess": "API密钥创建成功",
+      "createError": "创建API密钥失败",
+      "deleteSuccess": "API密钥已删除",
+      "deleteError": "删除API密钥失败",
+      "copySuccess": "API密钥已复制到剪贴板",
+      "copyError": "复制失败"
+    }
+  },
+  "evalResultDetail": {
+    "title": "评估结果详情",
+    "back": "返回",
+    "showDatasetColumns": "显示数据集列",
+    "hideDatasetColumns": "隐藏数据集列",
+    "showFailedOnly": "只显示失败",
+    "showAll": "显示全部",
+    "importFailedCases": "导入失败用例",
+    "refresh": "刷新",
+    "statistics": {
+      "totalItems": "总条目",
+      "passedItems": "通过",
+      "failedItems": "失败",
+      "progress": "进度"
+    },
+    "columns": {
+      "datasetItem": "数据集条目",
+      "actions": "操作"
+    },
+    "modals": {
+      "importFailedCases": {
+        "title": "导入失败用例",
+        "selectPrompt": "选择目标提示词",
+        "importing": "导入中...",
+        "importButton": "导入",
+        "cancel": "取消"
+      }
+    },
+    "statuses": {
+      "passed": "通过",
+      "failed": "失败",
+      "error": "错误"
+    },
+    "messages": {
+      "loadCellDataError": "加载单元格数据失败",
+      "loadResultDetailError": "加载评估结果详情失败",
+      "pollingError": "轮询更新失败",
+      "importSuccess": "导入成功",
+      "importError": "导入失败"
+    },
+    "noData": "暂无数据"
+  },
+  "landing": {
+    "nav": {
+      "welcome": "欢迎回来，{{name}}",
+      "logout": "退出",
+      "login": "登录",
+      "register": "注册"
+    },
+    "hero": {
+      "title": "让AI提示词开发\n更高效、更专业",
+      "subtitle": "专为AI开发者和内容创作者设计的一站式提示词管理平台\n通过智能编辑器、自动化评估和团队协作功能，显著提升开发效率和质量",
+      "platformTag": "🚀 专业AI提示词开发平台",
+      "enterConsole": "进入控制台",
+      "startUsing": "立即开始使用",
+      "watchDemo": "观看演示",
+      "freeRegister": "免费注册使用",
+      "contactSales": "联系销售团队"
+    },
+    "stats": {
+      "activeUsers": "活跃用户",
+      "createdPrompts": "创建提示词",
+      "runEvaluations": "运行评估",
+      "averageEfficiency": "平均提效"
+    },
+    "features": {
+      "title": "强大的功能，专业的体验",
+      "subtitle": "全方位提升您的提示词开发工作流程",
+      "smartEditor": {
+        "title": "智能提示词编辑器",
+        "description": "专业的提示词创建和编辑环境，支持语法高亮、实时预览和版本控制"
+      },
+      "dataManagement": {
+        "title": "数据集管理",
+        "description": "轻松管理测试数据集，支持批量导入、可视化预览和智能标注"
+      },
+      "autoEvaluation": {
+        "title": "自动化评估",
+        "description": "多维度评估系统，支持精确匹配、语义相似度、LLM评判等多种评估方法"
+      },
+      "teamCollaboration": {
+        "title": "团队协作",
+        "description": "多人协作工作空间，支持权限管理、标签系统和收藏功能"
+      }
+    },
+    "evaluationMethods": {
+      "title": "多维度评估系统",
+      "subtitle": "支持8+种评估方法，全面验证提示词效果",
+      "exactMatch": "精确匹配",
+      "multipleMatch": "多重匹配",
+      "jsonExtraction": "JSON提取",
+      "llmAssertion": "LLM断言",
+      "regex": "正则表达式",
+      "cosinesimilarity": "余弦相似度",
+      "codeExecution": "代码执行",
+      "humanEvaluation": "人工评估"
+    },
+    "useCases": {
+      "title": "适用于多种场景",
+      "subtitle": "无论您在哪个领域，PromptLab都能助您成功",
+      "aiDevelopment": {
+        "title": "AI产品开发",
+        "description": "为AI应用开发高质量的提示词，确保模型输出的准确性和一致性",
+        "examples": ["聊天机器人对话优化", "内容生成质量控制", "API接口响应标准化"]
+      },
+      "contentCreation": {
+        "title": "内容创作",
+        "description": "为创意写作、营销文案、技术文档等场景优化提示词策略",
+        "examples": ["营销文案模板", "技术文档生成", "创意故事写作"]
+      },
+      "dataAnalysis": {
+        "title": "数据分析",
+        "description": "构建专业的数据分析和报告生成的提示词，提高分析效率和质量",
+        "examples": ["数据洞察提取", "报告自动生成", "趋势分析总结"]
+      },
+      "education": {
+        "title": "教育培训",
+        "description": "为在线教育、培训课程、知识问答系统开发教学辅助提示词",
+        "examples": ["个性化学习指导", "作业批改助手", "知识点解析"]
+      }
+    },
+    "testimonials": {
+      "title": "用户反馈",
+      "subtitle": "看看其他用户如何评价PromptLab",
+      "user1": {
+        "name": "李明",
+        "role": "AI产品经理",
+        "company": "创新科技有限公司",
+        "content": "PromptLab帮助我们的团队将提示词开发效率提升了300%，质量控制也更加严格可靠。"
+      },
+      "user2": {
+        "name": "王小红",
+        "role": "NLP工程师",
+        "company": "智能应用研发中心",
+        "content": "评估系统非常全面，多种评估方法让我们能够从不同角度验证提示词效果。"
+      },
+      "user3": {
+        "name": "张强",
+        "role": "技术总监",
+        "company": "数字化解决方案",
+        "content": "团队协作功能很棒，现在整个团队都能高效地参与提示词优化工作。"
+      }
+    },
+    "callToAction": {
+      "title": "准备好提升您的AI提示词开发效率了吗？",
+      "subtitle": "加入成千上万的开发者，立即开始您的专业提示词开发之旅"
+    },
+    "footer": {
+      "description": "专业的AI提示词开发与管理平台，为开发者和创作者提供高效的提示词工程解决方案。",
+      "productFeatures": "产品功能",
+      "solutions": "解决方案",
+      "support": "支持帮助",
+      "contact": "联系方式",
+      "copyright": "© 2024 PromptLab. 保留所有权利.",
+      "privacyPolicy": "隐私政策",
+      "termsOfService": "服务条款",
+      "userAgreement": "用户协议",
+      "smartEditor": "智能编辑器",
+      "datasetManagement": "数据集管理",
+      "autoEvaluation": "自动评估",
+      "teamCollaboration": "团队协作",
+      "aiDevelopment": "AI产品开发",
+      "contentCreation": "内容创作",
+      "dataAnalysis": "数据分析",
+      "education": "教育培训",
+      "documentation": "使用文档",
+      "community": "社区论坛",
+      "customerService": "联系客服"
+    }
+  },
+  "invite": {
+    "title": "{{inviterName}} 邀请你加入项目 {{projectName}}",
+    "joinProject": "加入项目",
+    "loginRequired": "请先登录或注册账号",
+    "login": "登录",
+    "register": "注册",
+    "invalidInvite": "无效的邀请链接",
+    "linkError": "邀请链接错误",
+    "backHome": "返回首页",
+    "validatingInvite": "正在验证邀请链接...",
+    "checkingLoginStatus": "正在检查登录状态...",
+    "messages": {
+      "joinSuccess": "成功加入项目",
+      "joinError": "加入项目失败，请重试",
+      "validateError": "验证邀请链接失败"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Prompt管理平台",
+      "subtitle": "打造智能化数字未来",
+      "emailPlaceholder": "请输入邮箱地址",
+      "passwordPlaceholder": "请输入密码",
+      "submitText": "登录",
+      "noAccount": "还没有账户？",
+      "registerNow": "立即注册",
+      "emailRequired": "请输入邮箱地址!",
+      "emailInvalid": "请输入有效的电子邮件地址!",
+      "passwordRequired": "请输入密码！",
+      "passwordMinLength": "密码长度至少为 6 个字符!",
+      "autoLogin": "自动登录",
+      "forgotPassword": "忘记密码",
+      "loginSuccess": "登录成功",
+      "loginError": "登录失败，请检查您的账号密码"
+    },
+    "register": {
+      "title": "Prompt管理平台", 
+      "subtitle": "创建您的个人账户",
+      "emailPlaceholder": "请输入邮箱地址",
+      "passwordPlaceholder": "请设置密码",
+      "submitText": "注册",
+      "hasAccount": "已有账户？",
+      "loginNow": "立即登录",
+      "emailRequired": "请输入邮箱地址!",
+      "emailInvalid": "请输入有效的电子邮件地址!",
+      "passwordRequired": "请输入密码！",
+      "passwordMinLength": "密码长度至少为 6 个字符!",
+      "registerSuccess": "注册成功，请登录",
+      "registerError": "注册失败，请稍后重试"
+    }
+  },
+  "modelsManagement": {
+    "title": "模型管理",
+    "subtitle": "配置和管理大语言模型提供商。启用后的模型将在提示词编辑器中可用。",
+    "configSuggestion": "配置建议",
+    "configSuggestionDesc": "为了获得最佳体验，建议配置多个提供商作为备选。配置完成后，可以在提示词编辑器中选择使用不同的模型。",
+    "loadingModels": "加载模型数据中...",
+    "loadModelsError": "加载模型数据失败",
+    "hide": "隐藏",
+    "show": "显示",
+    "selectModels": "选择模型",
+    "selected": "已选择",
+    "functions": "函数调用",
+    "vision": "视觉理解",
+    "customModels": "自定义模型",
+    "addModel": "添加模型",
+    "noCustomModels": "暂无自定义模型",
+    "editCustomModel": "编辑自定义模型",
+    "addCustomModel": "添加自定义模型",
+    "displayName": "显示名称",
+    "displayNamePlaceholder": "例如：我的GPT-4模型",
+    "displayNameRequired": "请输入显示名称",
+    "modelId": "模型ID",
+    "modelIdPlaceholder": "例如：gpt-4-turbo-preview",
+    "modelIdRequired": "请输入模型ID",
+    "modelIdTooltip": "模型ID是模型提供商的唯一标识符，用于在提示词编辑器中选择模型。",
+    "modelDescription": "描述",
+    "modelDescriptionPlaceholder": "模型描述（可选）",
+    "contextWindow": "上下文窗口",
+    "maxTokens": "最大输出Tokens",
+    "inputPrice": "输入价格 ($/1K tokens)",
+    "outputPrice": "输出价格 ($/1K tokens)",
+    "deleteCustomModel": "确认删除",
+    "deleteCustomModelDesc": "确定要删除这个自定义模型吗？",
+    "delete": "删除",
+    "cancel": "取消",
+    "customModelDeleted": "自定义模型已删除",
+    "deleteCustomModelError": "删除失败，请重试",
+    "enabled": "已启用",
+    "disabled": "已禁用",
+    "notConfigured": "未配置",
+    "noDescription": "暂无描述",
+    "models": "模型",
+    "configure": "配置",
+    "add": "添加",
+    "configInfo": "配置信息",
+    "enabledModels": "启用的模型",
+    "testConnection": "测试连接",
+    "website": "官网",
+    "deleteProvider": "删除",
+    "deleteProviderConfirm": "确认删除",
+    "deleteProviderDesc": "确定要删除这个提供商配置吗？删除后将无法使用该提供商的模型。",
+    "notConfiguredYet": "尚未配置此提供商",
+    "configureNow": "立即配置",
+    "editProvider": "编辑",
+    "configProvider": "配置",
+    "configDescription": "配置说明",
+    "name": "名称",
+    "nameRequired": "请输入名称",
+    "nameDefaultValue": "我的{{providerName}}",
+    "authConfig": "认证配置",
+    "required": "*",
+    "fieldRequired": "请输入{{fieldName}}",
+    "modelSelection": "模型选择",
+    "selectModelsToEnable": "选择要启用的模型",
+    "selectAtLeastOneModel": "请至少选择一个模型",
+    "providerConfigUpdated": "提供商配置已更新",
+    "providerConfigured": "提供商已配置",
+    "configProviderError": "配置失败，请重试",
+    "connectionTestSuccess": "连接测试成功",
+    "connectionTestError": "连接测试失败，请检查配置",
+    "providerEnabled": "提供商已启用",
+    "providerDisabled": "提供商已禁用",
+    "toggleProviderError": "操作失败，请重试",
+    "providerDeleted": "提供商已删除",
+    "deleteProviderError": "删除失败，请重试",
+    "messages": {
+      "customModelUpdated": "自定义模型已更新",
+      "customModelAdded": "自定义模型已添加",
+      "operationFailed": "操作失败",
+      "operationError": "操作失败，请重试"
+    }
+  },
+  "editDatasetModal": {
+    "editDataset": "编辑数据集",
+    "createDataset": "创建数据集",
+    "cancel": "取消",
+    "save": "保存",
+    "create": "创建",
+    "loadingDatasetInfo": "加载数据集信息...",
+    "datasetName": "数据集名称",
+    "datasetNameRequired": "请输入数据集名称",
+    "datasetNamePlaceholder": "输入数据集名称",
+    "datasetDescription": "数据集描述",
+    "datasetDescriptionPlaceholder": "输入数据集描述",
+    "associatedPrompt": "关联提示词",
+    "associatedPromptRequired": "请选择关联的提示词",
+    "selectAssociatedPrompt": "选择关联的提示词",
+    "promptVersion": "提示词版本",
+    "promptVersionRequired": "请选择提示词版本",
+    "selectPromptVersion": "选择提示词版本",
+    "variablesList": "变量列表",
+    "selectVariables": "选择变量",
+    "variableDescriptions": "变量描述",
+    "variableDescriptionsHint": "为每个变量添加描述，这将帮助生成更准确的数据分析提示词",
+    "variableDescriptionPlaceholder": "请输入{{variable}}的描述",
+    "variablesListLabel": "变量列表：",
+    "variablesHint": "这些变量将用于创建数据集条目，您稍后可以为每个条目设置不同的变量值。",
+    "evaluationStrategy": "评估策略",
+    "evaluationStrategyRequired": "请选择评估策略",
+    "exactMatch": "精确匹配",
+    "keywordMatch": "关键词匹配",
+    "jsonStructureMatch": "JSON结构匹配",
+    "promptEvaluation": "提示词评估",
+    "strategyConfig": "策略配置 (JSON)",
+    "strategyConfigPlaceholder": "请输入策略配置（JSON格式，可选）",
+    "invalidJsonFormat": "请输入合法的JSON格式",
+    "messages": {
+      "loadDatasetDetailsFailed": "加载数据集详情失败",
+      "createUpdateSuccess": "数据集{{action}}成功",
+      "createUpdateFailed": "{{action}}数据集失败，请重试",
+      "updated": "更新",
+      "created": "创建"
+    }
+  },
+  "layouts": {
+  },
+  "uploadSteps": {
+    "fileSelect": {
+      "csvFormatRequired": "请选择CSV格式的文件",
+      "fileReadSuccess": "文件读取成功，点击下一步进行预览",
+      "fileReadError": "文件读取失败，请重新选择",
+      "templateDownloadSuccess": "模板文件下载成功",
+      "exampleName": "这是条目名称",
+      "exampleValue": "示例值",
+      "title": "选择CSV文件",
+      "instructions": "使用说明",
+      "requiredFields": "请确保CSV文件包含以下必需字段：",
+      "enabledField": "条目启用状态 (0/1 或 true/false)",
+      "nameField": "条目名称",
+      "variableValue": "变量值",
+      "downloadTemplate": "下载CSV模板",
+      "uploadText": "点击或拖拽CSV文件到此处",
+      "uploadHint": "支持单个CSV文件上传，文件大小不超过10MB",
+      "nextStepPreview": "下一步：预览数据",
+      "selectedFile": "已选择文件："
+    },
+    "preview": {
+      "title": "数据预览与验证",
+      "analyzing": "正在分析文件内容...",
+      "startPreview": "开始预览",
+      "previewError": "预览失败",
+      "uploadStartError": "上传启动失败",
+      "validationPassed": "文件验证通过，可以开始上传",
+      "validationFailed": "文件存在问题，请检查后再上传",
+      "totalRows": "总行数",
+      "validRows": "有效行数",
+      "invalidRows": "无效行数",
+      "missingRequiredFields": "缺少必需字段",
+      "missingFieldsDescription": "以下字段是必需的但在文件中未找到：",
+      "extraFields": "额外字段",
+      "extraFieldsDescription": "文件中包含以下额外字段（将被忽略；编辑数据集时可以添加这些字段）：",
+      "dataErrorsFound": "发现 {{count}} 个数据错误",
+      "rowError": "第{{rowNumber}}行:",
+      "moreErrors": "... 还有 {{count}} 个错误",
+      "dataPreviewTitle": "数据预览（前10行）",
+      "emptyValue": "(空)",
+      "uploadOptions": "上传选项：",
+      "skipInvalidRows": "跳过无效行",
+      "stopUpload": "停止上传",
+      "skipInvalidDescription": "将跳过 {{invalidRows}} 个无效行，上传 {{validRows}} 个有效行",
+      "stopUploadDescription": "遇到无效行时停止上传，请先修复数据问题",
+      "previousStep": "上一步",
+      "startUpload": "开始上传"
+    },
+    "progress": {
+      "title": "上传进度",
+      "getStatusError": "获取上传状态失败",
+      "taskInfoLost": "上传任务信息丢失",
+      "restartUpload": "请重新开始上传流程",
+      "initializing": "正在初始化上传任务...",
+      "stopMonitoring": "已停止监控上传进度",
+      "preparingStatus": "准备中...",
+      "uploadingStatus": "上传中...",
+      "completedStatus": "上传完成",
+      "failedStatus": "上传失败",
+      "unknownStatus": "未知状态",
+      "totalRows": "总行数:",
+      "processedRows": "已处理:",
+      "successRows": "成功:",
+      "failedRows": "失败:",
+      "estimatedTime": "预计剩余时间: {{time}}",
+      "completedTime": "完成时间: {{time}}",
+      "stopMonitoringBtn": "停止监控",
+      "viewResults": "查看结果",
+      "uploadFailedMsg": "上传失败",
+      "uploadFailedDesc": "请检查网络连接或联系管理员",
+      "timeFormatSeconds": "{{seconds}}秒",
+      "timeFormatMinutes": "{{minutes}}分{{seconds}}秒",
+      "timeFormatHours": "{{hours}}小时{{minutes}}分"
+    },
+    "result": {
+      "getResultError": "获取上传结果失败",
+      "fetchingResults": "正在获取上传结果...",
+      "retryTaskCreated": "重试任务已创建，请稍后查看结果",
+      "retryFailed": "重试失败",
+      "errorReportDownloaded": "错误报告下载成功",
+      "uploadSuccessTitle": "上传成功！",
+      "uploadSuccessSubtitle": "成功上传了 {{count}} 条数据到数据集",
+      "partialSuccessTitle": "部分上传成功",
+      "partialSuccessSubtitle": "成功上传了 {{successCount}} 条数据，{{failedCount}} 条数据失败",
+      "uploadFailedTitle": "上传失败",
+      "uploadFailedSubtitle": "所有数据都上传失败，请检查数据格式后重试",
+      "uploadStatistics": "上传统计",
+      "fileName": "文件名:",
+      "totalRows": "总行数:",
+      "successRate": "成功率:",
+      "successRows": "成功行数:",
+      "failedRows": "失败行数:",
+      "completedTime": "完成时间:",
+      "errorDetails": "错误详情 ({{count}} 个错误)",
+      "downloadErrorReport": "下载错误报告",
+      "rowNumber": "行号",
+      "errorType": "错误类型",
+      "errorMessage": "错误信息",
+      "originalData": "原始数据",
+      "retryFailedRows": "重试失败行",
+      "finish": "完成",
+      "partialSuccessHint": "提示",
+      "partialSuccessDescription": "部分数据上传成功。您可以下载错误报告查看失败原因，修正数据后重新上传失败的行。"
+    }
+  },
+  "promptAssistant": {
+    "impactLevels": {
+      "low": "低影响",
+      "medium": "中等影响", 
+      "high": "高影响"
+    },
+    "modificationTypes": {
+      "add_message": "添加消息",
+      "modify_message": "修改消息",
+      "delete_message": "删除消息",
+      "reorder_messages": "重新排序",
+      "add_variable": "添加变量",
+      "modify_variable": "修改变量",
+      "delete_variable": "删除变量"
+    }
+  },
+  "evaluationSteps": {
+    "categories": {
+      "dataSource": "数据源",
+      "transform": "数据转换",
+      "assertion": "断言",
+      "ai": "AI评估",
+      "comparison": "比较"
+    },
+    "stepTypes": {
+      "prompt_template": {
+        "name": "提示词模板",
+        "description": "执行提示词模板并返回结果"
+      },
+      "human_input": {
+        "name": "人工输入",
+        "description": "添加人工评估输入"
+      },
+      "static_value": {
+        "name": "静态值",
+        "description": "设置一个固定的值"
+      },
+      "parse_value": {
+        "name": "解析值",
+        "description": "从文本中解析指定格式的值"
+      },
+      "json_extraction": {
+        "name": "JSON提取",
+        "description": "从JSON数据中提取字段值"
+      },
+      "exact_match": {
+        "name": "精确匹配",
+        "description": "检查文本是否完全匹配"
+      },
+      "exact_multi_match": {
+        "name": "多项精确匹配",
+        "description": "检查文本是否匹配多个选项中的任意一个"
+      },
+      "contains": {
+        "name": "包含检查",
+        "description": "检查文本是否包含指定内容"
+      },
+      "regex": {
+        "name": "正则表达式",
+        "description": "使用正则表达式验证文本格式"
+      },
+      "type_validation": {
+        "name": "类型验证",
+        "description": "验证数据类型是否正确"
+      },
+      "numeric_distance": {
+        "name": "数值距离",
+        "description": "计算两个数值之间的距离"
+      },
+      "cosine_similarity": {
+        "name": "余弦相似度",
+        "description": "计算文本向量的余弦相似度"
+      },
+      "llm_assertion": {
+        "name": "LLM断言",
+        "description": "使用大语言模型进行智能判断"
+      },
+      "code_execution": {
+        "name": "代码执行",
+        "description": "执行自定义Python代码"
+      },
+      "custom_api": {
+        "name": "自定义API",
+        "description": "调用外部API进行评估"
+      }
+    },
+    "common": {
+      "execute": "执行",
+      "result": "结果",
+      "passed": "通过",
+      "failed": "失败",
+      "error": "错误",
+      "configure": "配置",
+      "inputRef": "输入引用",
+      "expectedValue": "期望值",
+      "actualValue": "实际值",
+      "threshold": "阈值",
+      "caseSensitive": "区分大小写",
+      "pattern": "模式",
+      "field": "字段",
+      "dataType": "数据类型",
+      "apiUrl": "API地址",
+      "method": "请求方法",
+      "headers": "请求头",
+      "body": "请求体",
+      "code": "代码",
+      "prompt": "提示词",
+      "model": "模型",
+      "temperature": "温度",
+      "maxTokens": "最大令牌数",
+      "loading": "执行中...",
+      "noResult": "暂无结果",
+      "executionTime": "执行时间",
+      "score": "得分",
+      "similarity": "相似度",
+      "distance": "距离",
+      "unsupportedStepType": "暂不支持此步骤类型的配置",
+      "options": "选项",
+      "ignoreCase": "忽略大小写",
+      "ignoreWhitespace": "忽略空白字符",
+      "inputType": "输入类型",
+      "text": "文本",
+      "number": "数字",
+      "select": "选择项",
+      "slider": "滑块",
+      "optionsOnePerLine": "选项 (一行一个)",
+      "enterOptionsOnePerLine": "输入选项，每行一个",
+      "minValue": "最小值",
+      "maxValue": "最大值",
+      "step": "步长",
+      "defaultValue": "默认值",
+      "defaultValuePlaceholder": "默认值",
+      "enterText": "请输入文本",
+      "save": "保存",
+      "jsonPath": "JSON路径",
+      "enterJsonPath": "输入JSON路径，例如：'data.results[0].value'",
+      "commonJsonPathExamples": "常用JSON路径示例：",
+      "assertionPrompt": "断言提示词",
+      "enterAssertionPrompt": "输入LLM用于断言的提示词，例如：'判断输出是否包含主要观点?'",
+      "outputFormat": "输出格式",
+      "trueFalse": "是/否",
+      "score": "评分(0-10)",
+      "containsText": "包含内容",
+      "enterContainsText": "输入应包含的文本",
+      "ignoreCaseLabel": "忽略大小写",
+      "yes": "是",
+      "no": "否",
+      "regexPattern": "正则表达式",
+      "enterRegexPattern": "输入正则表达式",
+      "staticValue": "静态值",
+      "enterStaticValue": "输入要返回的静态值",
+      "referenceValue": "基准数值",
+      "maxDistance": "最大允许差距",
+      "expectedType": "预期类型",
+      "string": "字符串",
+      "boolean": "布尔值",
+      "array": "数组",
+      "object": "对象",
+      "targetType": "目标类型",
+      "referenceText": "基准文本",
+      "enterReferenceText": "输入计算相似度的基准文本",
+      "codeLanguage": "代码语言",
+      "enterCode": "输入代码，可以通过data变量访问所有列数据",
+      "apiEndpointUrl": "API端点URL",
+      "enterApiEndpointUrl": "请输入API端点URL",
+      "requestHeaders": "请求头",
+      "requestHeadersPlaceholder": "JSON格式的请求头",
+      "requestMethod": "请求方法",
+      "requestBody": "请求体",
+      "requestBodyPlaceholder": "JSON格式的请求体",
+      "promptTemplate": "提示词模板",
+      "selectPromptTemplate": "请选择提示词模板",
+      "templateVersion": "模板版本",
+      "selectTemplateVersion": "请选择模板版本",
+      "variableReferences": "变量引用",
+      "selectVariableReferences": "选择变量引用",
+      "loadDatasetItemsError": "加载数据集项失败",
+      "maxSelectionWarning": "最多只能选择5条数据项",
+      "matchPair": "匹配对",
+      "inputColumn": "输入列",
+      "selectInputColumn": "选择输入列",
+      "selectInputColumnRequired": "请选择输入列",
+      "inputJsonPathRequired": "请输入JSON路径",
+      "jsonPathPlaceholder": "例如: user.name 或 data[0].id",
+      "jsonPathTooltip": "从输入列的JSON数据中提取特定字段值进行比较",
+      "expectedValueType": "期望值类型",
+      "fromColumn": "从列获取",
+      "fixedValue": "固定值",
+      "expectedColumn": "期望值列",
+      "selectExpectedColumn": "选择期望值列",
+      "selectExpectedColumnRequired": "请选择期望值列",
+      "expectedJsonPathPlaceholder": "例如: expected.name 或 result[0].value",
+      "expectedJsonPathTooltip": "从期望值列的JSON数据中提取特定字段值进行比较",
+      "fixedExpectedValue": "期望固定值",
+      "fixedExpectedValueRequired": "请输入期望的固定值",
+      "fixedExpectedValuePlaceholder": "输入期望的固定值",
+      "matchOptions": "匹配选项",
+      "selectMatchOptions": "选择匹配选项",
+      "noneAsEmpty": "None 作为空字符串",
+      "matchPairConfiguration": "匹配对配置",
+      "addMatchPair": "添加匹配对",
+      "noMatchPairs": "暂无匹配对配置",
+      "addFirstMatchPair": "添加第一个匹配对",
+      "usageInstructions": "使用说明：",
+      "instructionAllMatch": "所有匹配对都通过时，整体评估才算成功",
+      "instructionExpectedModes": "期望值支持两种模式：",
+      "instructionFromColumnMode": "从列获取：从指定的数据列中获取期望值",
+      "instructionFixedValueMode": "固定值：直接指定一个固定的期望值",
+      "instructionJsonExtraction": "可以分别为输入列和期望值列启用JSON路径提取",
+      "instructionJsonFormat": "JSON路径格式：user.name（对象属性）、data[0].id（数组元素）",
+      "instructionFailureDetails": "如果某个匹配对失败，会在结果中详细记录失败原因",
+      "loadTemplatesError": "加载提示词模板失败",
+      "loadTemplateDetailsError": "加载模板详情失败",
+      "selectPromptTemplateRequired": "请选择提示词模板",
+      "variableMappings": "变量映射",
+      "variableMappingDescription": "为提示词中的变量选择引用值，可以使用数据集原始变量或前面列的执行结果",
+      "selectReferenceSource": "选择引用源",
+      "previousColumnOutputs": "前置列输出值",
+      "validation": {
+        "required": "此字段为必填项",
+        "invalidNumber": "请输入有效数字",
+        "invalidJson": "请输入有效的JSON格式",
+        "invalidRegex": "请输入有效的正则表达式",
+        "invalidUrl": "请输入有效的URL"
+      }
+    }
+  },
+  "evalPipelineDetail": {
+    "lastColumnMustBeBoolean": "最后一列返回值必须是Boolean类型，用以统计成功率"
+  },
+  "modelsManagement": {
+    "title": "模型管理",
+    "subtitle": "配置和管理您的AI模型提供商，启用所需的模型来满足不同的使用场景。",
+    "configSuggestion": "配置建议",
+    "configSuggestionDesc": "建议配置多个提供商以确保服务稳定性，不同提供商的模型各有特色，可以满足不同的使用需求。",
+    "loadingModels": "加载模型数据中...",
+    "loadModelsError": "加载模型数据失败",
+    "configProviderError": "配置提供商失败",
+    "connectionTestError": "连接测试失败",
+    "toggleProviderError": "切换提供商状态失败",
+    "deleteProviderError": "删除提供商失败",
+    "enabled": "已启用",
+    "disabled": "已禁用",
+    "notConfigured": "未配置",
+    "models": "模型",
+    "configure": "配置",
+    "add": "添加",
+    "configInfo": "配置信息",
+    "enabledModels": "启用的模型",
+    "testConnection": "测试连接",
+    "website": "官网",
+    "deleteProviderConfirm": "确认删除提供商？",
+    "deleteProviderDesc": "删除后将无法使用该提供商的模型，请确认操作。",
+    "delete": "删除",
+    "cancel": "取消",
+    "deleteProvider": "删除提供商",
+    "notConfiguredYet": "尚未配置此提供商",
+    "configureNow": "立即配置",
+    "editProvider": "编辑提供商",
+    "configProvider": "配置提供商",
+    "configDescription": "配置提供商信息",
+    "name": "配置名称",
+    "nameRequired": "请输入配置名称",
+    "nameDefaultValue": "{{providerName}} 配置",
+    "authConfig": "认证配置",
+    "required": "*",
+    "fieldRequired": "请输入{{fieldName}}",
+    "modelSelection": "模型选择",
+    "selectModelsToEnable": "选择要启用的模型",
+    "selectAtLeastOneModel": "请至少选择一个模型",
+    "providerConfigUpdated": "提供商配置已更新",
+    "providerConfigured": "提供商配置成功",
+    "connectionTestSuccess": "连接测试成功",
+    "providerEnabled": "提供商已启用",
+    "providerDisabled": "提供商已禁用",
+    "providerDeleted": "提供商已删除",
+    "noDescription": "暂无描述",
+    "hide": "隐藏",
+    "show": "显示",
+    "selectModels": "选择模型",
+    "selected": "已选择",
+    "functions": "函数",
+    "vision": "视觉",
+    "customModels": "自定义模型",
+    "addModel": "添加模型",
+    "addCustomModel": "添加自定义模型",
+    "editCustomModel": "编辑自定义模型",
+    "deleteCustomModel": "删除自定义模型",
+    "deleteCustomModelDesc": "确认删除此自定义模型？",
+    "customModelDeleted": "自定义模型已删除",
+    "deleteCustomModelError": "删除自定义模型失败",
+    "modelId": "模型ID",
+    "displayName": "显示名称",
+    "displayNameRequired": "请输入显示名称",
+    "displayNamePlaceholder": "例如：GPT-4 Turbo",
+    "modelIdRequired": "请输入模型ID",
+    "modelIdPlaceholder": "例如：gpt-4-turbo-preview",
+    "modelIdTooltip": "提供商API中使用的模型标识符",
+    "modelDescription": "模型描述",
+    "modelDescriptionPlaceholder": "描述这个模型的特点和用途",
+    "contextWindow": "上下文窗口",
+    "maxTokens": "最大输出令牌",
+    "inputPrice": "输入价格 ($/1K tokens)",
+    "outputPrice": "输出价格 ($/1K tokens)",
+    "noCustomModels": "暂无自定义模型",
+    "messages": {
+      "customModelUpdated": "自定义模型已更新",
+      "customModelAdded": "自定义模型已添加",
+      "operationFailed": "操作失败",
+      "operationError": "操作失败，请重试"
+    }
+  },
+  "testCaseGeneratorModal": {
+    "title": "智能生成测试用例",
+    "generateConfig": "生成配置",
+    "generating": "生成中...",
+    "startGenerate": "开始生成",
+    "regenerate": "重新生成", 
+    "cancel": "取消",
+    "addCases": "添加测试用例",
+    "testCaseTypes": {
+      "normal": "正常情况",
+      "boundary": "边界情况",
+      "error": "异常情况"
+    },
+    "form": {
+      "quantityPlaceholder": "数量",
+      "variableConstraints": "变量约束",
+      "variableConstraintsOptional": "可选",
+      "variableConstraintPlaceholder": "为此变量设置约束条件，例如：必须是有效的邮箱地址",
+      "overallRequirements": "整体要求",
+      "overallRequirementsOptional": "可选",
+      "overallRequirementsPlaceholder": "描述测试用例的整体要求，例如：测试用例应该覆盖电商场景"
+    },
+    "validation": {
+      "addVariablesFirst": "请先添加变量",
+      "setQuantityFirst": "请先设置测试用例数量",
+      "selectCasesFirst": "请选择要添加的测试用例"
+    },
+    "messages": {
+      "generateSuccess": "测试用例生成成功",
+      "generateError": "生成测试用例失败",
+      "generateFailed": "生成测试用例失败，请重试"
+    },
+    "hints": {
+      "maxQuantity": "* 每种类型最多可生成100个测试用例"
+    }
+  },
+  "editDatasetModal": {
+    "editDataset": "编辑数据集",
+    "createDataset": "创建数据集",
+    "cancel": "取消",
+    "save": "保存",
+    "create": "创建",
+    "loadingDatasetInfo": "加载数据集信息中...",
+    "datasetName": "数据集名称",
+    "datasetNameRequired": "请输入数据集名称",
+    "datasetNamePlaceholder": "输入数据集名称",
+    "datasetDescription": "数据集描述",
+    "datasetDescriptionPlaceholder": "输入数据集描述（可选）",
+    "variablesList": "变量列表",
+    "selectVariables": "选择或输入变量名称",
+    "variableDescriptions": "变量描述",
+    "variableDescriptionsHint": "为每个变量添加描述，帮助用户理解变量的用途和格式要求",
+    "variableDescriptionPlaceholder": "为 {{variable}} 变量添加描述",
+    "messages": {
+      "loadDatasetDetailsFailed": "加载数据集详情失败",
+      "createUpdateSuccess": "数据集{{action}}成功",
+      "createUpdateFailed": "数据集{{action}}失败",
+      "created": "创建",
+      "updated": "更新",
+      "operationFailed": "操作失败"
+    }
+  },
+  "importFromDatasetModal": {
+    "title": "从数据集导入测试用例",
+    "cancel": "取消",
+    "import": "导入",
+    "importCount": "导入 ({{count}} 条)",
+    "selectDataset": "选择数据集",
+    "selectDatasetRequired": true,
+    "selectDatasetPlaceholder": "请选择数据集",
+    "variableMappings": "变量映射关系",
+    "variableMappingTitle": "🔄 变量映射关系",
+    "editMapping": "编辑映射",
+    "finishEditing": "完成编辑",
+    "mappingDescription": "将数据集变量（左侧）映射到提示词变量（右侧）：",
+    "selectDatasetVariable": "选择数据集变量",
+    "dataItemSelection": "数据项选择",
+    "dataItemSelectionHint": "选择要导入的数据项（最多10条）。表格支持左右滑动查看所有变量列。",
+    "selectColumn": "选择",
+    "nameColumn": "名称",
+    "unnamed": "未命名",
+    "loading": "加载中...",
+    "noData": "暂无数据项",
+    "selectedItems": "已选择 {{count}} 条数据项",
+    "messages": {
+      "loadDatasetsError": "加载数据集列表失败",
+      "loadDatasetItemsError": "加载数据集项失败",
+      "maxSelectionWarning": "最多只能选择10条数据项",
+      "selectItemsWarning": "请选择要导入的数据项",
+      "missingMappingsWarning": "请为以下变量配置映射关系：{{variables}}",
+      "importSuccess": "成功导入 {{count}} 条测试用例",
+      "importError": "导入测试用例失败，请重试",
+      "operationFailed": "操作失败"
+    }
+  },
+  "exportToDatasetModal": {
+    "title": "导出到数据集",
+    "cancel": "取消",
+    "import": "导入",
+    "searchDatasetPlaceholder": "搜索数据集",
+    "selectExistingDataset": "选择现有数据集：",
+    "noDescription": "无描述",
+    "variables": "变量: {{variables}}",
+    "noVariables": "无变量",
+    "emptyDatasets": "暂无数据集，请创建新数据集",
+    "createNewDataset": "创建新数据集",
+    "createNewDatasetTitle": "创建新数据集：",
+    "backToSelection": "返回选择",
+    "datasetName": "数据集名称",
+    "datasetNameRequired": "请输入数据集名称",
+    "datasetNamePlaceholder": "输入数据集名称",
+    "description": "描述",
+    "descriptionPlaceholder": "数据集描述（可选）",
+    "variablesNote": "注：数据集将使用当前提示词模板的变量({{variables}})",
+    "messages": {
+      "loadDatasetsError": "加载数据集列表失败",
+      "selectDatasetWarning": "请选择数据集或创建新数据集",
+      "createAndImportSuccess": "已成功创建数据集 \"{{name}}\" 并导入{{count}}个测试用例",
+      "importSuccess": "已成功导入{{count}}个测试用例到数据集 \"{{name}}\"",
+      "importFailedWithDetail": "导入失败: {{detail}}",
+      "importError": "导入测试用例失败，请重试",
+      "operationFailed": "操作失败"
+    }
+  },
+  "datasetItemSelectionModal": {
+    "title": "选择数据项",
+    "cancel": "取消",
+    "confirmSelection": "确认选择 ({{count}})",
+    "selectionHint": "选择要包含在评估任务中的数据项（最多5条）。表格支持左右滑动查看所有变量列。",
+    "selectColumn": "选择",
+    "nameColumn": "名称",
+    "unnamed": "未命名",
+    "loading": "加载中...",
+    "noData": "暂无数据项",
+    "selectedItems": "已选择 {{count}} 条数据项",
+    "selectedFirstFive": "已选择前5条数据项",
+    "messages": {
+      "loadDatasetItemsError": "加载数据集项失败",
+      "operationFailed": "操作失败"
+    }
+  },
+  "promptAssistant": {
+    "impactLevels": {
+      "low": "低影响",
+      "medium": "中等影响",
+      "high": "高影响"
+    },
+    "modificationTypes": {
+      "add_message": "添加消息",
+      "modify_message": "修改消息",
+      "delete_message": "删除消息",
+      "reorder_messages": "重新排序消息",
+      "add_variable": "添加变量",
+      "modify_variable": "修改变量",
+      "delete_variable": "删除变量"
+    },
+    "actionProposal": {
+      "confirmApplyTitle": "确认应用修改",
+      "confirmApplyContent": "您确定要应用这个修改提案吗？",
+      "confirmApplyNote": "此操作将直接修改您的提示词内容。",
+      "apply": "应用",
+      "cancel": "取消",
+      "reject": "拒绝",
+      "applied": "已应用",
+      "applyModification": "应用修改",
+      "previewDiff": "预览差异",
+      "close": "关闭",
+      "messageIndex": "消息 #{{index}}",
+      "modificationPreview": "修改预览",
+      "modificationSummary": "共 {{count}} 项修改",
+      "viewDetails": "查看修改详情",
+      "previewTitle": "修改预览 - {{title}}",
+      "messages": {
+        "applyFailed": "应用修改失败"
+      }
+    }
+  },
+  "evaluationColumnModal": {
+    "title": "添加评估列",
+    "cancel": "取消",
+    "save": "保存",
+    "add": "添加",
+    "backToList": "返回列表",
+    "selectTypePrompt": "选择要添加的评估列类型：",
+    "columnName": "列名称",
+    "columnNameRequired": "请输入列名称",
+    "columnNamePlaceholder": "请输入列名称",
+    "config": "配置",
+    "variableReference": "变量引用",
+    "useColumnAsInput": "使用前面列的值作为输入",
+    "useColumnAsExpected": "使用前面列的值作为期望值",
+    "selectReferenceColumn": "选择要引用的列",
+    "selectReferenceColumnRequired": "请选择引用的列",
+    "selectReferenceColumnPlaceholder": "选择要引用的列",
+    "duplicateWithVariable": "列名 \"{{name}}\" 与数据集变量重名，请使用其他名称",
+    "duplicateWithColumn": "列名 \"{{name}}\" 已存在，请使用其他名称",
+    "messages": {
+      "validationFailed": "表单验证失败"
+    }
+  },
+  "uploadDatasetWizard": {
+    "title": "批量上传数据集",
+    "uploadInProgress": "上传正在进行中，请稍后再关闭",
+    "steps": {
+      "selectFile": "选择文件",
+      "preview": "预览确认", 
+      "uploading": "上传进度",
+      "complete": "完成"
+    }
+  },
+  "createEvaluationPipeline": {
+    "title": "创建评估任务",
+    "cancel": "取消",
+    "create": "创建",
+    "name": "名称",
+    "nameRequired": "请输入名称",
+    "namePlaceholder": "输入名称",
+    "dataset": "数据集",
+    "datasetRequired": "请选择数据集",
+    "datasetPlaceholder": "请选择数据集",
+    "dataItemSelection": "数据项选择",
+    "dataItemSelectionHint": "选择要包含在评估任务中的数据项（最多5条）。表格支持左右滑动查看所有变量列。如果不选择，系统将自动使用前5条启用的数据项。",
+    "selectColumn": "选择",
+    "nameColumn": "名称",
+    "unnamed": "未命名",
+    "loading": "加载中...",
+    "noData": "暂无数据项",
+    "selectedItems": "已选择 {{count}} 条数据项",
+    "maxSelectionWarning": "最多只能选择5条数据项",
+    "selectedFirstFive": "已选择前5条数据项",
+    "messages": {
+      "loadDatasetsError": "加载数据集失败",
+      "loadDatasetItemsError": "加载数据集项失败",
+      "createSuccess": "创建评估任务成功",
+      "createError": "创建评估任务失败",
+      "operationFailed": "操作失败"
+    }
+  },
+  "requestDetailsModal": {
+    "title": "请求详情",
+    "copyRawRequest": "复制原始请求",
+    "close": "关闭",
+    "overview": {
+      "model": "模型",
+      "executionTime": "执行时间",
+      "cost": "费用",
+      "inputTokens": "输入Token",
+      "outputTokens": "输出Token",
+      "totalTokens": "总Token"
+    },
+    "sections": {
+      "modelConfig": "🔧 模型配置",
+      "inputMessages": "💬 输入消息",
+      "testCase": "🧪 测试用例",
+      "outputError": "❌ 输出错误",
+      "outputResult": "✅ 输出结果"
+    },
+    "requestTime": "请求时间: {{time}}",
+    "messages": {
+      "noRequestDetails": "没有请求详情可以复制",
+      "copySuccess": "原始请求已复制到剪贴板",
+      "copyFailed": "复制失败"
+    }
+  },
+  "promptHistoryDrawer": {
+    "title": "历史记录",
+    "noHistory": "暂无历史记录",
+    "executionTime": "耗时: {{time}}ms",
+    "tokens": "Token: {{count}}",
+    "cost": "费用: ${{amount}}",
+    "pagination": "第 {{start}}-{{end}} 条，共 {{total}} 条",
+    "messages": {
+      "fetchError": "获取历史数据失败",
+      "operationFailed": "操作失败"
+    }
+  },
+  "dataAnalysisModal": {
+    "title": "创建数据分析提示词",
+    "cancel": "取消",
+    "createPrompt": "创建提示词",
+    "addField": "添加输出字段",
+    "datasetInfo": {
+      "title": "数据集信息",
+      "name": "名称：",
+      "description": "描述：",
+      "dataFields": "数据字段："
+    },
+    "form": {
+      "analysisDescription": "分析描述",
+      "analysisPlaceholder": "请详细描述您希望AI如何分析这个数据集的数据。例如：\n• 分析用户行为模式\n• 识别数据中的异常值\n• 总结关键指标和趋势\n• 生成业务洞察和建议",
+      "outputFields": "输出字段定义",
+      "outputFieldsHelp": "定义AI分析结果的输出格式。每个字段将作为JSON对象的一个属性返回。",
+      "fieldNamePlaceholder": "字段名（如：trend_analysis）",
+      "fieldDescriptionPlaceholder": "字段描述（如：分析数据的趋势变化）"
+    },
+    "validation": {
+      "analysisRequired": "请输入分析描述",
+      "analysisMinLength": "分析描述至少需要10个字符"
+    },
+    "info": {
+      "title": "温馨提示",
+      "content": "系统将基于您的配置生成一个专业的数据分析提示词。\n生成的提示词将包含数据集的结构信息，并按照您定义的输出格式返回分析结果。\n您可以在提示词编辑器中进一步自定义和优化分析逻辑。"
+    },
+    "messages": {
+      "fieldsRequired": "请至少添加一个有效的输出字段",
+      "createSuccess": "数据分析提示词创建成功",
+      "createError": "创建提示词失败",
+      "createFailed": "创建提示词失败，请重试"
+    }
+  },
+  "createProjectModal": {
+    "title": "创建新项目",
+    "cancel": "取消",
+    "create": "创建",
+    "projectName": "项目名称",
+    "projectNamePlaceholder": "请输入项目名称",
+    "validation": {
+      "nameRequired": "请输入项目名称"
+    },
+    "messages": {
+      "createSuccess": "项目创建成功",
+      "createError": "创建项目失败",
+      "formValidationError": "表单验证失败"
+    }
+  },
+  "apiKeysSection": {
+    "title": "API 密钥",
+    "description": "API 密钥用于验证对此项目的请求。您可以创建和管理多个密钥。",
+    "createApiKey": "创建API密钥",
+    "nameColumn": "名称",
+    "keyColumn": "密钥",
+    "createdColumn": "创建时间",
+    "lastUsedColumn": "最后使用",
+    "actionColumn": "操作",
+    "neverUsed": "从未使用",
+    "delete": "删除",
+    "deleteConfirmTitle": "确认删除API密钥",
+    "deleteConfirmContent": "此操作不可逆转。使用此密钥的应用程序将无法再访问API。",
+    "createNewTitle": "创建新的API密钥",
+    "keyNamePlaceholder": "输入密钥名称",
+    "create": "创建",
+    "createSuccess": "API密钥创建成功！请保存此密钥，它不会再次显示。",
+    "copy": "复制",
+    "done": "完成",
+    "usageExample": "使用示例",
+    "messages": {
+      "getApiKeysError": "获取API密钥失败",
+      "nameRequired": "请输入密钥名称",
+      "createError": "创建API密钥失败",
+      "deleteSuccess": "API密钥删除成功",
+      "deleteError": "删除API密钥失败",
+      "copySuccess": "API密钥已复制到剪贴板",
+      "copyError": "复制失败"
+    }
+  },
+  "projectSettings": {
+    "projectInfo": {
+      "title": "项目信息",
+      "projectName": "项目名称",
+      "projectNameDescription": "项目名称将在整个应用程序中显示。",
+      "projectNamePlaceholder": "输入项目名称",
+      "saveChanges": "保存更改",
+      "dangerousActions": "危险操作",
+      "deleteProject": "删除项目",
+      "deleteProjectDescription": "一旦删除，项目及其所有数据将无法恢复。",
+      "deleteConfirmTitle": "删除项目确认",
+      "deleteConfirmContent": "此操作将永久删除项目及其所有数据，包括：",
+      "dataTypes": {
+        "prompts": "所有提示词和版本",
+        "datasets": "所有数据集和数据项",
+        "evaluations": "所有评估任务和结果",
+        "members": "所有成员和权限",
+        "apiConfigs": "所有API配置"
+      },
+      "deleteConfirmWarning": "此操作无法撤销！",
+      "continueDelete": "继续删除",
+      "deleteConfirmModal": "确认删除项目",
+      "deleteConfirmInstruction": "请输入项目名称 {{projectName}} 以确认删除：",
+      "deleteConfirmPlaceholder": "输入 {{projectName}} 确认删除",
+      "deleteConfirmNote": "输入项目名称后才能删除",
+      "confirmDelete": "确认删除",
+      "validation": {
+        "nameRequired": "请输入项目名称",
+        "nameMaxLength": "项目名称不能超过10个字符"
+      },
+      "messages": {
+        "fetchError": "获取项目信息失败",
+        "updateSuccess": "项目信息更新成功",
+        "updateError": "更新项目信息失败",
+        "nameNotMatch": "项目名称不匹配",
+        "nameNotMatchDescription": "请输入正确的项目名称以确认删除",
+        "deleteSuccess": "项目删除成功",
+        "deleteSuccessDescription": "项目及其所有数据已被永久删除",
+        "deleteError": "删除项目失败"
+      }
+    }
+  },
+  "projectSettings": {
+    "members": {
+      "title": "成员管理",
+      "description": "管理项目成员和权限。只有管理员可以邀请、移除成员和修改权限。",
+      "invite": "邀请成员",
+      "remove": "移除",
+      "roles": {
+        "admin": "管理员",
+        "member": "成员",
+        "readonly": "只读"
+      },
+      "modal": {
+        "title": "邀请成员",
+        "emailInvite": "通过邮箱邀请",
+        "emailPlaceholder": "输入邮箱地址",
+        "inviteButton": "发送邀请",
+        "linkInvite": "通过链接邀请",
+        "generateLink": "生成邀请链接",
+        "copyLink": "复制链接",
+        "removeConfirm": "确认移除此成员？"
+      },
+      "messages": {
+        "loadMembersError": "加载成员列表失败",
+        "emailRequired": "请输入邮箱地址",
+        "inviteSent": "邀请已发送",
+        "inviteError": "邀请失败",
+        "unknownError": "未知错误",
+        "generateLinkError": "生成邀请链接失败",
+        "linkCopied": "邀请链接已复制到剪贴板",
+        "copyFailed": "复制失败",
+        "memberRemoved": "成员已移除",
+        "removeMemberError": "移除成员失败",
+        "roleUpdated": "权限更新成功",
+        "updateRoleError": "修改权限失败"
+      }
+    }
+  },
+  "userButton": {
+    "profile": "个人资料",
+    "accountSettings": "账户设置",
+    "logout": "退出登录"
+  },
+  "auth": {
+    "login": {
+      "title": "PromptLab",
+      "subtitle": "专业的AI提示词管理平台",
+      "submitText": "登录",
+      "emailPlaceholder": "请输入邮箱",
+      "passwordPlaceholder": "请输入密码",
+      "emailRequired": "请输入邮箱地址",
+      "emailInvalid": "请输入有效的邮箱地址",
+      "passwordRequired": "请输入密码",
+      "passwordMinLength": "密码至少6位",
+      "noAccount": "还没有账户？",
+      "registerNow": "立即注册",
+      "loginSuccess": "登录成功",
+      "loginError": "登录失败，请检查邮箱和密码"
+    },
+    "register": {
+      "title": "PromptLab",
+      "subtitle": "专业的AI提示词管理平台",
+      "submitText": "注册",
+      "emailPlaceholder": "请输入邮箱",
+      "passwordPlaceholder": "请输入密码",
+      "emailRequired": "请输入邮箱地址",
+      "emailInvalid": "请输入有效的邮箱地址",
+      "passwordRequired": "请输入密码",
+      "passwordMinLength": "密码至少6位",
+      "hasAccount": "已有账户？",
+      "loginNow": "立即登录",
+      "registerSuccess": "注册成功",
+      "registerError": "注册失败，请重试"
+    }
+  },
+  "promptEditorPage": {
+    "messages": {
+      "loadModelListFailed": "加载模型列表失败",
+      "loadVersionContentFailed": "加载版本内容失败", 
+      "saveTemplateFailed": "保存模板失败，请重试",
+      "promptUpdatedSuccess": "✅ 提示词已成功更新！",
+      "operationFailed": "操作失败",
+      "loadDataFailed": "加载数据失败",
+      "loadAvailableModelsFailed": "加载可用模型失败",
+      "noTestCasesOrFailed": "没有测试用例或加载测试用例失败",
+      "translationFailed": "翻译过程失败",
+      "userCancelledRequest": "用户已取消请求",
+      "modelCallError": "调用模型时出错",
+      "versionSavedSuccess": "提示词已保存为新版本 ({{language}})",
+      "contentNoChanges": "⚠️ 提示词内容没有变化",
+      "useBackupScroll": "使用备用滚动方法"
+    },
+    "ui": {
+      "promptEditor": "🚀 {{name}}",
+      "returnToViewMode": {
+        "title": "返回查看模式",
+        "description": "您有未保存的更改，确定要返回吗？",
+        "okText": "确定",
+        "cancelText": "取消"
+      },
+      "modelConfig": "模型",
+      "defaultValue": "默认",
+      "tooltips": {
+        "maxOutputLength": "最大输出长度",
+        "reduceRepetition": "减少重复内容的出现",
+        "reduceFrequency": "降低词频重复"
+      },
+      "languageLabels": {
+        "chinese": "中文",
+        "english": "EN",
+        "mixed": "混合"
+      },
+      "mode": {
+        "testing": "调试",
+        "writing": "创作"
+      },
+      "confirmDelete": {
+        "title": "确认删除",
+        "description": "确定要删除这条消息吗？",
+        "okText": "删除",
+        "cancelText": "取消"
+      },
+      "confirmDeleteAllTestCases": {
+        "title": "确认删除所有测试用例",
+        "okText": "确认删除",
+        "cancelText": "取消"
+      },
+      "messagePlaceholders": {
+        "system": "你是一个专业的{{角色}}...",
+        "default": "输入消息...",
+        "systemEn": "You are a professional {{role}}...",
+        "defaultEn": "Enter message..."
+      },
+      "variableHint": "💡 使用 {{变量名}} 插入变量, 只能使用文字、数字、下划线",
+      "languageSwitch": {
+        "chinese": "中文",
+        "english": "English"
+      },
+      "clickToLocateTestCase": "点击定位到对应测试用例",
+      "optimization": {
+        "viewProgress": "查看优化进度",
+        "viewDetails": "查看优化详情",
+        "viewError": "查看错误信息",
+        "modifyDescription": "修改描述",
+        "optimizePrompt": "优化提示词"
+      },
+      "actions": {
+        "copyResult": "复制结果",
+        "viewDetails": "查看详情"
+      },
+      "generating": "正在生成中...",
+      "versionNote": {
+        "rules": "请输入版本备注"
+      },
+      "promptContent": "提示词内容 ({{language}})",
+      "promptContentEn": "提示词内容 (English版本)",
+      "promptContentZh": "提示词内容 (中文版本)",
+      "changes": "变更",
+      "itemChanges": "项变更",
+      "changeComparison": "变更对比区域",
+      "modelConfigChanges": "模型配置变更",
+      "promptContentChanges": "提示词内容变更",
+      "englishChanges": "英文变更",
+      "chineseChanges": "中文变更",
+      "noChanges": "如果没有任何变更",
+      "firstVersionNoChanges": "这是第一个版本，没有变更对比",
+      "testCaseOperations": {
+        "deletedAllSuccess": "已删除所有 {{count}} 个测试用例",
+        "addedSuccess": "已添加 {{count}} 个测试用例",
+        "testCaseTag": "用例{{index}}",
+        "generating": "正在生成回答...",
+        "callFailed": "❌ 调用失败",
+        "userCancelled": "用户已取消请求",
+        "modelCallErrorWithIndex": "测试用例 {{index}} 调用模型时出错:",
+        "userCancelledWithIndex": "测试用例 {{index}} 请求被用户取消"
+      },
+      "optimization": {
+        "optimizing": "优化中",
+        "completed": "已优化",
+        "failed": "优化失败", 
+        "hasFeedback": "已反馈",
+        "score": "{{score}}/100"
+      },
+      "versions": {
+        "firstVersionTitle": "这将是该提示词的第一个版本"
+      },
+      "variableTooltip": {
+        "appearsCount": "该变量在此消息中出现{{count}}次",
+        "clickToLocate": "点击定位到第{{messageIndex}}条消息中的变量"
+      }
+    }
+  },
+  "assistantChat": {
+    "messages": {
+      "copySuccess": "已复制到剪贴板",
+      "copyFailed": "复制失败",
+      "applyError": "应用修改失败:"
+    },
+    "ui": {
+      "copy": "复制",
+      "retry": "重试",
+      "greeting": "你好！我是小白，你的智能提示词助理",
+      "description": "我可以帮助你编写和优化AI提示词，让你的AI对话更加精准有效",
+      "pendingActions": "待处理的修改提案",
+      "clearChat": "清空对话",
+      "sendMessage": "发送消息",
+      "thinking": "正在思考...",
+      "inputPlaceholder": "询问如何优化你的提示词...",
+      "inputPlaceholderFull": "输入你的问题... (Enter 发送，Shift+Enter 换行)",
+      "functionDisabled": "功能暂不可用",
+      "assistantTitle": "提示词助理 - 小白",
+      "askMeExample": "你可以这样问我：",
+      "thinkingStatus": "正在思考中...",
+      "initializing": "初始化助理中..."
+    },
+    "messages": {
+      "stopGeneration": "已停止内容生成",
+      "generationFailed": "生成失败，请重试",
+      "proposalNotFound": "未找到对应的修改提案",
+      "applyFailed": "应用修改失败",
+      "applyFailedRetry": "应用修改失败，请重试",
+      "proposalRejected": "已拒绝修改提案",
+      "noMessageToRegenerate": "未找到可重新生成的消息"
+    },
+    "tooltips": {
+      "copyContent": "复制内容",
+      "regenerate": "重新生成",
+      "pendingActions": "待处理的修改提案",
+      "clearChat": "清空对话",
+      "expandEditor": "展开编辑"
+    },
+    "suggestions": {
+      "translate": {
+        "design": "如何为\"{{name}}\"设计一个好的翻译提示词？",
+        "elements": "翻译提示词应该包含哪些要素？",
+        "template": "给我一个翻译任务的提示词模板"
+      },
+      "summary": {
+        "design": "如何为\"{{name}}\"设计一个高质量的总结提示词？",
+        "practices": "总结类提示词的最佳实践是什么？",
+        "template": "给我一个文本总结的提示词模板"
+      },
+      "writing": {
+        "design": "如何为\"{{name}}\"设计一个创作类提示词？",
+        "structure": "写作类提示词应该如何构建？",
+        "template": "给我一个内容生成的提示词模板"
+      },
+      "analysis": {
+        "design": "如何为\"{{name}}\"设计一个分析类提示词？",
+        "points": "分析判断类任务的提示词要点是什么？",
+        "template": "给我一个分析分类的提示词模板"
+      },
+      "dialogue": {
+        "design": "如何为\"{{name}}\"设计一个对话类提示词？",
+        "chatbot": "对话机器人的提示词应该如何写？",
+        "template": "给我一个客服对话的提示词模板"
+      },
+      "general": {
+        "quickWrite": "如何为\"{{name}}\"快速编写一个有效的提示词？",
+        "template": "给我一个通用的提示词模板",
+        "basedOnName": "基于任务名称，这个提示词应该包含什么？",
+        "howToWrite": "如何快速编写一个有效的提示词？",
+        "structure": "什么是好的提示词结构？"
+      },
+      "optimization": {
+        "analyze": "分析当前提示词有什么问题",
+        "accuracy": "如何让回答更加准确？",
+        "variables": "推荐一些变量设计"
+      }
+    }
+  },
+  "longTextEditor": {
+    "ui": {
+      "placeholder": "请输入文本",
+      "expandEditor": "展开编辑",
+      "formatJSON": "格式化JSON",
+      "cancel": "取消",
+      "save": "保存",
+      "plainText": "普通文本",
+      "codeMode": "代码模式",
+      "characterCount": "字符数: {{count}}"
+    }
+  },
+  "modeToggle": {
+    "tooltips": {
+      "chatMode": "咨询模式：与助理讨论提示词设计思路和最佳实践",
+      "agentMode": "代理模式：让助理直接修改提示词内容"
+    }
+  },
+  "jsonDisplay": {
+    "messages": {
+      "copySuccess": "复制成功",
+      "copyFailed": "复制失败"
+    },
+    "ui": {
+      "noContent": "暂无内容",
+      "textContent": "文本内容",
+      "jsonContent": "JSON 内容",
+      "copy": "复制",
+      "copyJSON": "复制JSON",
+      "copyOriginal": "复制原文",
+      "close": "关闭"
+    }
+  },
+  "usageProgress": {
+    "ui": {
+      "unlimited": "无限制",
+      "dailyLabel": "（今日）",
+      "viewDetails": "点击查看使用详情",
+      "totalUsage": "总使用量",
+      "dailyUsage": "每日使用量",
+      "featureNotEnabled": "功能未启用"
+    }
+  },
+  "promptOptimizer": {
+    "ui": {
+      "firstRoundOptimization": "第一轮优化",
+      "secondRoundOptimization": "第二轮优化", 
+      "thirdRoundOptimization": "第三轮优化",
+      "optimizationComplete": "优化完成",
+      "basicProblemAnalysis": "基础问题分析",
+      "deepStructureAdjustment": "深度结构调整",
+      "refinedImprovement": "精细化改进",
+      "selectBestVersion": "选择最佳版本",
+      "promptComparison": "提示词对比",
+      "originalVsFinalVersion": "原始版本 vs 最终优化版本",
+      "executingRoundOptimization": "正在执行第{round}轮优化...",
+      "roundOptimization": "第{round}轮优化",
+      "score": "评分: {score}",
+      "roundOptimizationComparison": "第{round}轮优化对比",
+      "optimizationCompleted": "优化完成！",
+      "aiSmartOptimization": "AI智能优化",
+      "multiRoundIterativeOptimization": "多轮迭代优化",
+      "userFeedbackOverview": "用户反馈概览",
+      "initialScore": "初始评分: {score}/100",
+      "bestScore": "最佳评分: {score}/100",
+      "caseDescription": "用例描述",
+      "expectedOutput": "期望输出",
+      "noDescription": "无描述",
+      "analysisResult": "🔍 分析结果：",
+      "rejected": "被拒绝",
+      "best": "最佳",
+      "rejectedWarning": "⚠️ 本轮优化被拒绝：评分({score})低于基准线，使用上一轮最佳结果继续优化",
+      "resultComparison": "结果对比",
+      "originalResult": "原始结果",
+      "optimizedResult": "优化结果",
+      "aiEvaluation": "🎯 AI评价：",
+      "testResults": "🧪 测试结果：",
+      "afterRounds": "经过{rounds}轮优化，已为您生成最佳提示词版本",
+      "finalOptimizationComparison": "最终优化对比：",
+      "analyzing": "AI正在分析并优化您的提示词，请稍候"
+    },
+    "messages": {
+      "confirmTerminateOptimization": "确认终止优化",
+      "terminateOptimizationContent": "优化正在进行中，关闭弹窗将终止当前优化流程。是否确认关闭？",
+      "confirmClose": "确认关闭",
+      "cancel": "取消",
+      "continueOptimization": "继续优化",
+      "optimizationCompleted": "优化完成",
+      "roundOptimizationFailed": "第{round}轮优化失败，请重试",
+      "roundOptimizationStarted": "第{round}轮优化开始调用AI",
+      "roundOptimizationCancelled": "第{round}轮优化被取消",
+      "roundOptimizationSuccess": "第{round}轮优化成功",
+      "roundOptimizationRejected": "第{round}轮优化被拒绝",
+      "invalidJsonFormat": "未找到有效的JSON格式{type}结果",
+      "optimization": "优化",
+      "evaluation": "评分",
+      "optimizationFailed": "优化流程失败，请重试",
+      "applyOptimized": "已应用优化后的提示词"
+    },
+    "buttons": {
+      "cancel": "取消",
+      "returnToFeedback": "返回反馈",
+      "restartOptimization": "重新优化",
+      "continueOptimization": "继续优化",
+      "applyBestVersion": "应用最优版本",
+      "close": "关闭"
+    },
+    "evaluation": {
+      "promptExpert": "提示词优化专家",
+      "currentPrompt": "当前提示词：",
+      "specificEvaluation": "具体评价说明",
+      "promptIssues": ["提示词问题1", "提示词问题2"],
+      "improvements": ["可改进点1", "可改进点2"],
+      "issues": ["存在问题1", "存在问题2"],
+      "recommendation": "针对提示词的优化建议"
+    }
+  },
+  "apiKeysSection": {
+    "messages": {
+      "unknownError": "未知错误"
+    }
+  },
+  "evalResultDetailPage": {
+    "messages": {
+      "pollingUpdateFailed": "轮询更新失败",
+      "loadCellDataFailed": "加载单元格数据失败",
+      "getPromptInfoFailed": "获取提示词信息失败",
+      "loadEvalResultDetailFailed": "加载评估结果详情失败",
+      "getFailedCasesDataFailed": "获取失败用例数据失败",
+      "getVariableMappingFailed": "获取变量映射失败",
+      "selectPromptToImport": "请选择要导入的提示词",
+      "noFailedCasesFound": "没有找到失败的用例数据",
+      "saveTestCaseFailed": "保存测试用例失败",
+      "importFailedCasesSuccess": "已成功导入 {{count}} 个失败用例到提示词",
+      "importFailed": "导入失败，请重试",
+      "importFailedCasesFailed": "导入失败用例失败",
+      "operationFailed": "操作失败"
+    },
+    "ui": {
+      "promptLabel": "提示词{promptId}",
+      "loadFailedMessage": "加载评估结果详情失败",
+      "dataId": "数据ID",
+      "scoreLabels": {
+        "excellent": "优秀",
+        "good": "良好", 
+        "average": "中等",
+        "belowAverage": "偏低",
+        "poor": "较差",
+        "veryPoor": "很差"
+      },
+      "promptTemplate": "提示词：{{promptName}} (v{{versionNumber}})",
+      "promptTemplateDefault": "提示词模板",
+      "loading": "加载中...",
+      "executionProgress": "⏳ 执行进度",
+      "taskProgress": "📊 任务进度",
+      "totalCases": "总用例数",
+      "passedCases": "通过用例",
+      "failedCases": "未通过用例",
+      "errorCases": "异常用例",
+      "on": "开",
+      "off": "关",
+      "show": "显示",
+      "hide": "隐藏",
+      "pagination": "第 {start}-{end} 条，共 {total} 条数据行",
+      "noData": "无数据",
+      "confirmImport": "确认导入",
+      "cancel": "取消",
+      "selectPromptPlaceholder": "请选择要导入失败用例的提示词",
+      "importTip": "💡 提示：导入后您可以在提示词编辑页面的测试用例中看到这些失败的用例，它们会被标记为\"错误类型\"，方便您进行调试和优化。",
+      "back": "返回",
+      "evalResultDetails": "评估结果详情",
+      "evalSummary": "评估摘要",
+      "successRate": "通过率",
+      "realtimeUpdating": "实时更新中",
+      "casesPassed": "{passed} / {total} 用例通过",
+      "executing": "正在执行中...",
+      "testInfo": "测试信息",
+      "evalPrompts": "评估提示词",
+      "createdAt": "创建时间：",
+      "updatedAt": "更新时间：",
+      "evalDetails": "评估详情",
+      "showFailedOnly": "只看失败记录",
+      "importFailedCases": "导入失败用例",
+      "datasetColumns": "数据集列",
+      "hidden": "已隐藏",
+      "showColumns": "显示列：",
+      "importFailedCasesToPrompt": "导入失败用例到提示词",
+      "importDescription": "将当前评估中的失败用例导入到指定提示词的测试用例中，以便进行错误复现和调试。",
+      "failedCasesStats": "失败用例统计：",
+      "unpassedCases": "未通过用例：",
+      "errorCasesDetail": "异常用例：",
+      "totalFailedCases": "总计：{total} 个失败用例将被导入。（最多导入100条）",
+      "selectTargetPrompt": "选择目标提示词：",
+      "variableMappingRelation": "变量映射关系：",
+      "variableMappingDescription": "数据集变量将按以下映射关系转换为提示词变量：",
+      "noVariableMappingWarning": "注意：未找到变量映射配置，将尝试直接使用相同的变量名进行匹配。"
+    }
+  },
+  "evalPipelineDetailPage": {
+    "ui": {
+      "confirmDelete": {
+        "title": "确认删除",
+        "content": "确定要删除这个评估列吗？相关的评估结果将一并删除。"
+      },
+      "executeFullEvaluation": {
+        "title": "执行完整评估",
+        "okText": "确认执行",
+        "cancelText": "取消",
+        "description": "您将对数据集下所有记录执行完整评估功能：",
+        "recordCount": "数据集记录：{{count}} 条",
+        "columnCount": "评估列数：{{count}} 个",
+        "warningTitle": "⚠️ 重要提醒：",
+        "warningItems": {
+          "async": "评估将异步执行，需要耗费较长时间",
+          "canClose": "执行过程中您可以关闭页面，不会影响评估进度",
+          "viewHistory": "完成后可在评估历史记录中查看结果"
+        }
+      },
+      "dataset": "数据集:",
+      "selectDataset": "选择数据集",
+      "selectDataItems": "选择数据项",
+      "noMatchingDatasets": "暂无匹配的数据集",
+      "fullExecution": "全量执行",
+      "loading": "加载中...",
+      "datasetColumns": "数据集列",
+      "hidden": "隐藏",
+      "shown": "显示",
+      "hiddenColumns": "已隐藏 {{count}} 列",
+      "showColumns": "显示列：",
+      "addEvaluationColumn": "添加评估列",
+      "dataId": "数据ID",
+      "dataName": "数据名称",
+      "execute": "执行",
+      "notExecuted": "未执行",
+      "executing": "执行中",
+      "success": "成功",
+      "failed": "失败",
+      "noSamplesInDataset": "数据集中没有样本",
+      "pleaseSelectDataset": "请先选择数据集"
+    },
+    "messages": {
+      "operationFailed": "操作失败",
+      "loadPipelineFailed": "加载流水线失败",
+      "loadDatasetFailed": "加载数据集失败",
+      "updateDatasetFailed": "更新数据集失败",
+      "dataItemsUpdatedSuccess": "数据项更新成功",
+      "updateDataItemFailed": "更新数据项失败",
+      "addColumnFailed": "添加列失败",
+      "saveSuccess": "保存成功",
+      "saveFailed": "保存失败",
+      "executeCellFailed": "执行单元格失败",
+      "pleaseSelectDatasetFirst": "请先选择数据集",
+      "pleaseAddEvaluationColumn": "请先添加评估列",
+      "fullEvaluationStarted": "完整评估已启动，您可以在评估历史记录中查看进度",
+      "startFullEvaluationFailed": "启动完整评估失败"
+    }
+  },
+  "optimizationTrigger": {
+    "ui": {
+      "optimizePrompt": "优化提示词",
+      "singleOptimization": "单例优化",
+      "startOptimization": "开始优化",
+      "cancel": "取消",
+      "close": "关闭",
+      "optimizing": "优化进行中",
+      "aiAnalyzing": "AI分析中",
+      "optimizingPrompt": "正在优化提示词...",
+      "aiAnalyzingDescription": "AI正在分析您的反馈，生成优化方案并验证效果，请稍候",
+      "optimizationRequirementLabel": "优化需求：",
+      "expectedOutputLabel": "期望输出：",
+      "originalOutputResult": "原始输出结果",
+      "singleOptimizationDescription": {
+        "title": "单例优化说明",
+        "line1": "AI将针对此案例进行专门优化，分析问题、改进提示词并验证效果。",
+        "line2": "优化过程在后台执行，您可以继续处理其他案例。"
+      },
+      "optimizationRequirement": {
+        "label": "优化需求说明",
+        "rules": "请描述您希望如何优化这个结果",
+        "placeholder": "请描述您希望如何优化这个结果，例如：语气更加友好、格式更加规范、内容更加详细等..."
+      },
+      "expectedOutput": {
+        "label": "期望输出（可选）",
+        "placeholder": "如果您有具体的期望输出，请在这里提供..."
+      }
+    },
+    "messages": {
+      "formValidationFailed": "表单验证失败"
+    }
+  },
+  "testCaseCard": {
+    "ui": {
+      "testCase": "用例 {{index}}",
+      "selected": "选中",
+      "typeLabels": {
+        "normal": "正常",
+        "boundary": "边界", 
+        "error": "异常",
+        "manual": "手动"
+      },
+      "inputPlaceholder": "输入{{key}}值"
+    }
+  }
+}

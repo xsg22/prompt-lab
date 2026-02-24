@@ -1,0 +1,87 @@
+name: Build and Deploy Version Branches
+
+# 触发条件：推送到以v开头的分支（如v1.0.0、v2.1.3等）
+on:
+  push:
+    branches: 
+      - 'v[0-9]+.[0-9]+.[0-9]+'  # 匹配语义化版本格式（主版本.次版本.修订号）
+      - 'v[0-9]+.[0-9]+'        # 匹配v1.0这种格式
+      - 'v[0-9]+'               # 匹配v1这种格式
+
+permissions:
+  contents: write  # 允许修改仓库内容
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment: production  # 这里使用生产环境作为示例
+    
+    
+    steps:
+      # 步骤1：检出代码仓库
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      # 步骤2：获取当前分支名称
+      - name: Get current branch name
+        id: branch_name
+        run: echo "BRANCH_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
+      
+      # 步骤3：设置Node.js环境
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      # 步骤4：安装前端依赖并打包
+      - name: Install web dependencies and build
+        run: |
+          cd web
+          npm install
+          npm run build
+      
+      # 步骤5：提交构建文件到当前版本分支
+      - name: Commit built files to version branch
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          
+          # 添加并提交构建文件
+          git add server/app/public
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-update frontend build files for ${{ steps.branch_name.outputs.BRANCH_NAME }}"
+            git push origin ${{ steps.branch_name.outputs.BRANCH_NAME }}
+          fi
+      
+      # 步骤7：通过SSH登录AWS服务器并从当前版本分支拉取代码部署
+      - name: Deploy to AWS server via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.AWS_HOST }}
+          username: ${{ secrets.AWS_USERNAME }}
+          key: ${{ secrets.AWS_SSH_PRIVATE_KEY }}
+          script: |
+            cd /opt/app/promptLab
+            git fetch
+            # 切换到当前版本分支（确保服务器使用正确的分支）
+            git checkout ${{ steps.branch_name.outputs.BRANCH_NAME }}
+
+            cd /opt/app/promptLab/web
+            # 执行npm install
+            npm install
+
+            cd /opt/app/promptLab/server
+            
+            # 执行pip install -r requirements.txt
+            source /opt/app/promptLab/server/.venv/bin/activate
+            pip install -r requirements.txt
+
+            # 数据库更新
+            alembic upgrade head
+
+            # 重启服务
+            ./start_service.sh restart
+            deactivate
+    

@@ -1,0 +1,148 @@
+Ant Design + Tailwind CSS 集成样式
+
+/* 1. 保留必要的Tailwind base样式，但不影响Ant Design */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+}
+
+/* 2. 确保Ant Design组件的基础样式不被覆盖 */
+.ant-btn,
+.ant-input,
+.ant-select,
+.ant-card,
+.ant-typography,
+.ant-statistic,
+.ant-row,
+.ant-col,
+.ant-space,
+.ant-badge,
+.ant-tag {
+  box-sizing: border-box;
+}
+
+/* 3. 修复可能的样式冲突 */
+.ant-btn:focus,
+.ant-btn:hover {
+  outline: none;
+}
+
+/* 4. 确保Tailwind的响应式类在Ant Design组件上正常工作 */
+.ant-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* 5. 修复文字渲染问题 */
+.ant-typography {
+  color: inherit;
+}
+
+.ant-typography h1,
+.ant-typography h2,
+.ant-typography h3,
+.ant-typography h4,
+.ant-typography h5,
+.ant-typography h6 {
+  color: inherit;
+  margin-top: 0;
+}
+
+/* 6. 确保渐变文字效果正常工作 */
+.landing-hero-title.ant-typography {
+  background: linear-gradient(135deg, #1890ff 0%, #722ed1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* 7. 修复按钮在不同状态下的样式 */
+.ant-btn-primary {
+  border-color: #1890ff;
+  background: #1890ff;
+}
+
+.ant-btn-primary:hover,
+.ant-btn-primary:focus {
+  border-color: #40a9ff;
+  background: #40a9ff;
+}
+
+/* 8. 确保统计组件正常显示 */
+.ant-statistic-title {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.ant-statistic-content {
+  color: #262626;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+/* 9. 卡片组件样式优化 */
+.ant-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.ant-card-hoverable:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* 10. 标签组件样式 */
+.ant-tag {
+  border-radius: 6px;
+  padding: 2px 8px;
+}
+
+/* 11. 间距系统确保正常工作 */
+.ant-space {
+  display: inline-flex;
+  /* align-items: center; */
+}
+
+.ant-space-vertical {
+  flex-direction: column;
+}
+
+/* 12. 响应式网格修复 */
+@media (max-width: 640px) {
+  .ant-col {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  
+  .ant-row {
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+}
+
+/* 13. 修复导航栏样式 */
+.ant-badge {
+  display: inline-block;
+}
+
+.ant-badge-ribbon {
+  position: absolute;
+}
+
+/* 14. 确保模态框和抽屉等覆盖层组件正常显示 */
+.ant-modal,
+.ant-drawer,
+.ant-tooltip,
+.ant-popover {
+  z-index: 1000;
+}
+
+/* 15. 修复字体渲染 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+} 

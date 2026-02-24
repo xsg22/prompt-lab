@@ -1,0 +1,15 @@
+fastapi==0.104.1
+uvicorn==0.24.0
+python-dotenv==1.0.0
+pydantic[email]==2.5.1
+pydantic-settings==2.0.0
+python-multipart==0.0.6
+httpx==0.25.1
+python-jose[cryptography]==3.3.0
+bcrypt>=3.1.7,<4.0.0
+passlib[bcrypt]==1.7.4
+sqlalchemy==2.0.41
+asyncmy==0.2.10
+litellm>=1.81.4
+alembic==1.13.1
+chardet==5.2.0

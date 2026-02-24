@@ -1,0 +1,29 @@
+---
+description: 项目的前后端机构和文件路径
+globs: 
+alwaysApply: false
+---
+# PromptLab 项目概述
+
+PromptLab 是一个提示词工程实验平台，由以下主要部分组成：
+
+## 后端 (Server)
+
+后端是基于 FastAPI 构建的 Python 应用程序：
+- 主入口: [server/main.py](mdc:server/main.py)
+- API 核心: [server/app/main.py](mdc:server/app/main.py)
+- 依赖项: [server/requirements.txt](mdc:server/requirements.txt)
+
+## 前端 (Web)
+
+前端是基于 Next.js 构建的 React 应用程序：
+- 主页面: [web/app/page.tsx](mdc:web/app/page.tsx)
+- 项目配置: [web/package.json](mdc:web/package.json)
+- 主布局: [web/app/layout.tsx](mdc:web/app/layout.tsx)
+
+## 项目架构
+
+这是一个全栈应用，由以下部分组成：
+- 后端 API 服务器 (FastAPI)
+- 前端 Web 界面 (Next.js)
+- 数据库操作
