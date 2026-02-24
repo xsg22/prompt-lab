@@ -46,60 +46,6 @@ def upgrade() -> None:
         comment='项目表'
     )
 
-    op.create_table('membership_features',
-        sa.Column('id', sa.BigInteger(), autoincrement=True, nullable=False),
-        sa.Column('membership_type', sa.Enum('free', 'pro_monthly', 'pro_annual', 'enterprise'), nullable=False, comment='会员类型'),
-        sa.Column('feature_code', sa.String(100), nullable=False, comment='功能编码'),
-        sa.Column('feature_name', sa.String(200), nullable=False, comment='功能名称'),
-        sa.Column('limit_value', sa.Integer(), nullable=True, comment='限制值，-1表示无限制，0表示不可用'),
-        sa.Column('daily_limit', sa.Integer(), nullable=True, comment='每日限制，-1表示无限制'),
-        sa.Column('is_enabled', sa.Boolean(), nullable=False, comment='是否启用'),
-        sa.Column('created_at', sa.DateTime(), server_default=sa.text('CURRENT_TIMESTAMP'), nullable=False),
-        sa.Column('updated_at', sa.DateTime(), server_default=sa.text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'), nullable=False),
-        sa.PrimaryKeyConstraint('id'),
-        sa.UniqueConstraint('membership_type', 'feature_code', name='uk_membership_feature'),
-        comment='会员权益配置表'
-    )
-    op.create_index('idx_feature_code', 'membership_features', ['feature_code'])
-    op.create_index('idx_membership_type_feature', 'membership_features', ['membership_type'])
-
-    op.create_table('membership_orders',
-        sa.Column('id', sa.BigInteger(), autoincrement=True, nullable=False),
-        sa.Column('user_id', sa.BigInteger(), nullable=False, comment='用户ID'),
-        sa.Column('order_no', sa.String(100), nullable=False, comment='订单号'),
-        sa.Column('membership_type', sa.Enum('pro_monthly', 'pro_annual', 'enterprise'), nullable=False, comment='会员类型'),
-        sa.Column('amount', sa.Numeric(10, 2), nullable=False, comment='金额'),
-        sa.Column('currency', sa.String(10), nullable=False, comment='货币'),
-        sa.Column('status', sa.Enum('pending', 'paid', 'failed', 'refunded'), nullable=False, comment='订单状态'),
-        sa.Column('payment_method', sa.String(50), nullable=True, comment='支付方式'),
-        sa.Column('payment_id', sa.String(200), nullable=True, comment='第三方支付ID'),
-        sa.Column('paid_at', sa.DateTime(), nullable=True, comment='支付时间'),
-        sa.Column('created_at', sa.DateTime(), server_default=sa.text('CURRENT_TIMESTAMP'), nullable=False),
-        sa.Column('updated_at', sa.DateTime(), server_default=sa.text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'), nullable=False),
-        sa.PrimaryKeyConstraint('id'),
-        sa.UniqueConstraint('order_no', name='uk_order_no'),
-        comment='订单记录表'
-    )
-    op.create_index('idx_order_no', 'membership_orders', ['order_no'])
-    op.create_index('idx_order_status', 'membership_orders', ['status'])
-    op.create_index('idx_user_orders', 'membership_orders', ['user_id'])
-
-    op.create_table('user_usage_limits',
-        sa.Column('id', sa.BigInteger(), autoincrement=True, nullable=False),
-        sa.Column('user_id', sa.BigInteger(), nullable=False, comment='用户ID'),
-        sa.Column('limit_type', sa.String(50), nullable=False, comment='限制类型'),
-        sa.Column('current_usage', sa.Integer(), nullable=False, comment='当前使用量'),
-        sa.Column('daily_usage', sa.Integer(), nullable=False, comment='每日使用量'),
-        sa.Column('last_reset_date', sa.Date(), nullable=True, comment='最后重置日期'),
-        sa.Column('created_at', sa.DateTime(), server_default=sa.text('CURRENT_TIMESTAMP'), nullable=False),
-        sa.Column('updated_at', sa.DateTime(), server_default=sa.text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'), nullable=False),
-        sa.PrimaryKeyConstraint('id'),
-        sa.UniqueConstraint('user_id', 'limit_type', name='uk_user_limit_type'),
-        comment='用户使用限制记录表'
-    )
-    op.create_index('idx_last_reset', 'user_usage_limits', ['last_reset_date'])
-    op.create_index('idx_limit_type', 'user_usage_limits', ['limit_type'])
-
     # ===== 依赖 projects 的表 =====
 
     op.create_table('model_provider_instances',
@@ -633,8 +579,5 @@ def downgrade() -> None:
     op.drop_table('project_ai_feature_configs')
     op.drop_table('project_models')
     op.drop_table('model_provider_instances')
-    op.drop_table('user_usage_limits')
-    op.drop_table('membership_orders')
-    op.drop_table('membership_features')
     op.drop_table('projects')
     op.drop_table('users')

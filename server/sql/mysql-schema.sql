@@ -72,58 +72,6 @@ create index dataset_item_id
 create index evaluation_id
     on evaluation_results (evaluation_id);
 
-create table if not exists membership_features
-(
-    id              bigint auto_increment comment '主键ID'
-        primary key,
-    membership_type enum ('free', 'pro_monthly', 'pro_annual', 'enterprise') not null comment '会员类型',
-    feature_code    varchar(100)                                             not null comment '功能编码',
-    feature_name    varchar(200)                                             not null comment '功能名称',
-    limit_value     int                                                      null comment '限制值，-1表示无限制，0表示不可用',
-    daily_limit     int                                                      null comment '每日限制，-1表示无限制',
-    is_enabled      tinyint(1)                                               not null comment '是否启用',
-    created_at      datetime default CURRENT_TIMESTAMP                       not null comment '创建时间',
-    updated_at      datetime default CURRENT_TIMESTAMP                       not null on update CURRENT_TIMESTAMP comment '更新时间',
-    constraint uk_membership_feature
-        unique (membership_type, feature_code)
-)
-    comment '会员权益配置表';
-
-create index idx_feature_code
-    on membership_features (feature_code);
-
-create index idx_membership_type_feature
-    on membership_features (membership_type);
-
-create table if not exists membership_orders
-(
-    id              bigint auto_increment comment '主键ID'
-        primary key,
-    user_id         bigint                                           not null comment '用户ID',
-    order_no        varchar(100)                                     not null comment '订单号',
-    membership_type enum ('pro_monthly', 'pro_annual', 'enterprise') not null comment '会员类型',
-    amount          decimal(10, 2)                                   not null comment '金额',
-    currency        varchar(10)                                      not null comment '货币',
-    status          enum ('pending', 'paid', 'failed', 'refunded')   not null comment '订单状态',
-    payment_method  varchar(50)                                      null comment '支付方式',
-    payment_id      varchar(200)                                     null comment '第三方支付ID',
-    paid_at         datetime                                         null comment '支付时间',
-    created_at      datetime default CURRENT_TIMESTAMP               not null comment '创建时间',
-    updated_at      datetime default CURRENT_TIMESTAMP               not null on update CURRENT_TIMESTAMP comment '更新时间',
-    constraint uk_order_no
-        unique (order_no)
-)
-    comment '订单记录表';
-
-create index idx_order_no
-    on membership_orders (order_no);
-
-create index idx_order_status
-    on membership_orders (status);
-
-create index idx_user_orders
-    on membership_orders (user_id);
-
 create table if not exists project_ai_feature_configs
 (
     id          int auto_increment
@@ -335,28 +283,6 @@ create table if not exists test_cases
 
 create index prompt_version_id
     on test_cases (prompt_version_id);
-
-create table if not exists user_usage_limits
-(
-    id              bigint auto_increment comment '主键ID'
-        primary key,
-    user_id         bigint                             not null comment '用户ID',
-    limit_type      varchar(50)                        not null comment '限制类型',
-    current_usage   int                                not null comment '当前使用量',
-    daily_usage     int                                not null comment '每日使用量',
-    last_reset_date date                               null comment '最后重置日期',
-    created_at      datetime default CURRENT_TIMESTAMP not null comment '创建时间',
-    updated_at      datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间',
-    constraint uk_user_limit_type
-        unique (user_id, limit_type)
-)
-    comment '用户使用限制记录表';
-
-create index idx_last_reset
-    on user_usage_limits (last_reset_date);
-
-create index idx_limit_type
-    on user_usage_limits (limit_type);
 
 create table if not exists users
 (

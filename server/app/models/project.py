@@ -32,7 +32,6 @@ class ProjectMember(Base, TimestampMixin):
     role = Column(String(16), nullable=False, default="member")
     
     # 关系
-    # user = relationship("Users", back_populates="project_memberships")
     # project = relationship("Project", back_populates="members")
 
 
